@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.3.1 - 2026-03-19
+#### Bug Fixes
+- version display showing 0.0.0 due to missing tags and shallow clone - (3183197) - Jeff Nelson
+- later round matchups now depend on feeder round results, not R64 - (83554df) - Jeff Nelson
+#### Miscellaneous Chores
+- update bracket data — 2026-03-19T23:14:07Z - (348e8bf) - github-actions[bot]
+- update bracket data — 2026-03-19T22:58:39Z - (8988b9e) - github-actions[bot]
+
+- - -
+
 ## 0.3.0 - 2026-03-19
 #### Features
 - include git short hash in version display - (e0fad7e) - Jeff Nelson
