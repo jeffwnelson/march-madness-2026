@@ -981,6 +981,7 @@ body {
     <h3>How it works</h3>
     <button class="drawer-close" onclick="toggleHelp()">&times;</button>
   </div>
+  <div style="padding:0.4rem 1.2rem 0;font-size:0.65rem;color:var(--muted)">Version <span id="app-version">...</span></div>
   <div class="help-modal-body">
     <div class="help-section">
       <div class="help-section-title">Consensus Picks</div>
@@ -1047,6 +1048,9 @@ async function loadData() {
   const res = await fetch('data/brackets.json');
   DATA = await res.json();
   document.getElementById('group-name').textContent = DATA.groupName || '';
+  fetch('VERSION').then(r => r.text()).then(v => {
+    document.getElementById('app-version').textContent = v.trim();
+  }).catch(() => {});
   renderConsensus();
   renderLeaderboard();
   initWhatIf();

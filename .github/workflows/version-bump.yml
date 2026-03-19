@@ -1,0 +1,44 @@
+name: Version Bump
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'chore(version)')"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install cocogitto
+        uses: cocogitto/cocogitto-action@v3
+        with:
+          check-latest-tag-only: true
+          git-user: 'github-actions[bot]'
+          git-user-email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Bump version
+        id: bump
+        run: |
+          VERSION=$(cog bump --auto 2>&1 || echo "")
+          if echo "$VERSION" | grep -q "Bumped version"; then
+            NEW_VER=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.1.0")
+            echo "new_version=$NEW_VER" >> "$GITHUB_OUTPUT"
+            echo "bumped=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "bumped=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update VERSION file
+        if: steps.bump.outputs.bumped == 'true'
+        run: |
+          echo "${{ steps.bump.outputs.new_version }}" > VERSION
+          git add VERSION
+          git commit --amend --no-edit
+          git push --force-with-lease
