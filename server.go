@@ -3,7 +3,70 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
+	"net/http"
+	"os"
 )
+
+const (
+	challengeURL = "https://gambit-api.fantasy.espn.com/apis/v1/challenges/tournament-challenge-bracket-2026"
+	groupURL     = "https://gambit-api.fantasy.espn.com/apis/v1/challenges/tournament-challenge-bracket-2026/groups/af223df6-96d0-46e7-b00d-1b590dc67888?view=entries&limit=50"
+	cachePath    = "data/brackets.json"
+)
+
+func saveCache(path string, data *BracketData) error {
+	b, err := json.MarshalIndent(data, "", "  ")
+	if err != nil {
+		return err
+	}
+	return os.WriteFile(path, b, 0644)
+}
+
+func loadCache(path string) (*BracketData, error) {
+	b, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	var data BracketData
+	if err := json.Unmarshal(b, &data); err != nil {
+		return nil, err
+	}
+	return &data, nil
+}
+
+func fetchESPNData() (*BracketData, error) {
+	challengeResp, err := http.Get(challengeURL)
+	if err != nil {
+		return nil, fmt.Errorf("fetching challenge data: %w", err)
+	}
+	defer challengeResp.Body.Close()
+	challengeBytes, err := io.ReadAll(challengeResp.Body)
+	if err != nil {
+		return nil, fmt.Errorf("reading challenge response: %w", err)
+	}
+
+	groupResp, err := http.Get(groupURL)
+	if err != nil {
+		return nil, fmt.Errorf("fetching group data: %w", err)
+	}
+	defer groupResp.Body.Close()
+	groupBytes, err := io.ReadAll(groupResp.Body)
+	if err != nil {
+		return nil, fmt.Errorf("reading group response: %w", err)
+	}
+
+	challenge, err := parseChallengeData(challengeBytes)
+	if err != nil {
+		return nil, fmt.Errorf("parsing challenge data: %w", err)
+	}
+
+	group, err := parseGroupData(groupBytes)
+	if err != nil {
+		return nil, fmt.Errorf("parsing group data: %w", err)
+	}
+
+	return processData(challenge, group), nil
+}
 
 func main() {
 	fmt.Println("march-madness-2026 server starting")
