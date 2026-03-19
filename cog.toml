@@ -3,11 +3,8 @@ ignore_merge_commits = true
 skip_ci = "[skip ci]"
 skip_untracked = true
 disable_changelog = false
-disable_bump_commit = false
+disable_bump_commit = true
 tag_prefix = ""
 
 [changelog]
 path = "CHANGELOG.md"
-
-[bump]
-create_github_release = true

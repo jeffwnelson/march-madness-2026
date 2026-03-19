@@ -4,63 +4,68 @@ on:
   push:
     branches: [master]
 
-permissions:
-  contents: write
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  bump:
+  version:
     runs-on: ubuntu-latest
     if: "!contains(github.event.head_commit.message, 'chore(version)')"
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Install cocogitto
-        run: |
-          curl -sSL https://github.com/cocogitto/cocogitto/releases/download/7.0.0/cocogitto-7.0.0-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components=1
-          sudo mv cog /usr/local/bin/
-          cog --version
+      - uses: cocogitto/cocogitto-action@v3
+        id: cocogitto
+        with:
+          release: true
+          check: true
+          check-latest-tag-only: true
 
-      - name: Configure git
+      - name: Set version output
+        id: version
+        run: echo "version=${{ steps.cocogitto.outputs.version }}" >> "$GITHUB_OUTPUT"
+
+  update-version-file:
+    needs: [version]
+    if: needs.version.outputs.version != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master
+
+      - name: Update VERSION file
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          # Stage any untracked files (e.g. LICENSE auto-added by GitHub)
-          git add -A
-          git diff --cached --quiet || git commit -m "chore: stage untracked files"
-
-      - name: Bump version
-        id: bump
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          OUTPUT=$(cog bump --auto 2>&1 || echo "no bump")
-          echo "$OUTPUT"
-          if echo "$OUTPUT" | grep -q "Bumped version"; then
-            NEW_VER=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.1.0")
-            echo "new_version=$NEW_VER" >> "$GITHUB_OUTPUT"
-            echo "bumped=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "bumped=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Update VERSION file and push
-        if: steps.bump.outputs.bumped == 'true'
-        run: |
           SHORT_SHA=$(git rev-parse --short HEAD)
-          echo "${{ steps.bump.outputs.new_version }}+${SHORT_SHA}" > VERSION
+          echo "${{ needs.version.outputs.version }}+${SHORT_SHA}" > VERSION
           git add VERSION
-          git commit --amend --no-edit
-          SHORT_SHA=$(git rev-parse --short HEAD)
-          echo "${{ steps.bump.outputs.new_version }}+${SHORT_SHA}" > VERSION
-          git add VERSION
-          git commit --amend --no-edit
-          # Re-tag after amending since the commit hash changed
-          git tag -f "${{ steps.bump.outputs.new_version }}"
-          git push --force-with-lease
-          git push --tags --force
-          # Update the GitHub release to point to the re-tagged commit
-          gh release edit "${{ steps.bump.outputs.new_version }}" --tag "${{ steps.bump.outputs.new_version }}" || true
+          git commit -m "chore(version): update VERSION to ${{ needs.version.outputs.version }}"
+          git push
+
+  release:
+    needs: [version, update-version-file]
+    if: needs.version.outputs.version != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "${{ needs.version.outputs.version }}" --generate-notes
