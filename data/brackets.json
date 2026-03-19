@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-19T22:58:39Z",
+  "lastUpdated": "2026-03-19T23:14:07Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -583,7 +583,7 @@
       "team1Id": "c90d45a1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90d45a2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773962700000
+      "gameTime": 1773963300000
     },
     {
       "id": "c90c0d20-0695-11f1-af21-ff98afcfd072",
@@ -713,7 +713,7 @@
       "team1Id": "c90e3001-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90e3002-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773961800000
+      "gameTime": 1773963000000
     },
     {
       "id": "c90ecc40-0695-11f1-af21-ff98afcfd072",
@@ -3926,7 +3926,7 @@
       ]
     },
     {
-      "member": "",
+      "member": "jeff-fa-fa-2",
       "entryName": "Luke's Hoops",
       "score": 60,
       "maxPossible": 1900,
@@ -4268,7 +4268,7 @@
       ]
     },
     {
-      "member": "",
+      "member": "jeff-fa-fa-2",
       "entryName": "Jeff's Worst Picks Ever",
       "score": 60,
       "maxPossible": 1900,
