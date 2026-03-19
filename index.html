@@ -1242,6 +1242,8 @@ function renderConsensus() {
 function toggleHelp() {
   document.getElementById('help-overlay').classList.toggle('open');
   document.getElementById('help-modal').classList.toggle('open');
+  const isOpen = document.getElementById('help-modal').classList.contains('open');
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
 // --- Drawer for matchup detail ---
@@ -1387,11 +1389,13 @@ function openDrawer(teamCounts, roundKey, winnerId, undecidedCounts) {
   document.getElementById('drawer-body').innerHTML = html;
   document.getElementById('drawer-overlay').classList.add('open');
   document.getElementById('drawer').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 
 function closeDrawer() {
   document.getElementById('drawer-overlay').classList.remove('open');
   document.getElementById('drawer').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 // --- Round selection ---
