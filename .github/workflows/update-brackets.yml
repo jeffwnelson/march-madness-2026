@@ -34,4 +34,10 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/brackets.json
           git commit -m "chore: update bracket data — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          # Update VERSION with new commit hash
+          VER=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "${VER}+${SHORT_SHA}" > VERSION
+          git add VERSION
+          git commit --amend --no-edit
           git push

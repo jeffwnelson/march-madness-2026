@@ -46,7 +46,12 @@ jobs:
       - name: Update VERSION file and push
         if: steps.bump.outputs.bumped == 'true'
         run: |
-          echo "${{ steps.bump.outputs.new_version }}" > VERSION
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "${{ steps.bump.outputs.new_version }}+${SHORT_SHA}" > VERSION
+          git add VERSION
+          git commit --amend --no-edit
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "${{ steps.bump.outputs.new_version }}+${SHORT_SHA}" > VERSION
           git add VERSION
           git commit --amend --no-edit
           git push --force-with-lease
