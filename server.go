@@ -6,6 +6,7 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"sync"
 )
 
 const (
@@ -69,7 +70,92 @@ func fetchESPNData() (*BracketData, error) {
 }
 
 func main() {
-	fmt.Println("march-madness-2026 server starting")
+	fetchOnly := false
+	for _, arg := range os.Args[1:] {
+		if arg == "--fetch-only" {
+			fetchOnly = true
+		}
+	}
+
+	// --fetch-only: always fetch fresh data, save, exit (for GitHub Actions)
+	if fetchOnly {
+		fmt.Println("Fetching fresh data from ESPN...")
+		data, err := fetchESPNData()
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "Error fetching ESPN data: %v\n", err)
+			os.Exit(1)
+		}
+		if err := saveCache(cachePath, data); err != nil {
+			fmt.Fprintf(os.Stderr, "Error saving cache: %v\n", err)
+			os.Exit(1)
+		}
+		fmt.Println("Data fetched and cached. Exiting.")
+		return
+	}
+
+	// Normal mode: load cache or fetch
+	var mu sync.Mutex
+	var currentData *BracketData
+
+	cached, err := loadCache(cachePath)
+	if err != nil {
+		fmt.Println("No cached data found, fetching from ESPN...")
+		fetched, fetchErr := fetchESPNData()
+		if fetchErr != nil {
+			fmt.Fprintf(os.Stderr, "Error fetching ESPN data: %v\n", fetchErr)
+			os.Exit(1)
+		}
+		if saveErr := saveCache(cachePath, fetched); saveErr != nil {
+			fmt.Fprintf(os.Stderr, "Error saving cache: %v\n", saveErr)
+		}
+		currentData = fetched
+	} else {
+		currentData = cached
+	}
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/" {
+			http.NotFound(w, r)
+			return
+		}
+		http.ServeFile(w, r, "index.html")
+	})
+
+	http.HandleFunc("/api/brackets", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet {
+			http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		mu.Lock()
+		d := currentData
+		mu.Unlock()
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(d)
+	})
+
+	http.HandleFunc("/api/refresh", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		fresh, fetchErr := fetchESPNData()
+		if fetchErr != nil {
+			http.Error(w, fmt.Sprintf("error fetching data: %v", fetchErr), http.StatusInternalServerError)
+			return
+		}
+		if saveErr := saveCache(cachePath, fresh); saveErr != nil {
+			fmt.Fprintf(os.Stderr, "Error saving cache: %v\n", saveErr)
+		}
+		mu.Lock()
+		currentData = fresh
+		mu.Unlock()
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(fresh)
+	})
+
+	addr := ":8000"
+	fmt.Printf("Server running at http://localhost%s\n", addr)
+	http.ListenAndServe(addr, nil)
 }
 
 // ESPN raw API types
