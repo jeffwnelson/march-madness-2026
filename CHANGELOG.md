@@ -2,6 +2,26 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.2.0 - 2026-03-19
+#### Features
+- fix version bump workflow, reorder help modal, remove what-if from help - (a52aae3) - Jeff Nelson
+- partial matchups with inline opponents, left justified, 10min cron - (cb4ba6b) - Jeff Nelson
+- deep link URIs for tabs and rounds (#leaderboard, #consensus/r32) - (ea8ab63) - Jeff Nelson
+- leaderboard as default tab, centered tabs, cocogitto v7 fix - (ff15b03) - Jeff Nelson
+#### Bug Fixes
+- rename to Bracket Picks, remove points from round tabs - (f705f32) - Jeff Nelson
+- determine winners from pick results instead of actualOutcomeIds order - (c8f7a38) - Jeff Nelson
+- limit cron to noon-1am CST (18-07 UTC) - (3539c13) - Jeff Nelson
+- install cocogitto v7 directly instead of action wrapper - (227396b) - Jeff Nelson
+- use cocogitto-action v4 (latest available) - (bbfb63e) - Jeff Nelson
+- upgrade cocogitto action to v7 - (ab4c2af) - Jeff Nelson
+- update cog.toml for cocogitto v6 compatibility - (88263d8) - Jeff Nelson
+#### Miscellaneous Chores
+- (**version**) 0.1.1 - (a5cba28) - github-actions[bot]
+- stage untracked files - (659d90d) - github-actions[bot]
+
+- - -
+
 ## 0.1.1 - 2026-03-19
 #### Bug Fixes
 - update cog.toml for cocogitto v6 compatibility - (88263d8) - Jeff Nelson
