@@ -1,11 +1,1072 @@
 <!DOCTYPE html>
-<html>
-<head><title>March Madness 2026</title></head>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>March Madness 2026 — Bracket Analyzer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg2: #12121a;
+  --card: #1a1a2e;
+  --border: #2a2a3e;
+  --accent: #ff6b35;
+  --accent-dim: #cc5529;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --muted: #94a3b8;
+  --text: #e2e8f0;
+  --white: #f8fafc;
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+/* Header */
+.header {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-left { display: flex; align-items: center; gap: 1rem; }
+.header h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--white);
+}
+.header h1 span { color: var(--accent); }
+.header-right { display: flex; align-items: center; gap: 1rem; }
+.last-updated { font-size: 0.75rem; color: var(--muted); }
+.btn-refresh {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background 0.2s;
+}
+.btn-refresh:hover { background: var(--accent-dim); }
+.btn-refresh .spinner {
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  display: none;
+}
+.btn-refresh.loading .spinner {
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Tabs */
+.tabs {
+  display: flex;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 1.5rem;
+  gap: 0;
+}
+.tab-btn {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0.85rem 1.5rem;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* Tab content */
+.tab-content { display: none; padding: 1.5rem; max-width: 1400px; margin: 0 auto; }
+.tab-content.active { display: block; animation: fadeIn 0.3s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Round selector */
+.round-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.round-btn {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.round-btn:hover { border-color: var(--accent); color: var(--text); }
+.round-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Region grid */
+.regions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 1100px) { .regions-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .regions-grid { grid-template-columns: 1fr; } }
+
+.region-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.region-header {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 0.75rem 1rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  color: var(--accent);
+}
+.matchup-row {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.matchup-row:last-child { border-bottom: none; }
+.matchup-teams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  margin-bottom: 0.35rem;
+}
+.team-info {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex: 1;
+}
+.team-info.right { flex-direction: row-reverse; text-align: right; }
+.team-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  border-radius: 2px;
+}
+.team-seed {
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-weight: 700;
+  min-width: 14px;
+}
+.team-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.team-pct {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  min-width: 36px;
+}
+.team-info.left .team-pct { text-align: right; }
+.team-info.right .team-pct { text-align: left; }
+.vs-label {
+  font-size: 0.6rem;
+  color: var(--muted);
+  margin: 0 0.25rem;
+  text-transform: uppercase;
+}
+.consensus-bar {
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  background: var(--border);
+}
+.consensus-bar .seg-left {
+  height: 100%;
+  transition: width 0.4s ease;
+  border-radius: 3px 0 0 3px;
+}
+.consensus-bar .seg-right {
+  height: 100%;
+  transition: width 0.4s ease;
+  border-radius: 0 3px 3px 0;
+}
+.matchup-decided .team-name.winner { color: var(--success); }
+.matchup-decided .team-name.loser { color: var(--muted); opacity: 0.5; }
+.winner-check { color: var(--success); font-size: 0.7rem; margin-left: 0.25rem; }
+
+/* Later rounds - list style */
+.later-round-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+.later-round-group {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.later-round-group .region-header { font-size: 0.8rem; }
+.pick-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+.pick-row:last-child { border-bottom: none; }
+.pick-bar-wrap {
+  flex: 1;
+  height: 22px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+}
+.pick-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+}
+.pick-bar-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* Tab 2: Uniqueness */
+.uniqueness-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.uniqueness-table th {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--border);
+}
+.uniqueness-table td {
+  padding: 0.65rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.uniqueness-table tr:hover td { background: rgba(255,255,255,0.02); }
+.rank-num {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--muted);
+  width: 32px;
+  text-align: center;
+}
+.score-big {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.score-bar {
+  width: 120px;
+  height: 8px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.score-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+.badge {
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.5rem;
+}
+.badge-unique { background: var(--accent); color: #fff; }
+.badge-mainstream { background: var(--border); color: var(--muted); }
+
+/* Similarity matrix */
+.similarity-toggle {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.similarity-toggle button {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.similarity-toggle button:hover { border-color: var(--accent); color: var(--text); }
+.similarity-wrap {
+  overflow-x: auto;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.similarity-wrap.show { display: block; }
+.sim-table {
+  border-collapse: collapse;
+  font-size: 0.7rem;
+  min-width: 100%;
+}
+.sim-table th, .sim-table td {
+  padding: 0.4rem 0.5rem;
+  border: 1px solid var(--border);
+  text-align: center;
+  white-space: nowrap;
+}
+.sim-table th {
+  background: var(--bg2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sim-table td { font-family: var(--font-display); font-weight: 600; }
+.sim-cell-self { background: var(--border); color: var(--muted); }
+
+/* Tab 3: What-If */
+.whatif-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .whatif-layout { grid-template-columns: 1fr; }
+}
+.whatif-bracket {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media (max-width: 1100px) { .whatif-bracket { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .whatif-bracket { grid-template-columns: 1fr; } }
+
+.whatif-region {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.whatif-matchup {
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.whatif-matchup:last-child { border-bottom: none; }
+.whatif-team {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 0.78rem;
+  border-left: 3px solid transparent;
+}
+.whatif-team:hover { background: rgba(255,255,255,0.04); }
+.whatif-team.picked-correct {
+  background: rgba(34,197,94,0.1);
+  border-left-color: var(--success);
+}
+.whatif-team.picked-correct .team-name { color: var(--success); font-weight: 700; }
+.whatif-team.picked-incorrect {
+  background: rgba(239,68,68,0.08);
+  border-left-color: var(--danger);
+  opacity: 0.5;
+}
+.whatif-team.picked-incorrect .team-name { text-decoration: line-through; color: var(--danger); }
+.whatif-team.disabled { pointer-events: none; opacity: 0.35; }
+.whatif-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* Leaderboard panel */
+.leaderboard-panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  position: sticky;
+  top: 80px;
+}
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+.leaderboard-header h3 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+}
+.btn-reset {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--danger);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--danger);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-reset:hover { background: var(--danger); color: #fff; }
+.lb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+}
+.lb-table th {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.lb-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+.lb-table tr:hover td { background: rgba(255,255,255,0.02); }
+.lb-entry-name {
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+  display: inline-block;
+}
+.lb-score {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+.lb-max {
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.lb-delta {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.delta-pos { color: var(--success); }
+.delta-neg { color: var(--danger); }
+.delta-zero { color: var(--muted); }
+
+/* Loading */
+.loading-msg {
+  text-align: center;
+  padding: 4rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+  color: var(--white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+</style>
+</head>
 <body>
-<h1>March Madness 2026 Bracket Analyzer</h1>
-<p>Dashboard coming soon...</p>
-<button onclick="fetch('/api/brackets').then(r=>r.json()).then(d=>console.log(d))">
-  Load Data (check console)
-</button>
+
+<div class="header">
+  <div class="header-left">
+    <h1>March Madness <span>2026</span></h1>
+  </div>
+  <div class="header-right">
+    <span class="last-updated" id="lastUpdated"></span>
+    <button class="btn-refresh" id="btnRefresh" onclick="refreshData()">
+      <div class="spinner"></div>
+      Refresh
+    </button>
+  </div>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" data-tab="consensus" onclick="switchTab('consensus')">Consensus Picks</button>
+  <button class="tab-btn" data-tab="uniqueness" onclick="switchTab('uniqueness')">Bracket Uniqueness</button>
+  <button class="tab-btn" data-tab="whatif" onclick="switchTab('whatif')">What-If Simulator</button>
+</div>
+
+<div class="tab-content active" id="tab-consensus">
+  <div class="loading-msg" id="loading-consensus">Loading bracket data...</div>
+</div>
+<div class="tab-content" id="tab-uniqueness">
+  <div class="loading-msg" id="loading-uniqueness">Loading bracket data...</div>
+</div>
+<div class="tab-content" id="tab-whatif">
+  <div class="loading-msg" id="loading-whatif">Loading bracket data...</div>
+</div>
+
+<script>
+// ============================================================
+// State
+// ============================================================
+let DATA = null;
+const REGION_NAMES = { 1: 'East', 2: 'South', 3: 'West', 4: 'Midwest' };
+const ROUND_KEYS = ['r64','r32','sweet16','elite8','finalFour','championship'];
+const ROUND_LABELS = { r64:'R64', r32:'R32', sweet16:'Sweet 16', elite8:'Elite 8', finalFour:'Final Four', championship:'Championship' };
+let currentRound = 'r64';
+let whatIfState = null;
+
+// ============================================================
+// Tab switching
+// ============================================================
+function switchTab(tab) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-' + tab));
+}
+
+// ============================================================
+// Data loading
+// ============================================================
+async function loadData() {
+  const res = await fetch('/api/brackets');
+  DATA = await res.json();
+  document.getElementById('lastUpdated').textContent = 'Updated: ' + new Date(DATA.lastUpdated).toLocaleString();
+  renderConsensus();
+  renderUniqueness();
+  initWhatIf();
+}
+
+async function refreshData() {
+  const btn = document.getElementById('btnRefresh');
+  btn.classList.add('loading');
+  btn.disabled = true;
+  try {
+    await fetch('/api/refresh', { method: 'POST' });
+    await loadData();
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+}
+
+// ============================================================
+// Tab 1: Consensus Picks
+// ============================================================
+function renderConsensus() {
+  const container = document.getElementById('tab-consensus');
+
+  // Round selector
+  let html = '<div class="round-selector">';
+  ROUND_KEYS.forEach(rk => {
+    html += `<button class="round-btn ${rk === currentRound ? 'active' : ''}" onclick="selectRound('${rk}')">${ROUND_LABELS[rk]}</button>`;
+  });
+  html += '</div>';
+
+  if (currentRound === 'r64') {
+    html += renderR64Consensus();
+  } else {
+    html += renderLaterRoundConsensus(currentRound);
+  }
+  container.innerHTML = html;
+}
+
+function selectRound(rk) {
+  currentRound = rk;
+  renderConsensus();
+}
+
+function renderR64Consensus() {
+  const matchups = DATA.matchups.filter(m => m.round === 1);
+  const byRegion = {};
+  matchups.forEach(m => {
+    if (!byRegion[m.region]) byRegion[m.region] = [];
+    byRegion[m.region].push(m);
+  });
+
+  // Sort matchups within each region by displayOrder
+  Object.values(byRegion).forEach(arr => arr.sort((a, b) => a.displayOrder - b.displayOrder));
+
+  let html = '<div class="regions-grid">';
+  [1,2,3,4].forEach(regionId => {
+    const regionMatchups = byRegion[regionId] || [];
+    html += `<div class="region-card">`;
+    html += `<div class="region-header">${REGION_NAMES[regionId]}</div>`;
+    regionMatchups.forEach(m => {
+      html += renderMatchupRow(m);
+    });
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function renderMatchupRow(m) {
+  const team1 = DATA.teams[m.team1Id];
+  const team2 = DATA.teams[m.team2Id];
+  if (!team1 || !team2) return '';
+
+  // Count picks
+  let t1Count = 0, t2Count = 0;
+  DATA.brackets.forEach(b => {
+    const pick = b.picks.r64.find(p => p.matchupId === m.id);
+    if (pick) {
+      if (pick.pickedTeamId === m.team1Id) t1Count++;
+      else if (pick.pickedTeamId === m.team2Id) t2Count++;
+    }
+  });
+  const total = t1Count + t2Count || 1;
+  const t1Pct = Math.round(t1Count / total * 100);
+  const t2Pct = 100 - t1Pct;
+
+  const decided = !!m.winnerId;
+  const t1Won = m.winnerId === m.team1Id;
+  const t2Won = m.winnerId === m.team2Id;
+
+  // Bar colors based on consensus strength
+  const consensus = Math.max(t1Pct, t2Pct);
+  const alpha = consensus > 80 ? 1 : consensus > 60 ? 0.8 : 0.5;
+
+  const cls = decided ? ' matchup-decided' : '';
+  let html = `<div class="matchup-row${cls}">`;
+  html += '<div class="matchup-teams">';
+  // Left team
+  html += `<div class="team-info left">
+    <img class="team-logo" src="${team1.logo}" alt="${team1.abbrev}" loading="lazy">
+    <span class="team-seed">${team1.seed}</span>
+    <span class="team-name${decided ? (t1Won ? ' winner' : ' loser') : ''}">${team1.abbrev}${decided && t1Won ? '<span class="winner-check"> &#10003;</span>' : ''}</span>
+    <span class="team-pct" style="color:${t1Pct >= t2Pct ? 'var(--accent)' : 'var(--muted)'}">${t1Pct}%</span>
+  </div>`;
+  html += '<span class="vs-label">vs</span>';
+  // Right team
+  html += `<div class="team-info right">
+    <span class="team-pct" style="color:${t2Pct > t1Pct ? 'var(--accent)' : 'var(--muted)'}">${t2Pct}%</span>
+    <span class="team-name${decided ? (t2Won ? ' winner' : ' loser') : ''}">${team2.abbrev}${decided && t2Won ? '<span class="winner-check"> &#10003;</span>' : ''}</span>
+    <span class="team-seed">${team2.seed}</span>
+    <img class="team-logo" src="${team2.logo}" alt="${team2.abbrev}" loading="lazy">
+  </div>`;
+  html += '</div>';
+
+  // Consensus bar
+  html += `<div class="consensus-bar">
+    <div class="seg-left" style="width:${t1Pct}%;background:rgba(255,107,53,${alpha})"></div>
+    <div class="seg-right" style="width:${t2Pct}%;background:rgba(148,163,184,${t2Pct > t1Pct ? alpha : 0.3})"></div>
+  </div>`;
+  html += '</div>';
+  return html;
+}
+
+function renderLaterRoundConsensus(roundKey) {
+  // For later rounds, group picks by which team was picked
+  const pickCounts = {};
+  DATA.brackets.forEach(b => {
+    const picks = b.picks[roundKey] || [];
+    picks.forEach(p => {
+      if (!pickCounts[p.pickedTeamId]) pickCounts[p.pickedTeamId] = 0;
+      pickCounts[p.pickedTeamId]++;
+    });
+  });
+
+  const total = DATA.brackets.length;
+
+  // Group by region (or flat for FF/Champ)
+  const teams = Object.keys(pickCounts).map(tid => ({
+    id: tid,
+    team: DATA.teams[tid],
+    count: pickCounts[tid],
+    pct: Math.round(pickCounts[tid] / total * 100)
+  })).sort((a, b) => b.count - a.count);
+
+  if (roundKey === 'finalFour' || roundKey === 'championship') {
+    let html = '<div class="later-round-container"><div class="later-round-group"><div class="region-header">' + ROUND_LABELS[roundKey] + ' Picks</div>';
+    teams.forEach(t => { html += renderPickRow(t, total); });
+    html += '</div></div>';
+    return html;
+  }
+
+  // Group by region
+  const byRegion = {};
+  teams.forEach(t => {
+    if (!t.team) return;
+    const r = t.team.region;
+    if (!byRegion[r]) byRegion[r] = [];
+    byRegion[r].push(t);
+  });
+
+  let html = '<div class="later-round-container">';
+  [1,2,3,4].forEach(regionId => {
+    const items = byRegion[regionId] || [];
+    if (!items.length) return;
+    html += `<div class="later-round-group"><div class="region-header">${REGION_NAMES[regionId]}</div>`;
+    items.forEach(t => { html += renderPickRow(t, total); });
+    html += '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function renderPickRow(t, total) {
+  if (!t.team) return '';
+  const color = t.pct > 60 ? 'var(--accent)' : t.pct > 30 ? 'rgba(255,107,53,0.6)' : 'rgba(148,163,184,0.4)';
+  return `<div class="pick-row">
+    <img class="team-logo" src="${t.team.logo}" alt="${t.team.abbrev}" loading="lazy">
+    <span class="team-seed">${t.team.seed}</span>
+    <span class="team-name" style="min-width:60px">${t.team.abbrev}</span>
+    <div class="pick-bar-wrap">
+      <div class="pick-bar-fill" style="width:${t.pct}%;background:${color}">
+        <span class="pick-bar-label">${t.pct}% (${t.count}/${total})</span>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ============================================================
+// Tab 2: Bracket Uniqueness
+// ============================================================
+function getPickVector(bracket) {
+  const picks = [];
+  ROUND_KEYS.forEach(round => {
+    (bracket.picks[round] || []).forEach(pick => picks.push(pick.pickedTeamId));
+  });
+  return picks;
+}
+
+function hammingDistance(v1, v2) {
+  let diff = 0;
+  const len = Math.min(v1.length, v2.length);
+  for (let i = 0; i < len; i++) {
+    if (v1[i] !== v2[i]) diff++;
+  }
+  return diff;
+}
+
+function renderUniqueness() {
+  const container = document.getElementById('tab-uniqueness');
+  const brackets = DATA.brackets;
+  const vectors = brackets.map(b => getPickVector(b));
+  const vecLen = vectors[0] ? vectors[0].length : 1;
+
+  // Pairwise distances
+  const distances = [];
+  for (let i = 0; i < brackets.length; i++) {
+    distances[i] = [];
+    for (let j = 0; j < brackets.length; j++) {
+      distances[i][j] = i === j ? 0 : hammingDistance(vectors[i], vectors[j]);
+    }
+  }
+
+  // Originality score = avg distance / vecLen * 100
+  const scores = brackets.map((b, i) => {
+    const others = distances[i].filter((_, j) => j !== i);
+    const avg = others.reduce((s, v) => s + v, 0) / (others.length || 1);
+    return { idx: i, bracket: b, score: Math.round(avg / vecLen * 100 * 10) / 10 };
+  }).sort((a, b) => b.score - a.score);
+
+  const maxScore = Math.max(...scores.map(s => s.score));
+  const minScore = Math.min(...scores.map(s => s.score));
+
+  let html = '<div class="section-title">Originality Leaderboard</div>';
+  html += '<div style="overflow-x:auto"><table class="uniqueness-table"><thead><tr>';
+  html += '<th>#</th><th>Bracket</th><th>Member</th><th>Score</th><th></th><th></th>';
+  html += '</tr></thead><tbody>';
+
+  scores.forEach((s, rank) => {
+    const pct = maxScore > 0 ? (s.score / maxScore * 100) : 0;
+    const barColor = s.score === maxScore ? 'var(--accent)' : s.score === minScore ? 'var(--muted)' : 'var(--accent)';
+    let badge = '';
+    if (rank === 0) badge = '<span class="badge badge-unique">Most Unique</span>';
+    if (rank === scores.length - 1) badge = '<span class="badge badge-mainstream">Most Mainstream</span>';
+
+    html += `<tr>
+      <td class="rank-num">${rank + 1}</td>
+      <td style="font-weight:600">${escHtml(s.bracket.entryName)}${badge}</td>
+      <td style="color:var(--muted)">${escHtml(s.bracket.member)}</td>
+      <td><span class="score-big" style="color:${barColor}">${s.score.toFixed(1)}%</span></td>
+      <td><div class="score-bar"><div class="score-bar-fill" style="width:${pct}%;background:${barColor}"></div></div></td>
+      <td></td>
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+
+  // Similarity matrix toggle
+  html += '<div class="similarity-toggle"><button onclick="toggleSimilarity()">Show Pairwise Similarity Matrix</button></div>';
+  html += '<div class="similarity-wrap" id="simMatrix">';
+  html += renderSimilarityMatrix(brackets, vectors, vecLen);
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+function renderSimilarityMatrix(brackets, vectors, vecLen) {
+  let html = '<table class="sim-table"><thead><tr><th></th>';
+  brackets.forEach(b => { html += `<th>${escHtml(b.entryName).substring(0, 12)}</th>`; });
+  html += '</tr></thead><tbody>';
+
+  for (let i = 0; i < brackets.length; i++) {
+    html += `<tr><th>${escHtml(brackets[i].entryName).substring(0, 12)}</th>`;
+    for (let j = 0; j < brackets.length; j++) {
+      if (i === j) {
+        html += '<td class="sim-cell-self">-</td>';
+      } else {
+        const dist = hammingDistance(vectors[i], vectors[j]);
+        const similarity = Math.round((1 - dist / vecLen) * 100);
+        const hue = similarity > 70 ? '0' : similarity > 40 ? '30' : '140';
+        const sat = Math.abs(similarity - 50) * 2;
+        html += `<td style="background:hsla(${hue},${sat}%,50%,0.15);color:var(--text)">${similarity}%</td>`;
+      }
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  return html;
+}
+
+function toggleSimilarity() {
+  document.getElementById('simMatrix').classList.toggle('show');
+}
+
+// ============================================================
+// Tab 3: What-If Simulator
+// ============================================================
+function initWhatIf() {
+  // Deep clone
+  whatIfState = {
+    matchups: JSON.parse(JSON.stringify(DATA.matchups)),
+    brackets: JSON.parse(JSON.stringify(DATA.brackets)),
+    pointsPerRound: DATA.pointsPerRound,
+    originalScores: DATA.brackets.map(b => b.score),
+    originalMaxPossible: DATA.brackets.map(b => b.maxPossible)
+  };
+  renderWhatIf();
+}
+
+function applyWhatIf(matchupId, winnerTeamId) {
+  const matchup = whatIfState.matchups.find(m => m.id === matchupId);
+  if (!matchup) return;
+  const loserId = matchup.team1Id === winnerTeamId ? matchup.team2Id : matchup.team1Id;
+  matchup.winnerId = winnerTeamId;
+
+  whatIfState.brackets.forEach(bracket => {
+    let score = 0, maxPossible = 0;
+    ROUND_KEYS.forEach((roundKey, idx) => {
+      const pts = whatIfState.pointsPerRound[idx];
+      (bracket.picks[roundKey] || []).forEach(pick => {
+        // Eliminate ALL picks for the losing team across all rounds
+        if (pick.pickedTeamId === loserId && pick.result === 'UNDECIDED') {
+          pick.result = 'ELIMINATED';
+        }
+        // Mark correct for this specific matchup
+        if (pick.matchupId === matchupId && pick.pickedTeamId === winnerTeamId && pick.result !== 'CORRECT') {
+          pick.result = 'CORRECT';
+        }
+        // Mark incorrect for this specific matchup
+        if (pick.matchupId === matchupId && pick.pickedTeamId === loserId) {
+          pick.result = 'INCORRECT';
+        }
+        // Tally
+        if (pick.result === 'CORRECT') score += pts;
+        if (pick.result === 'CORRECT' || pick.result === 'UNDECIDED') maxPossible += pts;
+      });
+    });
+    bracket.score = score;
+    bracket.maxPossible = maxPossible;
+  });
+  renderWhatIf();
+}
+
+function resetWhatIf() {
+  initWhatIf();
+}
+
+function renderWhatIf() {
+  const container = document.getElementById('tab-whatif');
+  let html = '<div class="whatif-layout">';
+
+  // Left: bracket matchups
+  html += '<div>';
+  html += '<div class="section-title">Select Winners</div>';
+  html += '<div class="whatif-bracket">';
+
+  const matchups = whatIfState.matchups.filter(m => m.round === 1);
+  const byRegion = {};
+  matchups.forEach(m => {
+    if (!byRegion[m.region]) byRegion[m.region] = [];
+    byRegion[m.region].push(m);
+  });
+
+  [1,2,3,4].forEach(regionId => {
+    const regionMatchups = (byRegion[regionId] || []).sort((a, b) => a.displayOrder - b.displayOrder);
+    html += `<div class="whatif-region"><div class="region-header">${REGION_NAMES[regionId]}</div>`;
+    regionMatchups.forEach(m => {
+      const team1 = DATA.teams[m.team1Id];
+      const team2 = DATA.teams[m.team2Id];
+      if (!team1 || !team2) return;
+      const decided = !!m.winnerId;
+      const t1Won = m.winnerId === m.team1Id;
+      const t2Won = m.winnerId === m.team2Id;
+
+      let t1Class = '';
+      let t2Class = '';
+      if (decided) {
+        t1Class = t1Won ? 'picked-correct' : 'picked-incorrect';
+        t2Class = t2Won ? 'picked-correct' : 'picked-incorrect';
+      }
+
+      const clickable = !decided;
+      html += '<div class="whatif-matchup">';
+      html += `<div class="whatif-team ${t1Class}" ${clickable ? `onclick="applyWhatIf('${m.id}','${m.team1Id}')"` : ''}>
+        <img class="team-logo" src="${team1.logo}" alt="${team1.abbrev}" loading="lazy">
+        <span class="team-seed">${team1.seed}</span>
+        <span class="team-name">${team1.name}</span>
+      </div>`;
+      html += '<div class="whatif-divider"></div>';
+      html += `<div class="whatif-team ${t2Class}" ${clickable ? `onclick="applyWhatIf('${m.id}','${m.team2Id}')"` : ''}>
+        <img class="team-logo" src="${team2.logo}" alt="${team2.abbrev}" loading="lazy">
+        <span class="team-seed">${team2.seed}</span>
+        <span class="team-name">${team2.name}</span>
+      </div>`;
+      html += '</div>';
+    });
+    html += '</div>';
+  });
+  html += '</div></div>';
+
+  // Right: leaderboard
+  html += '<div class="leaderboard-panel">';
+  html += '<div class="leaderboard-header"><h3>Leaderboard</h3><button class="btn-reset" onclick="resetWhatIf()">Reset</button></div>';
+
+  const sorted = whatIfState.brackets.map((b, i) => ({
+    bracket: b,
+    idx: i,
+    delta: b.score - whatIfState.originalScores[i]
+  })).sort((a, b) => b.bracket.score - a.bracket.score || b.bracket.maxPossible - a.bracket.maxPossible);
+
+  html += '<table class="lb-table"><thead><tr><th>#</th><th>Bracket</th><th>Pts</th><th>Max</th><th>+/-</th></tr></thead><tbody>';
+  sorted.forEach((s, rank) => {
+    const deltaClass = s.delta > 0 ? 'delta-pos' : s.delta < 0 ? 'delta-neg' : 'delta-zero';
+    const deltaStr = s.delta > 0 ? '+' + s.delta : s.delta === 0 ? '-' : '' + s.delta;
+    html += `<tr>
+      <td class="rank-num" style="font-size:0.85rem">${rank + 1}</td>
+      <td><span class="lb-entry-name" title="${escHtml(s.bracket.entryName)}">${escHtml(s.bracket.entryName)}</span></td>
+      <td><span class="lb-score">${s.bracket.score}</span></td>
+      <td><span class="lb-max">${s.bracket.maxPossible}</span></td>
+      <td><span class="lb-delta ${deltaClass}">${deltaStr}</span></td>
+    </tr>`;
+  });
+  html += '</tbody></table></div>';
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// ============================================================
+// Helpers
+// ============================================================
+function escHtml(str) {
+  const d = document.createElement('div');
+  d.textContent = str;
+  return d.innerHTML;
+}
+
+// ============================================================
+// Init
+// ============================================================
+loadData();
+</script>
 </body>
 </html>
