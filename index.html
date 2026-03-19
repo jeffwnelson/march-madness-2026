@@ -699,6 +699,94 @@ body {
   font-weight: 500;
 }
 
+/* Help button & modal */
+.help-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.help-btn:hover { color: var(--white); border-color: var(--muted); }
+.help-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 300;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.help-overlay.open { opacity: 1; pointer-events: auto; }
+.help-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: min(420px, 90vw);
+  max-height: 80vh;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  z-index: 301;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.help-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+.help-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+.help-modal-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.help-modal-body {
+  padding: 1rem 1.2rem;
+  overflow-y: auto;
+}
+.help-section {
+  margin-bottom: 1rem;
+}
+.help-section:last-child { margin-bottom: 0; }
+.help-section-title {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+}
+.help-section p {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.help-section p strong { color: var(--text); }
+
 /* Description wells — toggleable */
 .desc-toggle {
   display: inline-flex;
@@ -880,6 +968,30 @@ body {
   <div class="header-left">
     <h1>March Madness <span>2026</span></h1>
   </div>
+  <button class="help-btn" onclick="toggleHelp()">?</button>
+</div>
+
+<!-- Help modal -->
+<div class="help-overlay" id="help-overlay" onclick="toggleHelp()"></div>
+<div class="help-modal" id="help-modal">
+  <div class="help-modal-header">
+    <h3>How it works</h3>
+    <button class="drawer-close" onclick="toggleHelp()">&times;</button>
+  </div>
+  <div class="help-modal-body">
+    <div class="help-section">
+      <div class="help-section-title">Consensus Picks</div>
+      <p>See how our group of 19 picked each game. The numbers (e.g. "14/19") show how many brackets picked that team to win in each round. Tap any matchup to see exactly who picked each team. Decided games show the winner in green.</p>
+    </div>
+    <div class="help-section">
+      <div class="help-section-title">Leaderboard</div>
+      <p>See how everyone stacks up. <strong>Current Points</strong> shows actual points earned so far. <strong>Possible Points</strong> shows the maximum each bracket can still reach if all remaining picks are correct.</p>
+    </div>
+    <div class="help-section">
+      <div class="help-section-title">What-If Simulator</div>
+      <p>Click any team in a matchup to simulate them winning. The leaderboard updates instantly — brackets that picked the loser to advance further get those picks eliminated, reducing their max possible score. Chain multiple what-ifs to play out scenarios. Hit Reset to start over.</p>
+    </div>
+  </div>
 </div>
 
 <div class="tabs">
@@ -889,30 +1001,12 @@ body {
 </div>
 
 <div class="tab-content active" id="tab-consensus">
-  <button class="desc-toggle" onclick="toggleDesc(this)"><span class="arrow">&#9654;</span> What is this?</button>
-  <div class="desc-well">
-    <strong>Consensus Picks</strong> — See how our group of 19 picked each game.
-    The numbers (e.g. "14/19") show how many brackets picked that team to win in each round.
-    Tap any matchup to see exactly who picked each team. Decided games show the winner in green.
-  </div>
   <div id="consensus-content"><div class="loading-msg">Loading bracket data...</div></div>
 </div>
 <div class="tab-content" id="tab-leaderboard">
-  <button class="desc-toggle" onclick="toggleDesc(this)"><span class="arrow">&#9654;</span> What is this?</button>
-  <div class="desc-well">
-    <strong>Leaderboard</strong> — See how everyone stacks up. <strong>Current Points</strong> shows actual points earned so far.
-    <strong>Possible Points</strong> shows the maximum each bracket can still reach if all remaining picks are correct.
-  </div>
   <div id="leaderboard-content"><div class="loading-msg">Loading bracket data...</div></div>
 </div>
 <div class="tab-content" id="tab-whatif">
-  <button class="desc-toggle" onclick="toggleDesc(this)"><span class="arrow">&#9654;</span> What is this?</button>
-  <div class="desc-well">
-    <strong>What-If Simulator</strong> — Click any team in a matchup to simulate them winning.
-    The leaderboard on the right updates instantly: brackets that picked the loser to advance further
-    get those picks <strong>eliminated</strong>, reducing their max possible score.
-    Chain multiple what-ifs to play out scenarios. Hit <strong>Reset</strong> to start over.
-  </div>
   <div id="whatif-content"><div class="loading-msg">Loading bracket data...</div></div>
 </div>
 
@@ -948,7 +1042,7 @@ function switchTab(tab) {
 // Data loading
 // ============================================================
 async function loadData() {
-  const res = await fetch('/api/brackets');
+  const res = await fetch('data/brackets.json');
   DATA = await res.json();
   renderConsensus();
   renderLeaderboard();
@@ -1118,11 +1212,10 @@ function renderConsensus() {
   selectRound('r64');
 }
 
-// --- Toggle description wells ---
-function toggleDesc(btn) {
-  btn.classList.toggle('open');
-  const well = btn.nextElementSibling;
-  well.classList.toggle('open');
+// --- Help modal ---
+function toggleHelp() {
+  document.getElementById('help-overlay').classList.toggle('open');
+  document.getElementById('help-modal').classList.toggle('open');
 }
 
 // --- Drawer for matchup detail ---

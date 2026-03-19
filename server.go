@@ -114,11 +114,12 @@ func main() {
 	}
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/" {
-			http.NotFound(w, r)
+		if r.URL.Path == "/" {
+			http.ServeFile(w, r, "index.html")
 			return
 		}
-		http.ServeFile(w, r, "index.html")
+		// Serve static files (data/brackets.json, etc.)
+		http.ServeFile(w, r, r.URL.Path[1:])
 	})
 
 	http.HandleFunc("/api/brackets", func(w http.ResponseWriter, r *http.Request) {
