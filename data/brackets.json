@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-19T21:59:26Z",
+  "lastUpdated": "2026-03-19T22:07:52Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -602,7 +602,7 @@
       "displayOrder": 0,
       "team1Id": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9068ee2-0695-11f1-af21-ff98afcfd072",
-      "winnerId": "c9068ee2-0695-11f1-af21-ff98afcfd072",
+      "winnerId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "gameTime": 1773946800000
     },
     {
@@ -672,7 +672,7 @@
       "displayOrder": 4,
       "team1Id": "c907ee71-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c907ee72-0695-11f1-af21-ff98afcfd072",
-      "winnerId": "c907ee72-0695-11f1-af21-ff98afcfd072",
+      "winnerId": "c907ee71-0695-11f1-af21-ff98afcfd072",
       "gameTime": 1773941400000
     },
     {
@@ -772,7 +772,7 @@
       "displayOrder": 11,
       "team1Id": "c90a1151-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90a1152-0695-11f1-af21-ff98afcfd072",
-      "winnerId": "c90a1152-0695-11f1-af21-ff98afcfd072",
+      "winnerId": "c90a1151-0695-11f1-af21-ff98afcfd072",
       "gameTime": 1773938400000
     },
     {
@@ -822,7 +822,7 @@
       "displayOrder": 18,
       "team1Id": "c90c8251-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90c8252-0695-11f1-af21-ff98afcfd072",
-      "winnerId": "c90c8251-0695-11f1-af21-ff98afcfd072",
+      "winnerId": "c90c8252-0695-11f1-af21-ff98afcfd072",
       "gameTime": 1773942600000
     },
     {

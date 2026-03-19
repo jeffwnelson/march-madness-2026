@@ -112,13 +112,14 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			}
 		}
 
-		// Only mark a winner if the proposition status is COMPLETE
-		if prop.Status == "COMPLETE" && len(prop.ActualOutcomeIDs) > 0 {
-			winnerID := prop.ActualOutcomeIDs[0]
-			matchup.WinnerID = &winnerID
-		}
-
+		// Winner is determined after processing entries (using pick results)
 		matchups = append(matchups, matchup)
+	}
+
+	// Build a map of proposition ID → matchup index for winner assignment
+	matchupIdx := make(map[string]int)
+	for i, m := range matchups {
+		matchupIdx[m.ID] = i
 	}
 
 	// Process each entry into a Bracket
@@ -210,6 +211,44 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 		}
 
 		brackets = append(brackets, bracket)
+	}
+
+	// Determine winners for completed propositions using pick results.
+	// A pick with result "CORRECT" tells us which team won.
+	// We build a set of completed prop IDs, then scan the first entry's picks.
+	completedProps := make(map[string]bool)
+	for _, prop := range challenge.Propositions {
+		if prop.Status == "COMPLETE" {
+			completedProps[prop.ID] = true
+		}
+	}
+	if len(brackets) > 0 {
+		for _, pick := range brackets[0].Picks.R64 {
+			if !completedProps[pick.MatchupID] {
+				continue
+			}
+			// Find the original ESPN pick to check result
+			for _, ep := range group.Entries[0].Picks {
+				if ep.PropositionID == pick.MatchupID && len(ep.OutcomesPicked) > 0 {
+					result := ep.OutcomesPicked[0].Result
+					pickedTeam := ep.OutcomesPicked[0].OutcomeID
+					if idx, ok := matchupIdx[pick.MatchupID]; ok {
+						if result == "CORRECT" {
+							matchups[idx].WinnerID = &pickedTeam
+						} else if result == "INCORRECT" {
+							// The other team won
+							m := matchups[idx]
+							if pickedTeam == m.Team1ID {
+								matchups[idx].WinnerID = &m.Team2ID
+							} else {
+								matchups[idx].WinnerID = &m.Team1ID
+							}
+						}
+					}
+					break
+				}
+			}
+		}
 	}
 
 	return &BracketData{
