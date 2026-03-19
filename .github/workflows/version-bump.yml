@@ -32,6 +32,8 @@ jobs:
 
       - name: Bump version
         id: bump
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           OUTPUT=$(cog bump --auto 2>&1 || echo "no bump")
           echo "$OUTPUT"
@@ -58,3 +60,7 @@ jobs:
           git tag -f "${{ steps.bump.outputs.new_version }}"
           git push --force-with-lease
           git push --tags --force
+          # Update the GitHub release to point to the re-tagged commit
+          gh release edit "${{ steps.bump.outputs.new_version }}" --tag "${{ steps.bump.outputs.new_version }}" || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

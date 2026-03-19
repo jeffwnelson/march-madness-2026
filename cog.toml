@@ -8,3 +8,6 @@ tag_prefix = ""
 
 [changelog]
 path = "CHANGELOG.md"
+
+[bump]
+create_github_release = true
