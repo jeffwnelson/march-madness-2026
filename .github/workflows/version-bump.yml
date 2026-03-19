@@ -65,6 +65,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Create and push tag
+        run: |
+          git tag "${{ needs.version.outputs.version }}"
+          git push origin "${{ needs.version.outputs.version }}"
+
       - name: Install cocogitto
         run: |
           curl -sSL https://github.com/cocogitto/cocogitto/releases/download/7.0.0/cocogitto-7.0.0-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components=1
