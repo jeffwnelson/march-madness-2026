@@ -1045,10 +1045,10 @@ function switchTab(tab, updateHash) {
 // Data loading
 // ============================================================
 async function loadData() {
-  const res = await fetch('data/brackets.json');
+  const res = await fetch('data/brackets.json?' + Date.now());
   DATA = await res.json();
   document.getElementById('group-name').textContent = DATA.groupName || '';
-  fetch('VERSION').then(r => r.text()).then(v => {
+  fetch('VERSION?' + Date.now()).then(r => r.text()).then(v => {
     document.getElementById('app-version').textContent = v.trim();
   }).catch(() => {});
   renderConsensus();
