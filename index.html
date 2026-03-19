@@ -985,7 +985,7 @@ body {
   <div style="padding:0.4rem 1.2rem 0;font-size:0.65rem;color:var(--muted)">Version <span id="app-version">...</span></div>
   <div class="help-modal-body">
     <div class="help-section">
-      <div class="help-section-title">Consensus Picks</div>
+      <div class="help-section-title">Bracket Picks</div>
       <p>See how our group of 19 picked each game. The numbers (e.g. "14/19") show how many brackets picked that team to win in each round. Tap any matchup to see exactly who picked each team. Decided games show the winner in green.</p>
     </div>
     <div class="help-section">
@@ -1001,7 +1001,7 @@ body {
 
 <div class="tabs">
   <button class="tab-btn active" data-tab="leaderboard" onclick="switchTab('leaderboard')">Leaderboard</button>
-  <button class="tab-btn" data-tab="consensus" onclick="switchTab('consensus')">Consensus Picks</button>
+  <button class="tab-btn" data-tab="consensus" onclick="switchTab('consensus')">Bracket Picks</button>
 </div>
 
 <div class="tab-content active" id="tab-leaderboard">
@@ -1226,7 +1226,7 @@ function renderConsensus() {
 
   let html = '<div class="round-tabs">';
   rounds.forEach((rd, i) => {
-    html += `<button class="round-tab${i === 0 ? ' active' : ''}" data-round="${rd.key}" onclick="selectRound('${rd.key}')">${rd.label}<span class="pts">${rd.pts}</span></button>`;
+    html += `<button class="round-tab${i === 0 ? ' active' : ''}" data-round="${rd.key}" onclick="selectRound('${rd.key}')">${rd.label}</button>`;
   });
   html += '</div>';
 
