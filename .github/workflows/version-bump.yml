@@ -26,6 +26,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          # Stage any untracked files (e.g. LICENSE auto-added by GitHub)
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: stage untracked files"
 
       - name: Bump version
         id: bump
@@ -40,10 +43,11 @@ jobs:
             echo "bumped=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Update VERSION file
+      - name: Update VERSION file and push
         if: steps.bump.outputs.bumped == 'true'
         run: |
           echo "${{ steps.bump.outputs.new_version }}" > VERSION
           git add VERSION
           git commit --amend --no-edit
-          git push --force-with-lease --tags
+          git push --force-with-lease
+          git push --tags
