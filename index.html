@@ -966,7 +966,10 @@ body {
 
 <div class="header">
   <div class="header-left">
-    <h1>March Madness <span>2026</span></h1>
+    <div>
+      <h1>March Madness <span>2026</span></h1>
+      <div id="group-name" style="font-size:0.79rem;color:var(--muted);font-weight:500;margin-top:2px"></div>
+    </div>
   </div>
   <button class="help-btn" onclick="toggleHelp()">?</button>
 </div>
@@ -1044,6 +1047,7 @@ function switchTab(tab) {
 async function loadData() {
   const res = await fetch('data/brackets.json');
   DATA = await res.json();
+  document.getElementById('group-name').textContent = DATA.groupName || '';
   renderConsensus();
   renderLeaderboard();
   initWhatIf();

@@ -195,10 +195,15 @@ type espnMapping struct {
 	Value string `json:"value"`
 }
 
+type espnGroupSettings struct {
+	Name string `json:"name"`
+}
+
 type espnGroup struct {
-	Entries []espnEntry `json:"entries"`
-	Size    int         `json:"size"`
-	GroupID string      `json:"groupId"`
+	Entries       []espnEntry       `json:"entries"`
+	Size          int               `json:"size"`
+	GroupID       string            `json:"groupId"`
+	GroupSettings espnGroupSettings `json:"groupSettings"`
 }
 
 type espnEntry struct {

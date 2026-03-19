@@ -52,6 +52,7 @@ type Bracket struct {
 type BracketData struct {
 	LastUpdated    string          `json:"lastUpdated"`
 	GroupID        string          `json:"groupId"`
+	GroupName      string          `json:"groupName"`
 	PointsPerRound []int           `json:"pointsPerRound"`
 	Teams          map[string]Team `json:"teams"`
 	Matchups       []Matchup       `json:"matchups"`
@@ -214,6 +215,7 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 	return &BracketData{
 		LastUpdated:    time.Now().UTC().Format(time.RFC3339),
 		GroupID:        group.GroupID,
+		GroupName:      group.GroupSettings.Name,
 		PointsPerRound: []int{10, 20, 40, 80, 160, 320},
 		Teams:          teams,
 		Matchups:       matchups,
