@@ -54,5 +54,7 @@ jobs:
           echo "${{ steps.bump.outputs.new_version }}+${SHORT_SHA}" > VERSION
           git add VERSION
           git commit --amend --no-edit
+          # Re-tag after amending since the commit hash changed
+          git tag -f "${{ steps.bump.outputs.new_version }}"
           git push --force-with-lease
-          git push --tags
+          git push --tags --force
