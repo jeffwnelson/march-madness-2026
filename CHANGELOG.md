@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.3.0 - 2026-03-19
+#### Features
+- include git short hash in version display - (e0fad7e) - Jeff Nelson
+#### Miscellaneous Chores
+- (**version**) 0.2.2 - (aa793bd) - github-actions[bot]
+
+- - -
+
 ## 0.2.2 - 2026-03-19
 #### Bug Fixes
 - use conventional commit format for bracket data updates, skip untracked - (5fd881a) - Jeff Nelson
