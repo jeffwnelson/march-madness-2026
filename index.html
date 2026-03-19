@@ -585,6 +585,20 @@ body {
 .delta-neg { color: var(--danger); }
 .delta-zero { color: var(--muted); }
 
+/* Description wells */
+.desc-well {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 6px;
+  padding: 0.8rem 1.2rem;
+  margin: 1rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.desc-well strong { color: var(--text); }
+
 /* Loading */
 .loading-msg {
   text-align: center;
@@ -631,12 +645,28 @@ body {
 </div>
 
 <div class="tab-content active" id="tab-consensus">
+  <div class="desc-well">
+    <strong>Consensus Picks</strong> — This bracket shows how our group of 19 picked each game.
+    The numbers (e.g. "14/19") show how many brackets picked that team to win in each round.
+    Higher numbers mean more agreement. Decided games show the actual winner highlighted in green.
+  </div>
   <div class="loading-msg" id="loading-consensus">Loading bracket data...</div>
 </div>
 <div class="tab-content" id="tab-uniqueness">
+  <div class="desc-well">
+    <strong>Bracket Uniqueness</strong> — How different is each bracket from everyone else?
+    The <strong>originality score</strong> measures the average percentage of picks that differ from other brackets
+    across all 63 games. Higher = more unique picks. The pairwise table shows how similar any two brackets are.
+  </div>
   <div class="loading-msg" id="loading-uniqueness">Loading bracket data...</div>
 </div>
 <div class="tab-content" id="tab-whatif">
+  <div class="desc-well">
+    <strong>What-If Simulator</strong> — Click any team in a matchup to simulate them winning.
+    The leaderboard on the right updates instantly: brackets that picked the loser to advance further
+    get those picks <strong>eliminated</strong>, reducing their max possible score.
+    Chain multiple what-ifs to play out scenarios. Hit <strong>Reset</strong> to start over.
+  </div>
   <div class="loading-msg" id="loading-whatif">Loading bracket data...</div>
 </div>
 
