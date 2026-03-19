@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## 0.2.2 - 2026-03-19
+#### Bug Fixes
+- use conventional commit format for bracket data updates, skip untracked - (5fd881a) - Jeff Nelson
+
+- - -
+
 ## 0.2.0 - 2026-03-19
 #### Features
 - fix version bump workflow, reorder help modal, remove what-if from help - (a52aae3) - Jeff Nelson
