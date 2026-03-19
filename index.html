@@ -1037,9 +1037,12 @@ let whatIfState = null;
 // ============================================================
 // Tab switching
 // ============================================================
-function switchTab(tab) {
+function switchTab(tab, updateHash) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
   document.querySelectorAll('.tab-content').forEach(c => c.classList.toggle('active', c.id === 'tab-' + tab));
+  if (updateHash !== false) {
+    location.hash = tab;
+  }
 }
 
 // ============================================================
@@ -1055,7 +1058,23 @@ async function loadData() {
   renderConsensus();
   renderLeaderboard();
   initWhatIf();
+  applyHash();
 }
+
+function applyHash() {
+  const hash = location.hash.replace('#', '');
+  if (!hash) return;
+  const parts = hash.split('/');
+  const tab = parts[0];
+  if (['leaderboard', 'consensus', 'whatif'].includes(tab)) {
+    switchTab(tab, false);
+    if (tab === 'consensus' && parts[1]) {
+      selectRound(parts[1], false);
+    }
+  }
+}
+
+window.addEventListener('hashchange', applyHash);
 
 async function refreshData() {
   const btn = document.getElementById('btnRefresh');
@@ -1321,11 +1340,14 @@ function closeDrawer() {
 }
 
 // --- Round selection ---
-function selectRound(roundKey) {
+function selectRound(roundKey, updateHash) {
   // Update active tab
   document.querySelectorAll('.round-tab').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.round === roundKey);
   });
+  if (updateHash !== false) {
+    location.hash = 'consensus/' + roundKey;
+  }
 
   const container = document.getElementById('round-content');
   const total = DATA.brackets.length;
