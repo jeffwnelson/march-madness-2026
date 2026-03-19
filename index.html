@@ -92,6 +92,7 @@ body {
 /* Tabs */
 .tabs {
   display: flex;
+  justify-content: center;
   background: var(--bg2);
   border-bottom: 1px solid var(--border);
   padding: 0 1.5rem;
@@ -999,15 +1000,15 @@ body {
 </div>
 
 <div class="tabs">
-  <button class="tab-btn active" data-tab="consensus" onclick="switchTab('consensus')">Consensus Picks</button>
-  <button class="tab-btn" data-tab="leaderboard" onclick="switchTab('leaderboard')">Leaderboard</button>
+  <button class="tab-btn active" data-tab="leaderboard" onclick="switchTab('leaderboard')">Leaderboard</button>
+  <button class="tab-btn" data-tab="consensus" onclick="switchTab('consensus')">Consensus Picks</button>
 </div>
 
-<div class="tab-content active" id="tab-consensus">
-  <div id="consensus-content"><div class="loading-msg">Loading bracket data...</div></div>
-</div>
-<div class="tab-content" id="tab-leaderboard">
+<div class="tab-content active" id="tab-leaderboard">
   <div id="leaderboard-content"><div class="loading-msg">Loading bracket data...</div></div>
+</div>
+<div class="tab-content" id="tab-consensus">
+  <div id="consensus-content"><div class="loading-msg">Loading bracket data...</div></div>
 </div>
 <div class="tab-content" id="tab-whatif">
   <div id="whatif-content"><div class="loading-msg">Loading bracket data...</div></div>
