@@ -2,8 +2,8 @@ name: Update Bracket Data
 
 on:
   schedule:
-    - cron: '*/15 18-23 * * *'
-    - cron: '*/15 0-7 * * *'
+    - cron: '*/10 18-23 * * *'
+    - cron: '*/10 0-7 * * *'
   workflow_dispatch:
 
 permissions:

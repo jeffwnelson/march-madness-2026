@@ -1236,7 +1236,10 @@ function renderConsensus() {
   container.innerHTML = html;
 
   // Render the default round
-  selectRound('r64');
+  // Check if hash specifies a round, otherwise default to r64
+  const hashParts = location.hash.replace('#', '').split('/');
+  const initRound = (hashParts[0] === 'consensus' && hashParts[1]) ? hashParts[1] : 'r64';
+  selectRound(initRound, false);
 }
 
 // --- Help modal ---
@@ -1250,10 +1253,10 @@ let _cardDataStore = [];
 function openDrawerByIdx(idx) {
   const d = _cardDataStore[idx];
   if (!d) return;
-  openDrawer(d.teamCounts, d.rk, d.winnerId);
+  openDrawer(d.teamCounts, d.rk, d.winnerId, d.undecidedCounts);
 }
 
-function openDrawer(teamCounts, roundKey, winnerId) {
+function openDrawer(teamCounts, roundKey, winnerId, undecidedCounts) {
   const total = DATA.brackets.length;
   // Sort: winner first if decided, then by count
   const entries = Object.entries(teamCounts).sort((a, b) => {
@@ -1290,13 +1293,14 @@ function openDrawer(teamCounts, roundKey, winnerId) {
     if (!team) return;
     const pickers = pickersByTeam[tid] || [];
     const isWinner = winnerId === tid;
-    const countColor = isWinner ? 'var(--success)' : 'var(--muted)';
-    const nameColor = isWinner ? 'var(--success)' : 'var(--white)';
+    const isConfirmed = isWinner;
+    const countColor = isConfirmed ? 'var(--success)' : 'var(--muted)';
+    const nameColor = isConfirmed ? 'var(--success)' : 'var(--white)';
     html += `<div class="drawer-team-group">
       <div class="drawer-team-header">
         <img src="${team.logo}" alt="${team.abbrev}">
         <div class="team-info">
-          <div class="team-name" style="color:${nameColor}">(${team.seed}) ${team.name}${isWinner ? ' ✓' : ''}</div>
+          <div class="team-name" style="color:${nameColor}">(${team.seed}) ${team.name}${isConfirmed ? ' ✓' : ''}</div>
         </div>
         <div class="pick-count" style="color:${countColor}">${count}/${total}</div>
       </div>`;
@@ -1311,24 +1315,79 @@ function openDrawer(teamCounts, roundKey, winnerId) {
     html += '</div>';
   });
 
-  // Show "neither" section for later rounds
-  if (neitherPickers.length > 0) {
-    html += `<div class="drawer-team-group">
-      <div class="drawer-team-header">
-        <div class="team-info">
-          <div class="team-name" style="color:var(--muted)">Neither team picked</div>
-        </div>
-        <div class="pick-count" style="color:var(--muted)">${neitherPickers.length}/${total}</div>
-      </div>`;
-    neitherPickers.forEach(p => {
-      html += `<div class="drawer-picker"><span class="picker-name" style="color:var(--muted)">${p.entry}</span></div>`;
+  // Show undecided feeder teams (TBD opponents) for partial matchups
+  if (undecidedCounts && Object.keys(undecidedCounts).length > 0) {
+    const undecidedEntries = Object.entries(undecidedCounts).sort((a, b) => b[1] - a[1]);
+    undecidedEntries.forEach(([tid, count]) => {
+      if (count === 0) return; // skip teams nobody picked
+      const team = DATA.teams[tid];
+      if (!team) return;
+      // Find which brackets picked this undecided team
+      const pickers = [];
+      DATA.brackets.forEach(b => {
+        (b.picks[roundKey] || []).forEach(p => {
+          if (p.pickedTeamId === tid) {
+            pickers.push({ entry: b.entryName });
+          }
+        });
+      });
+      html += `<div class="drawer-team-group">
+        <div class="drawer-team-header">
+          <img src="${team.logo}" alt="${team.abbrev}">
+          <div class="team-info">
+            <div class="team-name" style="color:var(--muted)">(${team.seed}) ${team.name} <span style="font-size:0.65rem;font-style:italic;font-weight:400">— TBD</span></div>
+          </div>
+          <div class="pick-count" style="color:var(--muted)">${count}/${total}</div>
+        </div>`;
+      pickers.forEach(p => {
+        html += `<div class="drawer-picker"><span class="picker-name" style="color:var(--muted)">${p.entry}</span></div>`;
+      });
+      html += '</div>';
     });
-    html += '</div>';
   }
 
-  document.getElementById('drawer-title').textContent = entries.length >= 2
-    ? `${DATA.teams[entries[0][0]]?.name || '?'} vs ${DATA.teams[entries[1][0]]?.name || '?'}`
-    : entries.length === 1 ? DATA.teams[entries[0][0]]?.name || 'Detail' : 'Detail';
+  // Show "neither" section for later rounds
+  if (neitherPickers.length > 0) {
+    // For partial matchups, recalculate neither — exclude those who picked undecided teams
+    let actualNeither = neitherPickers;
+    if (undecidedCounts && Object.keys(undecidedCounts).length > 0) {
+      const undecidedTeamIds = new Set(Object.keys(undecidedCounts));
+      actualNeither = [];
+      DATA.brackets.forEach(b => {
+        const pickedKnown = (b.picks[roundKey] || []).some(p => allPickedTeamIds.has(p.pickedTeamId));
+        const pickedUndecided = (b.picks[roundKey] || []).some(p => undecidedTeamIds.has(p.pickedTeamId));
+        if (!pickedKnown && !pickedUndecided) {
+          actualNeither.push({ entry: b.entryName });
+        }
+      });
+    }
+    if (actualNeither.length > 0) {
+      html += `<div class="drawer-team-group">
+        <div class="drawer-team-header">
+          <div class="team-info">
+            <div class="team-name" style="color:var(--muted)">None of these teams</div>
+          </div>
+          <div class="pick-count" style="color:var(--muted)">${actualNeither.length}/${total}</div>
+        </div>`;
+      actualNeither.forEach(p => {
+        html += `<div class="drawer-picker"><span class="picker-name" style="color:var(--muted)">${p.entry}</span></div>`;
+      });
+      html += '</div>';
+    }
+  }
+
+  const hasUndecided = undecidedCounts && Object.keys(undecidedCounts).length > 0;
+  let drawerTitle;
+  if (entries.length >= 2) {
+    drawerTitle = `${DATA.teams[entries[0][0]]?.name || '?'} vs ${DATA.teams[entries[1][0]]?.name || '?'}`;
+  } else if (entries.length === 1 && hasUndecided) {
+    drawerTitle = `${DATA.teams[entries[0][0]]?.name || '?'} vs TBD`;
+  } else if (entries.length === 1) {
+    drawerTitle = DATA.teams[entries[0][0]]?.name || 'Detail';
+  } else {
+    drawerTitle = 'Detail';
+  }
+  document.getElementById('drawer-title').textContent = drawerTitle;
   document.getElementById('drawer-body').innerHTML = html;
   document.getElementById('drawer-overlay').classList.add('open');
   document.getElementById('drawer').classList.add('open');
@@ -1515,13 +1574,17 @@ function selectRound(roundKey, updateHash) {
       const half1AllDecided = half1DOs.every(d => r64Winners[d] !== undefined);
       const half2AllDecided = half2DOs.every(d => r64Winners[d] !== undefined);
 
-      if (half1AllDecided && half2AllDecided) {
+      if (half1AllDecided || half2AllDecided) {
         // Both feeders decided — this is a known matchup
-        // For R32: the two teams are the R64 winners of the two feeder games
-        // For later rounds: we need to find who won each feeder path
-        // Since we only have R64 results right now, for R32 this works directly
-        // For later rounds, we'd need intermediate results too
-        // For now, show the matchup with consensus counts for the two actual teams
+        // The actual teams in this matchup are the winners from each feeder half
+        // For R32: winner of R64 game at feeder1Start vs winner at feeder2Start
+        // For S16+: winner of each feeder sub-bracket
+
+        // Collect the actual R64 winners from each feeder half (filter undefined for undecided)
+        const feeder1Winners = new Set(half1DOs.map(d => r64Winners[d]).filter(Boolean));
+        const feeder2Winners = new Set(half2DOs.map(d => r64Winners[d]).filter(Boolean));
+        const actualTeams = new Set([...feeder1Winners, ...feeder2Winners]);
+        const isPartial = !half1AllDecided || !half2AllDecided;
 
         // Get all R64 matchup IDs in this slot
         const r64IdsInSlot = new Set();
@@ -1531,18 +1594,60 @@ function selectRound(roundKey, updateHash) {
           }
         });
 
-        // Count picks for just the teams that could be in this matchup
+        // Ensure both actual teams appear in counts (even with 0 picks)
         const counts = {};
+        actualTeams.forEach(tid => { counts[tid] = 0; });
         const rk = roundKey === 'championship' ? 'championship' : roundKey;
         DATA.brackets.forEach(b => {
           (b.picks[rk] || []).forEach(p => {
-            if (rk === 'championship' || r64IdsInSlot.has(p.matchupId)) {
+            if ((rk === 'championship' || r64IdsInSlot.has(p.matchupId)) && actualTeams.has(p.pickedTeamId)) {
               counts[p.pickedTeamId] = (counts[p.pickedTeamId] || 0) + 1;
             }
           });
         });
 
-        knownMatchups.push({ slot: s, counts, r64IdsInSlot });
+        // Also count brackets that picked neither actual team (their pick was eliminated)
+        let neitherCount = 0;
+        DATA.brackets.forEach(b => {
+          const hasPick = (b.picks[rk] || []).some(p =>
+            (rk === 'championship' || r64IdsInSlot.has(p.matchupId)) && actualTeams.has(p.pickedTeamId)
+          );
+          if (!hasPick) neitherCount++;
+        });
+
+        // Collect the undecided feeder teams (for TBD display in drawer)
+        const undecidedTeams = [];
+        if (!half1AllDecided) {
+          half1DOs.forEach(dOrder => {
+            if (!r64Winners[dOrder]) {
+              const m = r64.find(x => x.displayOrder === dOrder);
+              if (m) { undecidedTeams.push(m.team1Id, m.team2Id); }
+            }
+          });
+        }
+        if (!half2AllDecided) {
+          half2DOs.forEach(dOrder => {
+            if (!r64Winners[dOrder]) {
+              const m = r64.find(x => x.displayOrder === dOrder);
+              if (m) { undecidedTeams.push(m.team1Id, m.team2Id); }
+            }
+          });
+        }
+
+        // For partial matchups, also count picks for undecided feeder teams
+        const undecidedCounts = {};
+        if (isPartial) {
+          undecidedTeams.forEach(tid => { undecidedCounts[tid] = 0; });
+          DATA.brackets.forEach(b => {
+            (b.picks[rk] || []).forEach(p => {
+              if (r64IdsInSlot.has(p.matchupId) && undecidedCounts[p.pickedTeamId] !== undefined) {
+                undecidedCounts[p.pickedTeamId] = (undecidedCounts[p.pickedTeamId] || 0) + 1;
+              }
+            });
+          });
+        }
+
+        knownMatchups.push({ slot: s, counts, r64IdsInSlot, neitherCount, isPartial, undecidedCounts });
       }
     }
 
@@ -1554,7 +1659,35 @@ function selectRound(roundKey, updateHash) {
         if (regionMatchups.length === 0) return;
         out += `<div class="region-section"><div class="region-section-title">${name}</div><div class="round-matchups">`;
         regionMatchups.forEach(m => {
-          out += renderCard(m.counts, null, roundKey);
+          if (m.isPartial) {
+            // Show known team(s) + undecided feeder teams
+            const cardIdx = cardDataStore.length;
+            cardDataStore.push({ teamCounts: m.counts, rk: roundKey, winnerId: null, undecidedCounts: m.undecidedCounts });
+            let h = '<div class="bk-matchup" style="cursor:pointer" onclick="openDrawerByIdx(' + cardIdx + ')">';
+            h += '<div class="bk-matchup-inner"><div class="bk-teams-col">';
+            // Known teams (already advanced)
+            const entries = Object.entries(m.counts).sort((a, b) => b[1] - a[1]);
+            entries.forEach(([tid, count]) => {
+              const team = DATA.teams[tid];
+              if (!team) return;
+              h += `<div class="bk-team">
+                <img class="bk-team-logo" src="${team.logo}" alt="${team.abbrev}" loading="lazy">
+                <span class="bk-team-seed">${team.seed}</span>
+                <span class="bk-team-name">${team.name}</span>
+                <span class="bk-team-count" style="color:var(--muted)">${count}/${total}</span>
+              </div>`;
+            });
+            // Undecided feeder teams shown inline
+            const udTeams = Object.keys(m.undecidedCounts || {}).map(tid => DATA.teams[tid]).filter(Boolean);
+            if (udTeams.length > 0) {
+              const vs = udTeams.map(t => `<img class="bk-team-logo" src="${t.logo}" alt="${t.abbrev}" loading="lazy" style="vertical-align:middle"> ${t.abbrev}`).join(' vs ');
+              h += `<div class="bk-team" style="opacity:0.5;border-top:1px solid var(--border);font-size:0.65rem;color:var(--muted)">${vs}</div>`;
+            }
+            h += '</div></div></div>';
+            out += h;
+          } else {
+            out += renderCard(m.counts, null, roundKey);
+          }
         });
         out += '</div></div>';
       });
