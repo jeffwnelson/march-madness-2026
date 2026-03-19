@@ -59,17 +59,19 @@ body {
   background: var(--accent);
   color: #fff;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 75px;
   transition: background 0.2s;
 }
 .btn-refresh:hover { background: var(--accent-dim); }
@@ -84,6 +86,7 @@ body {
   display: inline-block;
   animation: spin 0.8s linear infinite;
 }
+.btn-refresh.loading .refresh-label { display: none; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* Tabs */
@@ -120,51 +123,64 @@ body {
 #tab-consensus.active { display: block; max-width: 100%; padding: 0.75rem; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
 
-/* ==================== BRACKET VIEW ==================== */
-.bracket-wrapper {
-  overflow-x: auto;
-  padding: 0.5rem 0;
-}
-.bracket-container {
-  display: grid;
-  grid-template-columns: 160px 160px 160px 200px 160px 160px 160px;
+/* ==================== CONSENSUS ROUND VIEW ==================== */
+.round-tabs {
+  display: flex;
   gap: 0;
-  min-width: 1200px;
-  position: relative;
+  margin: 0 1rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
 }
-.bracket-round-header {
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--muted);
+.round-tab {
+  flex: 1;
+  padding: 0.5rem 0.4rem;
   text-align: center;
-  padding: 0.4rem 0.25rem 0.25rem;
-  border-bottom: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
   background: var(--bg2);
+  border: none;
+  border-right: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
 }
-.bracket-round-header .pts {
+.round-tab:last-child { border-right: none; }
+.round-tab:hover { color: var(--text); background: var(--card); }
+.round-tab.active {
+  color: var(--white);
+  background: var(--accent);
+}
+.round-tab .pts {
   display: block;
   font-size: 0.6rem;
-  color: var(--accent);
+  font-weight: 500;
+  opacity: 0.7;
   letter-spacing: 0;
-  font-weight: 600;
 }
-.bracket-region-label {
+/* Matchup grid for the selected round */
+.round-matchups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+  padding: 0 1rem 1rem;
+}
+.region-section {
+  margin-bottom: 0.5rem;
+}
+.region-section-title {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--accent);
-  text-align: center;
-  padding: 0.3rem 0;
-  background: var(--bg);
-}
-.bracket-col {
-  display: flex;
-  flex-direction: column;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 0.5rem;
 }
 /* Matchup card */
 .bk-matchup {
@@ -177,7 +193,30 @@ body {
   position: relative;
   flex-shrink: 0;
 }
-.bk-matchup.decided { border-color: rgba(34,197,94,0.3); }
+.bk-matchup.decided { border-color: var(--success); border-width: 2px; }
+.bk-matchup-inner {
+  display: flex;
+  align-items: stretch;
+}
+.bk-teams-col {
+  flex: 1;
+  min-width: 0;
+}
+.bk-time-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 8px;
+  border-left: 1px solid var(--border);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--muted);
+  white-space: nowrap;
+  min-width: 50px;
+  text-align: center;
+  line-height: 1.3;
+}
+.bk-matchup.decided .bk-time-col { color: var(--success); }
 .bk-team {
   display: flex;
   align-items: center;
@@ -223,7 +262,7 @@ body {
   margin-left: auto;
 }
 .bk-team.winner .bk-team-count { color: var(--success); }
-.bk-team.favorite .bk-team-count { color: var(--accent); }
+.bk-team.favorite .bk-team-count { color: var(--muted); }
 .bk-bar {
   height: 3px;
   display: flex;
@@ -557,12 +596,8 @@ body {
   border-bottom: 1px solid var(--border);
 }
 .lb-table tr:hover td { background: rgba(255,255,255,0.02); }
-.lb-entry-name {
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 140px;
+.lb-entry-name-old {
+  /* removed */
   display: inline-block;
 }
 .lb-score {
@@ -585,19 +620,235 @@ body {
 .delta-neg { color: var(--danger); }
 .delta-zero { color: var(--muted); }
 
-/* Description wells */
+/* Leaderboard */
+.lb-pills {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.lb-pill {
+  padding: 0.4rem 1rem;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+  background: var(--bg2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.lb-pill + .lb-pill { border-left: 1px solid var(--border); }
+.lb-pill:hover { color: var(--text); }
+.lb-pill.active { background: var(--accent); color: var(--white); }
+.lb-list {
+  padding: 0 1rem;
+}
+.lb-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 3px;
+  background: var(--card);
+}
+.lb-row.lb-1st { border-color: #d4a017; background: rgba(212,160,23,0.08); }
+.lb-row.lb-2nd { border-color: #a8a8a8; background: rgba(168,168,168,0.06); }
+.lb-row.lb-3rd { border-color: #cd7f32; background: rgba(205,127,50,0.06); }
+.lb-rank {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  min-width: 30px;
+  text-align: center;
+}
+.lb-row.lb-1st .lb-rank { color: #d4a017; }
+.lb-row.lb-2nd .lb-rank { color: #a8a8a8; }
+.lb-row.lb-3rd .lb-rank { color: #cd7f32; }
+.lb-info { flex: 1; }
+.lb-entry-name {
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--white);
+}
+.lb-member {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.lb-pts {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.lb-pts-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* Description wells — toggleable */
+.desc-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.75rem 1.5rem 0.75rem;
+  padding: 0.3rem 0.7rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.desc-toggle:hover { color: var(--text); border-color: var(--muted); }
+.desc-toggle .arrow { transition: transform 0.2s; font-size: 0.6rem; }
+.desc-toggle.open .arrow { transform: rotate(90deg); }
 .desc-well {
   background: var(--bg2);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: 6px;
   padding: 0.8rem 1.2rem;
-  margin: 1rem 1.5rem;
+  margin: 0.4rem 1.5rem 0.5rem;
   color: var(--muted);
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   line-height: 1.5;
+  display: none;
 }
+.desc-well.open { display: block; }
 .desc-well strong { color: var(--text); }
+
+/* Slide-out detail drawer */
+.drawer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.drawer-overlay.open { opacity: 1; pointer-events: auto; }
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(280px, 75vw);
+  background: var(--bg2);
+  border-left: 1px solid var(--border);
+  z-index: 201;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.drawer.open { transform: translateX(0); }
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.drawer-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.drawer-close {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--muted);
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+.drawer-close:hover { color: var(--white); border-color: var(--muted); }
+.drawer-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem 1.2rem;
+}
+.drawer-team-group {
+  margin-bottom: 1.2rem;
+}
+.drawer-team-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.drawer-team-header img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+.drawer-team-header .team-info {
+  flex: 1;
+}
+.drawer-team-header .team-name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--white);
+}
+.drawer-team-header .team-meta {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.drawer-team-header .pick-count {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.drawer-picker {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.5rem;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+.drawer-picker .picker-name {
+  flex: 1;
+  font-weight: 600;
+  color: var(--text);
+}
+.drawer-picker .picker-entry {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
 
 /* Loading */
 .loading-msg {
@@ -629,45 +880,50 @@ body {
   <div class="header-left">
     <h1>March Madness <span>2026</span></h1>
   </div>
-  <div class="header-right">
-    <span class="last-updated" id="lastUpdated"></span>
-    <button class="btn-refresh" id="btnRefresh" onclick="refreshData()">
-      <div class="spinner"></div>
-      Refresh
-    </button>
-  </div>
 </div>
 
 <div class="tabs">
   <button class="tab-btn active" data-tab="consensus" onclick="switchTab('consensus')">Consensus Picks</button>
-  <button class="tab-btn" data-tab="uniqueness" onclick="switchTab('uniqueness')">Bracket Uniqueness</button>
+  <button class="tab-btn" data-tab="leaderboard" onclick="switchTab('leaderboard')">Leaderboard</button>
   <button class="tab-btn" data-tab="whatif" onclick="switchTab('whatif')">What-If Simulator</button>
 </div>
 
 <div class="tab-content active" id="tab-consensus">
+  <button class="desc-toggle" onclick="toggleDesc(this)"><span class="arrow">&#9654;</span> What is this?</button>
   <div class="desc-well">
-    <strong>Consensus Picks</strong> — This bracket shows how our group of 19 picked each game.
+    <strong>Consensus Picks</strong> — See how our group of 19 picked each game.
     The numbers (e.g. "14/19") show how many brackets picked that team to win in each round.
-    Higher numbers mean more agreement. Decided games show the actual winner highlighted in green.
+    Tap any matchup to see exactly who picked each team. Decided games show the winner in green.
   </div>
-  <div class="loading-msg" id="loading-consensus">Loading bracket data...</div>
+  <div id="consensus-content"><div class="loading-msg">Loading bracket data...</div></div>
 </div>
-<div class="tab-content" id="tab-uniqueness">
+<div class="tab-content" id="tab-leaderboard">
+  <button class="desc-toggle" onclick="toggleDesc(this)"><span class="arrow">&#9654;</span> What is this?</button>
   <div class="desc-well">
-    <strong>Bracket Uniqueness</strong> — How different is each bracket from everyone else?
-    The <strong>originality score</strong> measures the average percentage of picks that differ from other brackets
-    across all 63 games. Higher = more unique picks. The pairwise table shows how similar any two brackets are.
+    <strong>Leaderboard</strong> — See how everyone stacks up. <strong>Current Points</strong> shows actual points earned so far.
+    <strong>Possible Points</strong> shows the maximum each bracket can still reach if all remaining picks are correct.
   </div>
-  <div class="loading-msg" id="loading-uniqueness">Loading bracket data...</div>
+  <div id="leaderboard-content"><div class="loading-msg">Loading bracket data...</div></div>
 </div>
 <div class="tab-content" id="tab-whatif">
+  <button class="desc-toggle" onclick="toggleDesc(this)"><span class="arrow">&#9654;</span> What is this?</button>
   <div class="desc-well">
     <strong>What-If Simulator</strong> — Click any team in a matchup to simulate them winning.
     The leaderboard on the right updates instantly: brackets that picked the loser to advance further
     get those picks <strong>eliminated</strong>, reducing their max possible score.
     Chain multiple what-ifs to play out scenarios. Hit <strong>Reset</strong> to start over.
   </div>
-  <div class="loading-msg" id="loading-whatif">Loading bracket data...</div>
+  <div id="whatif-content"><div class="loading-msg">Loading bracket data...</div></div>
+</div>
+
+<!-- Slide-out drawer -->
+<div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <h3 id="drawer-title">Matchup Detail</h3>
+    <button class="drawer-close" onclick="closeDrawer()">&times;</button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
 </div>
 
 <script>
@@ -694,9 +950,8 @@ function switchTab(tab) {
 async function loadData() {
   const res = await fetch('/api/brackets');
   DATA = await res.json();
-  document.getElementById('lastUpdated').textContent = 'Updated: ' + new Date(DATA.lastUpdated).toLocaleString();
   renderConsensus();
-  renderUniqueness();
+  renderLeaderboard();
   initWhatIf();
 }
 
@@ -717,7 +972,7 @@ async function refreshData() {
 // Tab 1: Consensus Bracket View
 // ============================================================
 function renderConsensus() {
-  const container = document.getElementById('tab-consensus');
+  const container = document.getElementById('consensus-content');
   const total = DATA.brackets.length;
 
   // Build R64 matchup map sorted by displayOrder
@@ -828,15 +1083,6 @@ function renderConsensus() {
       html += `<div class="bk-team" style="opacity:0.2;min-height:24px"><span class="bk-team-name" style="color:var(--muted)">---</span></div>`;
     }
 
-    // Consensus bar
-    if (entries.length >= 2) {
-      const pct1 = Math.round(showTeams[0][1] / totalPicks * 100);
-      const pct2 = 100 - pct1;
-      html += `<div class="bk-bar">
-        <div class="bk-bar-seg" style="width:${pct1}%;background:var(--accent)"></div>
-        <div class="bk-bar-seg" style="width:${pct2}%;background:var(--muted)"></div>
-      </div>`;
-    }
     html += '</div>';
     return html;
   }
@@ -847,192 +1093,352 @@ function renderConsensus() {
     return renderCard(picks, matchup.winnerId);
   }
 
-  // Now build the 7-column layout
-  // Left side: col 0 = R64 region1 top + region2 bottom
-  //            col 1 = R32 for regions 1+2
-  //            col 2 = S16 for regions 1+2
-  // Center:    col 3 = E8 + FF + Championship
-  // Right side: col 4 = S16 for regions 3+4
-  //             col 5 = R32 for regions 3+4
-  //             col 6 = R64 region3 top + region4 bottom
+  // Round tab selector
+  const rounds = [
+    { key: 'r64', label: 'Round of 64', pts: '10 pts', games: 32 },
+    { key: 'r32', label: 'Round of 32', pts: '20 pts', games: 16 },
+    { key: 'sweet16', label: 'Sweet 16', pts: '40 pts', games: 8 },
+    { key: 'elite8', label: 'Elite 8', pts: '80 pts', games: 4 },
+    { key: 'finalFour', label: 'Final Four', pts: '160 pts', games: 2 },
+    { key: 'championship', label: 'Championship', pts: '320 pts', games: 1 },
+  ];
 
-  // Region 1: displayOrder 0-7, Region 2: 8-15
-  // Region 3: displayOrder 16-23, Region 4: 24-31
+  let html = '<div class="round-tabs">';
+  rounds.forEach((rd, i) => {
+    html += `<button class="round-tab${i === 0 ? ' active' : ''}" data-round="${rd.key}" onclick="selectRound('${rd.key}')">${rd.label}<span class="pts">${rd.pts}</span></button>`;
+  });
+  html += '</div>';
 
-  function buildColumn(matchupCards, regionLabels) {
-    let html = '';
-    regionLabels.forEach((label, ri) => {
-      if (label) {
-        html += `<div class="bracket-region-label">${label}</div>`;
+  // Content area for the selected round
+  html += '<div id="round-content"></div>';
+
+  container.innerHTML = html;
+
+  // Render the default round
+  selectRound('r64');
+}
+
+// --- Toggle description wells ---
+function toggleDesc(btn) {
+  btn.classList.toggle('open');
+  const well = btn.nextElementSibling;
+  well.classList.toggle('open');
+}
+
+// --- Drawer for matchup detail ---
+let _cardDataStore = [];
+function openDrawerByIdx(idx) {
+  const d = _cardDataStore[idx];
+  if (!d) return;
+  openDrawer(d.teamCounts, d.rk, d.winnerId);
+}
+
+function openDrawer(teamCounts, roundKey, winnerId) {
+  const total = DATA.brackets.length;
+  // Sort: winner first if decided, then by count
+  const entries = Object.entries(teamCounts).sort((a, b) => {
+    if (winnerId) {
+      if (a[0] === winnerId) return -1;
+      if (b[0] === winnerId) return 1;
+    }
+    return b[1] - a[1];
+  });
+
+  // For each team, find which brackets picked them
+  const pickersByTeam = {};
+  entries.forEach(([tid]) => { pickersByTeam[tid] = []; });
+
+  const allPickedTeamIds = new Set(entries.map(e => e[0]));
+  const neitherPickers = [];
+
+  DATA.brackets.forEach(b => {
+    let pickedInThisSlot = false;
+    (b.picks[roundKey] || []).forEach(p => {
+      if (pickersByTeam[p.pickedTeamId] !== undefined) {
+        pickersByTeam[p.pickedTeamId].push({ member: b.member, entry: b.entryName });
+        pickedInThisSlot = true;
       }
-      const cards = matchupCards[ri];
-      cards.forEach((card, i) => {
-        html += card;
-      });
     });
-    return html;
+    if (!pickedInThisSlot && roundKey !== 'r64') {
+      neitherPickers.push({ member: b.member, entry: b.entryName });
+    }
+  });
+
+  let html = '';
+  entries.forEach(([tid, count]) => {
+    const team = DATA.teams[tid];
+    if (!team) return;
+    const pickers = pickersByTeam[tid] || [];
+    const isWinner = winnerId === tid;
+    const countColor = isWinner ? 'var(--success)' : 'var(--muted)';
+    const nameColor = isWinner ? 'var(--success)' : 'var(--white)';
+    html += `<div class="drawer-team-group">
+      <div class="drawer-team-header">
+        <img src="${team.logo}" alt="${team.abbrev}">
+        <div class="team-info">
+          <div class="team-name" style="color:${nameColor}">(${team.seed}) ${team.name}${isWinner ? ' ✓' : ''}</div>
+        </div>
+        <div class="pick-count" style="color:${countColor}">${count}/${total}</div>
+      </div>`;
+    pickers.forEach(p => {
+      html += `<div class="drawer-picker">
+        <span class="picker-name">${p.entry}</span>
+      </div>`;
+    });
+    if (pickers.length === 0) {
+      html += `<div style="color:var(--muted);font-size:0.75rem;padding:0.3rem">No one picked this team</div>`;
+    }
+    html += '</div>';
+  });
+
+  // Show "neither" section for later rounds
+  if (neitherPickers.length > 0) {
+    html += `<div class="drawer-team-group">
+      <div class="drawer-team-header">
+        <div class="team-info">
+          <div class="team-name" style="color:var(--muted)">Neither team picked</div>
+        </div>
+        <div class="pick-count" style="color:var(--muted)">${neitherPickers.length}/${total}</div>
+      </div>`;
+    neitherPickers.forEach(p => {
+      html += `<div class="drawer-picker"><span class="picker-name" style="color:var(--muted)">${p.entry}</span></div>`;
+    });
+    html += '</div>';
   }
 
-  // R64 columns (8 games per region)
-  const leftR64Region1 = r64.filter(m => m.region === 1).sort((a, b) => a.displayOrder - b.displayOrder);
-  const leftR64Region2 = r64.filter(m => m.region === 2).sort((a, b) => a.displayOrder - b.displayOrder);
-  const rightR64Region3 = r64.filter(m => m.region === 3).sort((a, b) => a.displayOrder - b.displayOrder);
-  const rightR64Region4 = r64.filter(m => m.region === 4).sort((a, b) => a.displayOrder - b.displayOrder);
+  document.getElementById('drawer-title').textContent = entries.length >= 2
+    ? `${DATA.teams[entries[0][0]]?.name || '?'} vs ${DATA.teams[entries[1][0]]?.name || '?'}`
+    : entries.length === 1 ? DATA.teams[entries[0][0]]?.name || 'Detail' : 'Detail';
+  document.getElementById('drawer-body').innerHTML = html;
+  document.getElementById('drawer-overlay').classList.add('open');
+  document.getElementById('drawer').classList.add('open');
+}
 
-  let html = '<div class="bracket-wrapper"><div class="bracket-container">';
+function closeDrawer() {
+  document.getElementById('drawer-overlay').classList.remove('open');
+  document.getElementById('drawer').classList.remove('open');
+}
 
-  // === HEADERS ===
-  html += '<div class="bracket-round-header">R64<span class="pts">10 pts</span></div>';
-  html += '<div class="bracket-round-header">R32<span class="pts">20 pts</span></div>';
-  html += '<div class="bracket-round-header">Sweet 16<span class="pts">40 pts</span></div>';
-  html += '<div class="bracket-round-header">Final Rounds<span class="pts">80-320 pts</span></div>';
-  html += '<div class="bracket-round-header">Sweet 16<span class="pts">40 pts</span></div>';
-  html += '<div class="bracket-round-header">R32<span class="pts">20 pts</span></div>';
-  html += '<div class="bracket-round-header">R64<span class="pts">10 pts</span></div>';
+// --- Round selection ---
+function selectRound(roundKey) {
+  // Update active tab
+  document.querySelectorAll('.round-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.round === roundKey);
+  });
 
-  // === COLUMN 0: Left R64 (Region 1 top, Region 2 bottom) ===
-  html += '<div class="bracket-col">';
-  html += `<div class="bracket-region-label">${REGION_NAMES[1]}</div>`;
-  leftR64Region1.forEach(m => { html += renderR64Card(m); });
-  html += `<div class="bracket-region-label" style="margin-top:4px">${REGION_NAMES[2]}</div>`;
-  leftR64Region2.forEach(m => { html += renderR64Card(m); });
-  html += '</div>';
+  const container = document.getElementById('round-content');
+  const total = DATA.brackets.length;
+  const r64 = DATA.matchups.filter(m => m.round === 1).sort((a, b) => a.displayOrder - b.displayOrder);
 
-  // === COLUMN 1: Left R32 (slots 0-3 for region1, 4-7 for region2) ===
-  html += '<div class="bracket-col">';
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  // Region 1: R32 slots 0-3 (displayOrder pairs 0-1, 2-3, 4-5, 6-7)
-  for (let i = 0; i < 4; i++) {
-    html += '<div class="bk-spacer-half"></div>';
-    html += renderCard(r32Slots[i], null);
-    html += '<div class="bk-spacer-half"></div>';
+  // Build R64 pick counts (needed for R64 view)
+  const r64Picks = {};
+  r64.forEach(m => {
+    let t1 = 0, t2 = 0;
+    DATA.brackets.forEach(b => {
+      const pick = b.picks.r64.find(p => p.matchupId === m.id);
+      if (pick) {
+        if (pick.pickedTeamId === m.team1Id) t1++;
+        else if (pick.pickedTeamId === m.team2Id) t2++;
+      }
+    });
+    r64Picks[m.id] = { [m.team1Id]: t1, [m.team2Id]: t2 };
+  });
+
+  // Build later round slot picks
+  function buildSlotPicks(rk, slotSize) {
+    const numSlots = 32 / slotSize;
+    const slots = [];
+    for (let s = 0; s < numSlots; s++) {
+      const minDO = s * slotSize;
+      const maxDO = minDO + slotSize - 1;
+      const r64IdsInSlot = new Set();
+      r64.forEach(m => { if (m.displayOrder >= minDO && m.displayOrder <= maxDO) r64IdsInSlot.add(m.id); });
+      const counts = {};
+      DATA.brackets.forEach(b => {
+        (b.picks[rk] || []).forEach(p => {
+          if (r64IdsInSlot.has(p.matchupId)) {
+            counts[p.pickedTeamId] = (counts[p.pickedTeamId] || 0) + 1;
+          }
+        });
+      });
+      slots.push(counts);
+    }
+    return slots;
   }
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  // Region 2: R32 slots 4-7 (displayOrder pairs 8-9, 10-11, 12-13, 14-15)
-  for (let i = 4; i < 8; i++) {
-    html += '<div class="bk-spacer-half"></div>';
-    html += renderCard(r32Slots[i], null);
-    html += '<div class="bk-spacer-half"></div>';
-  }
-  html += '</div>';
 
-  // === COLUMN 2: Left S16 (slots 0-1 for region1, 2-3 for region2) ===
-  html += '<div class="bracket-col">';
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  // Region 1: S16 slots 0-1
-  for (let i = 0; i < 2; i++) {
-    html += '<div class="bk-spacer"></div>';
-    html += renderCard(s16Slots[i], null);
-    html += '<div class="bk-spacer"></div>';
-  }
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  // Region 2: S16 slots 2-3
-  for (let i = 2; i < 4; i++) {
-    html += '<div class="bk-spacer"></div>';
-    html += renderCard(s16Slots[i], null);
-    html += '<div class="bk-spacer"></div>';
-  }
-  html += '</div>';
+  // Store card data for drawer lookups (exposed globally)
+  _cardDataStore = [];
+  const cardDataStore = _cardDataStore;
 
-  // === COLUMN 3: CENTER (E8 + FF + Championship) ===
-  html += '<div class="bracket-col bracket-center">';
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-
-  // E8 slot 0 (Region 1 champion)
-  html += '<div class="bk-spacer"></div>';
-  html += '<div class="bk-final-label">Elite 8 - ' + REGION_NAMES[1] + '</div>';
-  html += renderCard(e8Slots[0], null);
-
-  // FF semifinal 1 (regions 1 vs 2)
-  html += '<div class="bk-spacer-half"></div>';
-  html += '<div class="bk-final-label">Final Four</div>';
-  html += renderCard(ffSlots[0], null);
-
-  // E8 slot 1 (Region 2 champion)
-  html += '<div class="bk-spacer-half"></div>';
-  html += '<div class="bk-final-label">Elite 8 - ' + REGION_NAMES[2] + '</div>';
-  html += renderCard(e8Slots[1], null);
-
-  // Championship
-  html += '<div class="bk-spacer-half"></div>';
-  html += '<div class="bk-champion-box">';
-  html += '<div class="bk-champion-title">Championship</div>';
-  const champEntries = Object.entries(champCounts).sort((a, b) => b[1] - a[1]);
-  if (champEntries.length > 0) {
-    champEntries.slice(0, 3).forEach(([tid, count]) => {
+  // Render a matchup card (clickable to show picker detail)
+  function renderCard(teamCounts, winnerId, rk, gameTime) {
+    rk = rk || roundKey;
+    const entries = Object.entries(teamCounts).sort((a, b) => b[1] - a[1]);
+    if (entries.length === 0) return '<div class="bk-empty">TBD</div>';
+    const totalPicks = entries.reduce((s, e) => s + e[1], 0) || 1;
+    const maxCount = entries[0][1];
+    const decided = !!winnerId;
+    const cardIdx = cardDataStore.length;
+    cardDataStore.push({ teamCounts, rk, winnerId });
+    let timeStr = '';
+    if (decided) {
+      timeStr = 'FINAL';
+    } else if (gameTime) {
+      const d = new Date(gameTime);
+      timeStr = d.toLocaleString('en-US', { month:'numeric', day:'numeric', timeZone:'America/Chicago' }) + '<br>' + d.toLocaleString('en-US', { hour:'numeric', minute:'2-digit', timeZone:'America/Chicago' });
+    }
+    let h = `<div class="bk-matchup${decided ? ' decided' : ''}" style="cursor:pointer" onclick="openDrawerByIdx(${cardIdx})">`;
+    h += '<div class="bk-matchup-inner">';
+    h += '<div class="bk-teams-col">';
+    const showTeams = entries.slice(0, 2);
+    if (winnerId && !showTeams.find(e => e[0] === winnerId)) {
+      const we = entries.find(e => e[0] === winnerId);
+      if (we) showTeams[1] = we;
+    }
+    showTeams.forEach(([tid, count]) => {
       const team = DATA.teams[tid];
       if (!team) return;
-      html += `<div class="bk-team" style="justify-content:center;padding:2px 4px">
+      const isWinner = winnerId === tid;
+      const isLoser = decided && winnerId !== tid;
+      const isFav = !decided && count === maxCount && entries.length > 1;
+      let cls = 'bk-team';
+      if (isWinner) cls += ' winner';
+      if (isLoser) cls += ' loser';
+      if (isFav) cls += ' favorite';
+      h += `<div class="${cls}">
         <img class="bk-team-logo" src="${team.logo}" alt="${team.abbrev}" loading="lazy">
         <span class="bk-team-seed">${team.seed}</span>
-        <span class="bk-team-name" style="flex:0">${team.abbrev}</span>
+        <span class="bk-team-name">${team.name}</span>
         <span class="bk-team-count">${count}/${total}</span>
       </div>`;
     });
+    if (showTeams.length < 2) {
+      h += `<div class="bk-team" style="opacity:0.2;min-height:24px"><span class="bk-team-name" style="color:var(--muted)">---</span></div>`;
+    }
+    h += '</div>'; // close bk-teams-col
+    if (timeStr) {
+      h += `<div class="bk-time-col">${timeStr}</div>`;
+    }
+    h += '</div>'; // close bk-matchup-inner
+    h += '</div>'; // close bk-matchup
+    return h;
+  }
+
+  let out = '';
+
+  if (roundKey === 'r64') {
+    // Group by region
+    [1, 2, 3, 4].forEach(regionId => {
+      const regionMatchups = r64.filter(m => m.region === regionId);
+      out += `<div class="region-section"><div class="region-section-title">${REGION_NAMES[regionId]}</div><div class="round-matchups">`;
+      regionMatchups.forEach(m => {
+        out += renderCard(r64Picks[m.id], m.winnerId, roundKey, m.gameTime);
+      });
+      out += '</div></div>';
+    });
   } else {
-    html += '<div style="color:var(--muted);font-size:0.65rem">TBD</div>';
+    // For later rounds: only show matchups where both feeder games are decided
+    // Build the bracket tree of decided winners from R64 matchups
+    // R64 winners indexed by displayOrder
+    const r64Winners = {};
+    r64.forEach(m => {
+      if (m.winnerId) r64Winners[m.displayOrder] = m.winnerId;
+    });
+
+    // Build known matchups for each round based on decided feeder games
+    // R32: pairs [0,1],[2,3],...  — known if both R64 feeders decided
+    // S16: quads [0-3],[4-7],...  — known if both R32 feeders decided
+    // E8:  octets [0-7],[8-15],... — known if both S16 feeders decided
+    // FF:  halves [0-15],[16-31]  — known if both E8 feeders decided
+    // Champ: known if both FF feeders decided
+
+    // We track decided winners at each round level
+    const roundWinners = { r64: r64Winners }; // displayOrder → winnerId
+
+    const laterRounds = [
+      { key: 'r32', slotSize: 2, regionSlots: [[0,3,'East'],[4,7,'South'],[8,11,'West'],[12,15,'Midwest']] },
+      { key: 'sweet16', slotSize: 4, regionSlots: [[0,1,'East'],[2,3,'South'],[4,5,'West'],[6,7,'Midwest']] },
+      { key: 'elite8', slotSize: 8, regionSlots: [[0,0,'East'],[1,1,'South'],[2,2,'West'],[3,3,'Midwest']] },
+      { key: 'finalFour', slotSize: 16, regionSlots: [[0,0,'Semifinal 1 (East/South)'],[1,1,'Semifinal 2 (West/Midwest)']] },
+      { key: 'championship', slotSize: 32, regionSlots: [[0,0,'Championship']] },
+    ];
+
+    const roundConfig = laterRounds.find(r => r.key === roundKey);
+    if (!roundConfig) { container.innerHTML = out; return; }
+
+    // Determine the feeder round for this round
+    const feederSlotSize = roundConfig.slotSize / 2;
+    const numSlots = 32 / roundConfig.slotSize;
+
+    // For each slot in this round, check if both feeder slots have decided winners
+    const knownMatchups = [];
+    for (let s = 0; s < numSlots; s++) {
+      // The two feeder slots
+      const feeder1Start = s * roundConfig.slotSize;
+      const feeder2Start = feeder1Start + feederSlotSize;
+
+      // Check: are all R64 games in each feeder half decided?
+      let feeder1Winner = null;
+      let feeder2Winner = null;
+
+      // For R32, feeders are individual R64 games
+      // For S16, feeders are R32 slots (which need their own R64 feeders decided)
+      // Simplified: check if all R64 games in each half of this slot are decided
+      const half1DOs = [];
+      const half2DOs = [];
+      for (let d = feeder1Start; d < feeder1Start + feederSlotSize; d++) half1DOs.push(d);
+      for (let d = feeder2Start; d < feeder2Start + feederSlotSize; d++) half2DOs.push(d);
+
+      const half1AllDecided = half1DOs.every(d => r64Winners[d] !== undefined);
+      const half2AllDecided = half2DOs.every(d => r64Winners[d] !== undefined);
+
+      if (half1AllDecided && half2AllDecided) {
+        // Both feeders decided — this is a known matchup
+        // For R32: the two teams are the R64 winners of the two feeder games
+        // For later rounds: we need to find who won each feeder path
+        // Since we only have R64 results right now, for R32 this works directly
+        // For later rounds, we'd need intermediate results too
+        // For now, show the matchup with consensus counts for the two actual teams
+
+        // Get all R64 matchup IDs in this slot
+        const r64IdsInSlot = new Set();
+        r64.forEach(m => {
+          if (m.displayOrder >= feeder1Start && m.displayOrder < feeder1Start + roundConfig.slotSize) {
+            r64IdsInSlot.add(m.id);
+          }
+        });
+
+        // Count picks for just the teams that could be in this matchup
+        const counts = {};
+        const rk = roundKey === 'championship' ? 'championship' : roundKey;
+        DATA.brackets.forEach(b => {
+          (b.picks[rk] || []).forEach(p => {
+            if (rk === 'championship' || r64IdsInSlot.has(p.matchupId)) {
+              counts[p.pickedTeamId] = (counts[p.pickedTeamId] || 0) + 1;
+            }
+          });
+        });
+
+        knownMatchups.push({ slot: s, counts, r64IdsInSlot });
+      }
+    }
+
+    if (knownMatchups.length === 0) {
+      out += '<div style="text-align:center;padding:2rem;color:var(--muted)">No matchups decided yet for this round. Check back after more games finish!</div>';
+    } else {
+      roundConfig.regionSlots.forEach(([start, end, name]) => {
+        const regionMatchups = knownMatchups.filter(m => m.slot >= start && m.slot <= end);
+        if (regionMatchups.length === 0) return;
+        out += `<div class="region-section"><div class="region-section-title">${name}</div><div class="round-matchups">`;
+        regionMatchups.forEach(m => {
+          out += renderCard(m.counts, null, roundKey);
+        });
+        out += '</div></div>';
+      });
+    }
   }
-  html += '</div>';
 
-  // E8 slot 2 (Region 3 champion)
-  html += '<div class="bk-spacer-half"></div>';
-  html += '<div class="bk-final-label">Elite 8 - ' + REGION_NAMES[3] + '</div>';
-  html += renderCard(e8Slots[2], null);
-
-  // FF semifinal 2 (regions 3 vs 4)
-  html += '<div class="bk-spacer-half"></div>';
-  html += '<div class="bk-final-label">Final Four</div>';
-  html += renderCard(ffSlots[1], null);
-
-  // E8 slot 3 (Region 4 champion)
-  html += '<div class="bk-spacer-half"></div>';
-  html += '<div class="bk-final-label">Elite 8 - ' + REGION_NAMES[4] + '</div>';
-  html += renderCard(e8Slots[3], null);
-  html += '<div class="bk-spacer"></div>';
-  html += '</div>';
-
-  // === COLUMN 4: Right S16 (slots 4-5 for region3, 6-7 for region4) ===
-  html += '<div class="bracket-col">';
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  for (let i = 4; i < 6; i++) {
-    html += '<div class="bk-spacer"></div>';
-    html += renderCard(s16Slots[i], null);
-    html += '<div class="bk-spacer"></div>';
-  }
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  for (let i = 6; i < 8; i++) {
-    html += '<div class="bk-spacer"></div>';
-    html += renderCard(s16Slots[i], null);
-    html += '<div class="bk-spacer"></div>';
-  }
-  html += '</div>';
-
-  // === COLUMN 5: Right R32 (slots 8-11 for region3, 12-15 for region4) ===
-  html += '<div class="bracket-col">';
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  for (let i = 8; i < 12; i++) {
-    html += '<div class="bk-spacer-half"></div>';
-    html += renderCard(r32Slots[i], null);
-    html += '<div class="bk-spacer-half"></div>';
-  }
-  html += '<div class="bracket-region-label">&nbsp;</div>';
-  for (let i = 12; i < 16; i++) {
-    html += '<div class="bk-spacer-half"></div>';
-    html += renderCard(r32Slots[i], null);
-    html += '<div class="bk-spacer-half"></div>';
-  }
-  html += '</div>';
-
-  // === COLUMN 6: Right R64 (Region 3 top, Region 4 bottom) ===
-  html += '<div class="bracket-col">';
-  html += `<div class="bracket-region-label">${REGION_NAMES[3]}</div>`;
-  rightR64Region3.forEach(m => { html += renderR64Card(m); });
-  html += `<div class="bracket-region-label" style="margin-top:4px">${REGION_NAMES[4]}</div>`;
-  rightR64Region4.forEach(m => { html += renderR64Card(m); });
-  html += '</div>';
-
-  html += '</div></div>'; // close bracket-container and bracket-wrapper
-  container.innerHTML = html;
+  container.innerHTML = out;
 }
 
 // ============================================================
@@ -1056,7 +1462,7 @@ function hammingDistance(v1, v2) {
 }
 
 function renderUniqueness() {
-  const container = document.getElementById('tab-uniqueness');
+  const container = document.getElementById('uniqueness-content');
   const brackets = DATA.brackets;
   const vectors = brackets.map(b => getPickVector(b));
   const vecLen = vectors[0] ? vectors[0].length : 1;
@@ -1143,6 +1549,59 @@ function toggleSimilarity() {
 // ============================================================
 // Tab 3: What-If Simulator
 // ============================================================
+// ============================================================
+// Tab: Leaderboard
+// ============================================================
+let lbSortMode = 'current';
+
+function renderLeaderboard() {
+  const container = document.getElementById('leaderboard-content');
+  let html = '<div class="lb-pills">';
+  html += `<button class="lb-pill${lbSortMode === 'current' ? ' active' : ''}" onclick="setLbSort('current')">Current Points</button>`;
+  html += `<button class="lb-pill${lbSortMode === 'possible' ? ' active' : ''}" onclick="setLbSort('possible')">Possible Points</button>`;
+  html += '</div>';
+
+  const sorted = [...DATA.brackets].sort((a, b) => {
+    if (lbSortMode === 'current') return b.score - a.score || b.maxPossible - a.maxPossible;
+    return b.maxPossible - a.maxPossible || b.score - a.score;
+  });
+
+  html += '<div class="lb-list">';
+  function ordinal(n) {
+    const s = ['th','st','nd','rd'];
+    const v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
+  }
+
+  sorted.forEach((b, i) => {
+    const pts = lbSortMode === 'current' ? b.score : b.maxPossible;
+    const subPts = lbSortMode === 'current' ? `/${b.maxPossible}` : `/${b.score}`;
+    // Handle ties — same rank if same points
+    const rank = (i === 0 || pts !== (lbSortMode === 'current' ? sorted[i-1].score : sorted[i-1].maxPossible))
+      ? ordinal(i + 1) : ordinal(sorted.findIndex(x => (lbSortMode === 'current' ? x.score : x.maxPossible) === pts) + 1);
+    const rankNum = sorted.findIndex(x => (lbSortMode === 'current' ? x.score : x.maxPossible) === pts) + 1;
+    const placeClass = rankNum === 1 ? ' lb-1st' : rankNum === 2 ? ' lb-2nd' : rankNum === 3 ? ' lb-3rd' : '';
+    html += `<div class="lb-row${placeClass}">
+      <div class="lb-rank">${rank}</div>
+      <div class="lb-info">
+        <div class="lb-entry-name">${b.entryName}</div>
+      </div>
+      <div class="lb-pts">${pts}<span class="lb-pts-sub">${subPts}</span></div>
+    </div>`;
+  });
+  html += '</div>';
+
+  container.innerHTML = html;
+}
+
+function setLbSort(mode) {
+  lbSortMode = mode;
+  renderLeaderboard();
+}
+
+// ============================================================
+// Tab: What-If Simulator
+// ============================================================
 function initWhatIf() {
   // Deep clone
   whatIfState = {
@@ -1194,7 +1653,7 @@ function resetWhatIf() {
 }
 
 function renderWhatIf() {
-  const container = document.getElementById('tab-whatif');
+  const container = document.getElementById('whatif-content');
   let html = '<div class="whatif-layout">';
 
   // Left: bracket matchups

@@ -21,6 +21,7 @@ type Matchup struct {
 	Team1ID      string  `json:"team1Id"`
 	Team2ID      string  `json:"team2Id"`
 	WinnerID     *string `json:"winnerId"`
+	GameTime     *int64  `json:"gameTime"`
 }
 
 type Pick struct {
@@ -96,6 +97,7 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			ID:           prop.ID,
 			Round:        1,
 			DisplayOrder: prop.DisplayOrder,
+			GameTime:     prop.Date,
 		}
 
 		for _, outcome := range prop.PossibleOutcomes {
@@ -109,7 +111,8 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			}
 		}
 
-		if len(prop.ActualOutcomeIDs) > 0 {
+		// Only mark a winner if the proposition status is COMPLETE
+		if prop.Status == "COMPLETE" && len(prop.ActualOutcomeIDs) > 0 {
 			winnerID := prop.ActualOutcomeIDs[0]
 			matchup.WinnerID = &winnerID
 		}

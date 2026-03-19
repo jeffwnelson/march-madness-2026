@@ -167,6 +167,8 @@ type espnChallenge struct {
 type espnProposition struct {
 	ID               string        `json:"id"`
 	Name             string        `json:"name"`
+	Status           string        `json:"status"`
+	Date             *int64        `json:"date"`
 	ScoringPeriodID  int           `json:"scoringPeriodId"`
 	DisplayOrder     int           `json:"displayOrder"`
 	ActualOutcomeIDs []string      `json:"actualOutcomeIds"`
@@ -183,6 +185,7 @@ type espnOutcome struct {
 	RegionSeed         int           `json:"regionSeed"`
 	RegionCompetitorID string        `json:"regionCompetitorId"`
 	MatchupPosition    int           `json:"matchupPosition"`
+	Status             string        `json:"status"`
 	Mappings           []espnMapping `json:"mappings"`
 }
 
