@@ -195,6 +195,8 @@ body {
   flex-shrink: 0;
 }
 .bk-matchup.decided { border-color: var(--success); border-width: 2px; }
+.bk-matchup.playing { border-color: #3b82f6; border-width: 2px; background: rgba(59,130,246,0.06); }
+.bk-matchup.playing .bk-time-col { color: #3b82f6; }
 .bk-matchup-inner {
   display: flex;
   align-items: stretch;
@@ -677,6 +679,7 @@ body {
 .lb-row.lb-1st .lb-rank { color: #d4a017; }
 .lb-row.lb-2nd .lb-rank { color: #a8a8a8; }
 .lb-row.lb-3rd .lb-rank { color: #cd7f32; }
+.lb-champ { display: flex; align-items: center; }
 .lb-info { flex: 1; }
 .lb-entry-name {
   font-weight: 600;
@@ -1028,6 +1031,27 @@ let DATA = null;
 const REGION_NAMES = { 1: 'East', 2: 'South', 3: 'West', 4: 'Midwest' };
 const ROUND_KEYS = ['r64','r32','sweet16','elite8','finalFour','championship'];
 const ROUND_LABELS = { r64:'R64', r32:'R32', sweet16:'Sweet 16', elite8:'Elite 8', finalFour:'Final Four', championship:'Championship' };
+const ENTRY_NAMES = {
+  "9th Time's The Charm": 'Julie',
+  "Eli's Grandpa": 'Tim',
+  'Vasquez fam intern👩🏿‍💻': 'Payton',
+  'Cornhusker Hustlers 🌽🏀': 'Dylan',
+  "John\u2019s Final Fourcast": 'John',
+  "Blair N Nelson's Picks 1": 'Blair',
+  'Jack Jack Attack 💥': 'Jack',
+  "Delka\u2019s Dunk Dynasty": 'Sara',
+  'Binkies & Buckets': 'Lane',
+  'Frat Rat 🏓 🍻': 'Tommy',
+  'Lenny 🐶🐾': 'Lenny',
+  "Luke's Hoops": 'Luke',
+  "Jeff's Worst Picks Ever": 'Jeff',
+  'Nautical Nate ⚓': 'Nathan',
+  "M&M's": 'Nathan',
+  'Swishers Sweet': 'Cheri',
+  'Just Rae-ndom ': 'Raelynn',
+  'March sadness ft Tressa ': 'Tressa',
+  'The Auditor 📈📉📊🧮': 'Andy',
+};
 let whatIfState = null;
 
 // ============================================================
@@ -1460,16 +1484,22 @@ function selectRound(roundKey, updateHash) {
     const totalPicks = entries.reduce((s, e) => s + e[1], 0) || 1;
     const maxCount = entries[0][1];
     const decided = !!winnerId;
+    const playing = !decided && gameTime && gameTime <= Date.now();
     const cardIdx = cardDataStore.length;
     cardDataStore.push({ teamCounts, rk, winnerId });
     let timeStr = '';
     if (decided) {
       timeStr = 'FINAL';
+    } else if (playing) {
+      timeStr = 'PLAYING';
     } else if (gameTime) {
       const d = new Date(gameTime);
       timeStr = d.toLocaleString('en-US', { month:'numeric', day:'numeric', timeZone:'America/Chicago' }) + '<br>' + d.toLocaleString('en-US', { hour:'numeric', minute:'2-digit', timeZone:'America/Chicago' });
     }
-    let h = `<div class="bk-matchup${decided ? ' decided' : ''}" style="cursor:pointer" onclick="openDrawerByIdx(${cardIdx})">`;
+    let matchupCls = 'bk-matchup';
+    if (decided) matchupCls += ' decided';
+    else if (playing) matchupCls += ' playing';
+    let h = `<div class="${matchupCls}" style="cursor:pointer" onclick="openDrawerByIdx(${cardIdx})">`;
     h += '<div class="bk-matchup-inner">';
     h += '<div class="bk-teams-col">';
     const showTeams = entries.slice(0, 2);
@@ -1776,10 +1806,14 @@ function renderLeaderboard() {
       ? ordinal(i + 1) : ordinal(sorted.findIndex(x => (lbSortMode === 'current' ? x.score : x.maxPossible) === pts) + 1);
     const rankNum = sorted.findIndex(x => (lbSortMode === 'current' ? x.score : x.maxPossible) === pts) + 1;
     const placeClass = rankNum === 1 ? ' lb-1st' : rankNum === 2 ? ' lb-2nd' : rankNum === 3 ? ' lb-3rd' : '';
+    const champTeam = DATA.teams[b.champion];
+    const champLogo = champTeam ? `<img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy" style="width:32px;height:32px">` : '';
     html += `<div class="lb-row${placeClass}">
       <div class="lb-rank">${rank}</div>
+      ${champLogo ? `<div class="lb-champ">${champLogo}</div>` : ''}
       <div class="lb-info">
         <div class="lb-entry-name">${b.entryName}</div>
+        <div class="lb-member">${ENTRY_NAMES[b.entryName] || b.member}</div>
       </div>
       <div class="lb-pts">${pts}<span class="lb-pts-sub">${subPts}</span></div>
     </div>`;

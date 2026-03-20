@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T00:12:31Z",
+  "lastUpdated": "2026-03-20T00:15:33Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -533,7 +533,8 @@
       "team1Id": "c90b70e1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90b70e2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773969900000
+      "gameTime": 1773969900000,
+      "status": "LOCKED"
     },
     {
       "id": "c9099c20-0695-11f1-af21-ff98afcfd072",
@@ -543,7 +544,8 @@
       "team1Id": "c9099c21-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9099c22-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774047000000
+      "gameTime": 1774047000000,
+      "status": "LOCKED"
     },
     {
       "id": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -553,7 +555,8 @@
       "team1Id": "c908ffe1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c908ffe2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774058400000
+      "gameTime": 1774058400000,
+      "status": "LOCKED"
     },
     {
       "id": "c90f1a60-0695-11f1-af21-ff98afcfd072",
@@ -563,7 +566,8 @@
       "team1Id": "c90f1a61-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90f1a62-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774038300000
+      "gameTime": 1774038300000,
+      "status": "LOCKED"
     },
     {
       "id": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
@@ -573,7 +577,8 @@
       "team1Id": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90fb6a2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774032600000
+      "gameTime": 1774032600000,
+      "status": "LOCKED"
     },
     {
       "id": "c90d45a0-0695-11f1-af21-ff98afcfd072",
@@ -583,7 +588,8 @@
       "team1Id": "c90d45a1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90d45a2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773963300000
+      "gameTime": 1773963300000,
+      "status": "LOCKED"
     },
     {
       "id": "c90c0d20-0695-11f1-af21-ff98afcfd072",
@@ -593,7 +599,8 @@
       "team1Id": "c90c0d21-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90c0d22-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774028100000
+      "gameTime": 1774028100000,
+      "status": "LOCKED"
     },
     {
       "id": "c9068ee0-0695-11f1-af21-ff98afcfd072",
@@ -603,7 +610,8 @@
       "team1Id": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9068ee2-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773946800000
+      "gameTime": 1773946800000,
+      "status": "COMPLETE"
     },
     {
       "id": "c9088ab0-0695-11f1-af21-ff98afcfd072",
@@ -613,7 +621,8 @@
       "team1Id": "c9088ab1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9088ab2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774049100000
+      "gameTime": 1774049100000,
+      "status": "LOCKED"
     },
     {
       "id": "c90f4170-0695-11f1-af21-ff98afcfd072",
@@ -623,7 +632,8 @@
       "team1Id": "c90f4171-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90f4172-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774029000000
+      "gameTime": 1774029000000,
+      "status": "LOCKED"
     },
     {
       "id": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -633,7 +643,8 @@
       "team1Id": "c90e08f1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90e08f2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774049700000
+      "gameTime": 1774049700000,
+      "status": "LOCKED"
     },
     {
       "id": "c90ea530-0695-11f1-af21-ff98afcfd072",
@@ -643,7 +654,8 @@
       "team1Id": "c90ea531-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90ea532-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774024800000
+      "gameTime": 1774024800000,
+      "status": "LOCKED"
     },
     {
       "id": "c90c3430-0695-11f1-af21-ff98afcfd072",
@@ -653,7 +665,8 @@
       "team1Id": "c90c3431-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90c3432-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774037400000
+      "gameTime": 1774037400000,
+      "status": "LOCKED"
     },
     {
       "id": "c90cd070-0695-11f1-af21-ff98afcfd072",
@@ -663,7 +676,8 @@
       "team1Id": "c90cd071-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90cd072-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773952020000
+      "gameTime": 1773952020000,
+      "status": "COMPLETE"
     },
     {
       "id": "c907ee70-0695-11f1-af21-ff98afcfd072",
@@ -673,7 +687,8 @@
       "team1Id": "c907ee71-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c907ee72-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c907ee71-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773941400000
+      "gameTime": 1773941400000,
+      "status": "COMPLETE"
     },
     {
       "id": "c90bbf00-0695-11f1-af21-ff98afcfd072",
@@ -683,7 +698,8 @@
       "team1Id": "c90bbf01-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90bbf02-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773963780000
+      "gameTime": 1773963780000,
+      "status": "LOCKED"
     },
     {
       "id": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -693,7 +709,8 @@
       "team1Id": "c9094e01-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9094e02-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774056300000
+      "gameTime": 1774056300000,
+      "status": "LOCKED"
     },
     {
       "id": "c909ea40-0695-11f1-af21-ff98afcfd072",
@@ -703,7 +720,8 @@
       "team1Id": "c909ea41-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c909ea42-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773947700000
+      "gameTime": 1773947700000,
+      "status": "COMPLETE"
     },
     {
       "id": "c90e3000-0695-11f1-af21-ff98afcfd072",
@@ -713,7 +731,8 @@
       "team1Id": "c90e3001-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90e3002-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773963000000
+      "gameTime": 1773963000000,
+      "status": "LOCKED"
     },
     {
       "id": "c90ecc40-0695-11f1-af21-ff98afcfd072",
@@ -723,7 +742,8 @@
       "team1Id": "c90ecc41-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90ecc42-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774034100000
+      "gameTime": 1774034100000,
+      "status": "LOCKED"
     },
     {
       "id": "c90d93c0-0695-11f1-af21-ff98afcfd072",
@@ -733,7 +753,8 @@
       "team1Id": "c90d93c1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90d93c2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773972000000
+      "gameTime": 1773972000000,
+      "status": "LOCKED"
     },
     {
       "id": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -743,7 +764,8 @@
       "team1Id": "c9077941-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9077942-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774048200000
+      "gameTime": 1774048200000,
+      "status": "LOCKED"
     },
     {
       "id": "c90b49d0-0695-11f1-af21-ff98afcfd072",
@@ -753,7 +775,8 @@
       "team1Id": "c90b49d1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90b49d2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773960600000
+      "gameTime": 1773960600000,
+      "status": "LOCKED"
     },
     {
       "id": "c90be610-0695-11f1-af21-ff98afcfd072",
@@ -763,7 +786,8 @@
       "team1Id": "c90be611-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90be612-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773972600000
+      "gameTime": 1773972600000,
+      "status": "LOCKED"
     },
     {
       "id": "c90a1150-0695-11f1-af21-ff98afcfd072",
@@ -773,7 +797,8 @@
       "team1Id": "c90a1151-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90a1152-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773938400000
+      "gameTime": 1773938400000,
+      "status": "COMPLETE"
     },
     {
       "id": "c9083c90-0695-11f1-af21-ff98afcfd072",
@@ -783,7 +808,8 @@
       "team1Id": "c9083c91-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9083c92-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773952020000
+      "gameTime": 1773952020000,
+      "status": "COMPLETE"
     },
     {
       "id": "c90f8f90-0695-11f1-af21-ff98afcfd072",
@@ -793,7 +819,8 @@
       "team1Id": "c90f8f91-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90f8f92-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774023300000
+      "gameTime": 1774023300000,
+      "status": "LOCKED"
     },
     {
       "id": "c90e5710-0695-11f1-af21-ff98afcfd072",
@@ -803,7 +830,8 @@
       "team1Id": "c90e5711-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90e5712-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1773971700000
+      "gameTime": 1773971700000,
+      "status": "LOCKED"
     },
     {
       "id": "c90dbad0-0695-11f1-af21-ff98afcfd072",
@@ -813,7 +841,8 @@
       "team1Id": "c90dbad1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90dbad2-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774059000000
+      "gameTime": 1774059000000,
+      "status": "LOCKED"
     },
     {
       "id": "c90c8250-0695-11f1-af21-ff98afcfd072",
@@ -823,7 +852,8 @@
       "team1Id": "c90c8251-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c90c8252-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c90c8252-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773942600000
+      "gameTime": 1773942600000,
+      "status": "COMPLETE"
     },
     {
       "id": "c9070410-0695-11f1-af21-ff98afcfd072",
@@ -833,7 +863,8 @@
       "team1Id": "c9070411-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c9070412-0695-11f1-af21-ff98afcfd072",
       "winnerId": "c9070412-0695-11f1-af21-ff98afcfd072",
-      "gameTime": 1773937440000
+      "gameTime": 1773937440000,
+      "status": "COMPLETE"
     },
     {
       "id": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -843,7 +874,8 @@
       "team1Id": "c907a051-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c907a052-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
-      "gameTime": 1774057500000
+      "gameTime": 1774057500000,
+      "status": "LOCKED"
     }
   ],
   "brackets": [
@@ -1518,12 +1550,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9094e01-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9094e01-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c908ffe1-0695-11f1-af21-ff98afcfd072",
         "c9094e01-0695-11f1-af21-ff98afcfd072",
@@ -2544,12 +2576,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90e08f1-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90e08f1-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c90be611-0695-11f1-af21-ff98afcfd072",
@@ -3228,12 +3260,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c90be611-0695-11f1-af21-ff98afcfd072",
@@ -3570,12 +3602,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c9094e01-0695-11f1-af21-ff98afcfd072",
@@ -3912,12 +3944,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90e3001-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c90be611-0695-11f1-af21-ff98afcfd072",
@@ -4596,12 +4628,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90e08f1-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90e08f1-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c90be611-0695-11f1-af21-ff98afcfd072",
@@ -4938,12 +4970,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90c0d21-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9068ee1-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c9094e01-0695-11f1-af21-ff98afcfd072",
@@ -5622,12 +5654,12 @@
         "championship": [
           {
             "matchupId": "championship",
-            "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
+            "pickedTeamId": "c9094e01-0695-11f1-af21-ff98afcfd072",
             "result": "UNDECIDED"
           }
         ]
       },
-      "champion": "c90e3001-0695-11f1-af21-ff98afcfd072",
+      "champion": "c9094e01-0695-11f1-af21-ff98afcfd072",
       "finalFour": [
         "c9068ee1-0695-11f1-af21-ff98afcfd072",
         "c9094e01-0695-11f1-af21-ff98afcfd072",

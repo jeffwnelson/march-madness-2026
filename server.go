@@ -207,11 +207,12 @@ type espnGroup struct {
 }
 
 type espnEntry struct {
-	ID     string     `json:"id"`
-	Name   string     `json:"name"`
-	Member espnMember `json:"member"`
-	Picks  []espnPick `json:"picks"`
-	Score  espnScore  `json:"score"`
+	ID        string     `json:"id"`
+	Name      string     `json:"name"`
+	Member    espnMember `json:"member"`
+	Picks     []espnPick `json:"picks"`
+	Score     espnScore  `json:"score"`
+	FinalPick espnPick   `json:"finalPick"`
 }
 
 type espnMember struct {

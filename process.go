@@ -1,6 +1,10 @@
 package main
 
-import "time"
+import (
+	"strconv"
+	"strings"
+	"time"
+)
 
 // Processed output types
 
@@ -22,6 +26,7 @@ type Matchup struct {
 	Team2ID      string  `json:"team2Id"`
 	WinnerID     *string `json:"winnerId"`
 	GameTime     *int64  `json:"gameTime"`
+	Status       string  `json:"status"`
 }
 
 type Pick struct {
@@ -83,6 +88,15 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 		}
 	}
 
+	// Build region+seed → teamId lookup for resolving championship outcomes
+	type regionSeed struct {
+		region, seed int
+	}
+	teamByRegionSeed := make(map[regionSeed]string)
+	for id, team := range teams {
+		teamByRegionSeed[regionSeed{team.Region, team.Seed}] = id
+	}
+
 	// Build proposition ID → scoringPeriod and displayOrder maps
 	propPeriod := make(map[string]int)
 	propDisplay := make(map[string]int)
@@ -99,6 +113,7 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			Round:        1,
 			DisplayOrder: prop.DisplayOrder,
 			GameTime:     prop.Date,
+			Status:       prop.Status,
 		}
 
 		for _, outcome := range prop.PossibleOutcomes {
@@ -120,6 +135,128 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 	matchupIdx := make(map[string]int)
 	for i, m := range matchups {
 		matchupIdx[m.ID] = i
+	}
+
+	// Build championship outcomeId → R64 teamId mapping via cross-entry correlation.
+	// The finalPick uses championship-proposition outcomeIds which differ from R64 outcomeIds.
+	// For each championship outcomeId, intersect the R64 finalists across all entries that
+	// picked it — the common team is the mapping.
+	type champCandidate struct {
+		teams    map[string]bool
+		resolved string
+	}
+	champMap := make(map[string]*champCandidate)
+	for _, entry := range group.Entries {
+		if len(entry.FinalPick.OutcomesPicked) == 0 {
+			continue
+		}
+		fpOutcome := entry.FinalPick.OutcomesPicked[0].OutcomeID
+
+		// Collect R64 teams this entry has at periodReached >= 6 (championship finalists)
+		finalists := make(map[string]bool)
+		for _, pick := range entry.Picks {
+			if _, ok := propPeriod[pick.PropositionID]; !ok {
+				continue
+			}
+			if propPeriod[pick.PropositionID] == 1 && pick.PeriodReached >= 6 && len(pick.OutcomesPicked) > 0 {
+				finalists[pick.OutcomesPicked[0].OutcomeID] = true
+			}
+		}
+
+		if existing, ok := champMap[fpOutcome]; ok {
+			// Intersect
+			for tid := range existing.teams {
+				if !finalists[tid] {
+					delete(existing.teams, tid)
+				}
+			}
+		} else {
+			champMap[fpOutcome] = &champCandidate{teams: finalists}
+		}
+	}
+
+	// Iteratively resolve: find unambiguous mappings, eliminate those teams from
+	// ambiguous ones, repeat until no more progress.
+	usedTeams := make(map[string]bool)
+	for {
+		progress := false
+		for _, c := range champMap {
+			if c.resolved != "" {
+				continue
+			}
+			for tid := range c.teams {
+				if usedTeams[tid] {
+					delete(c.teams, tid)
+				}
+			}
+			if len(c.teams) == 1 {
+				for tid := range c.teams {
+					c.resolved = tid
+					usedTeams[tid] = true
+					progress = true
+				}
+			}
+		}
+		if !progress {
+			break
+		}
+	}
+
+	// Fallback for still-ambiguous outcomes: use championship outcome ID offset pattern.
+	// Championship outcomes are ordered by region (16 per region), within each region by
+	// standard bracket position: [1,16,8,9,5,12,4,13,6,11,3,14,7,10,2,15].
+	// IDs are UUIDs like "c9161f41-0695-..." — the first segment varies.
+	bracketOrder := [16]int{1, 16, 8, 9, 5, 12, 4, 13, 6, 11, 3, 14, 7, 10, 2, 15}
+
+	parseFirstSegment := func(id string) (int64, bool) {
+		seg := strings.SplitN(id, "-", 2)[0]
+		val, err := strconv.ParseInt(seg, 16, 64)
+		return val, err == nil
+	}
+
+	// Find the base value from any resolved mapping
+	var champBase int64
+	var hasBase bool
+	for fpOutcome, c := range champMap {
+		if c.resolved == "" {
+			continue
+		}
+		fpVal, ok := parseFirstSegment(fpOutcome)
+		if !ok {
+			continue
+		}
+		team := teams[c.resolved]
+		pos := 0
+		for i, s := range bracketOrder {
+			if s == team.Seed {
+				pos = i
+				break
+			}
+		}
+		champBase = fpVal - int64((team.Region-1)*16+pos)
+		hasBase = true
+		break
+	}
+
+	if hasBase {
+		for fpOutcome, c := range champMap {
+			if c.resolved != "" {
+				continue
+			}
+			fpVal, ok := parseFirstSegment(fpOutcome)
+			if !ok {
+				continue
+			}
+			offset := int(fpVal - champBase)
+			region := offset/16 + 1
+			pos := offset % 16
+			if pos >= 0 && pos < 16 && region >= 1 && region <= 4 {
+				seed := bracketOrder[pos]
+				if tid, ok := teamByRegionSeed[regionSeed{region, seed}]; ok {
+					c.resolved = tid
+				}
+			}
+		}
 	}
 
 	// Process each entry into a Bracket
@@ -184,21 +321,13 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			}
 		}
 
-		// Determine champion: right half finalist (displayOrder >= 16), fallback to left half
+		// Determine champion from finalPick mapping
 		var championID string
-		var rightFinalist, leftFinalist *Pick
-		for i, p := range bracket.Picks.FinalFour {
-			dOrder := propDisplay[p.MatchupID]
-			if dOrder >= 16 {
-				rightFinalist = &bracket.Picks.FinalFour[i]
-			} else {
-				leftFinalist = &bracket.Picks.FinalFour[i]
+		if len(entry.FinalPick.OutcomesPicked) > 0 {
+			fpOutcome := entry.FinalPick.OutcomesPicked[0].OutcomeID
+			if c, ok := champMap[fpOutcome]; ok && c.resolved != "" {
+				championID = c.resolved
 			}
-		}
-		if rightFinalist != nil {
-			championID = rightFinalist.PickedTeamID
-		} else if leftFinalist != nil {
-			championID = leftFinalist.PickedTeamID
 		}
 
 		if championID != "" {
