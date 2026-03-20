@@ -67,8 +67,12 @@ jobs:
 
       - name: Create and push tag
         run: |
-          git tag "${{ needs.version.outputs.version }}"
-          git push origin "${{ needs.version.outputs.version }}"
+          if git rev-parse "${{ needs.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "Tag ${{ needs.version.outputs.version }} already exists, skipping"
+          else
+            git tag "${{ needs.version.outputs.version }}"
+            git push origin "${{ needs.version.outputs.version }}"
+          fi
 
       - name: Install cocogitto
         run: |
@@ -79,8 +83,12 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cog changelog --at "${{ needs.version.outputs.version }}" > RELEASE_NOTES.md
-          gh release create "${{ needs.version.outputs.version }}" --notes-file RELEASE_NOTES.md
+          if gh release view "${{ needs.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "Release ${{ needs.version.outputs.version }} already exists, skipping"
+          else
+            cog changelog --at "${{ needs.version.outputs.version }}" > RELEASE_NOTES.md
+            gh release create "${{ needs.version.outputs.version }}" --notes-file RELEASE_NOTES.md
+          fi
 
   deploy:
     needs: [version, update-version-file, release]
