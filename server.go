@@ -207,12 +207,13 @@ type espnGroup struct {
 }
 
 type espnEntry struct {
-	ID        string     `json:"id"`
-	Name      string     `json:"name"`
-	Member    espnMember `json:"member"`
-	Picks     []espnPick `json:"picks"`
-	Score     espnScore  `json:"score"`
-	FinalPick espnPick   `json:"finalPick"`
+	ID               string               `json:"id"`
+	Name             string               `json:"name"`
+	Member           espnMember           `json:"member"`
+	Picks            []espnPick           `json:"picks"`
+	Score            espnScore            `json:"score"`
+	FinalPick        espnPick             `json:"finalPick"`
+	TiebreakAnswers  []espnTiebreakAnswer `json:"tiebreakAnswers"`
 }
 
 type espnMember struct {
@@ -232,12 +233,17 @@ type espnOutcomePicked struct {
 }
 
 type espnScore struct {
-	OverallScore            int  `json:"overallScore"`
-	PossiblePointsMax       int  `json:"possiblePointsMax"`
-	PossiblePointsRemaining int  `json:"possiblePointsRemaining"`
-	PointsLost              int  `json:"pointsLost"`
-	Rank                    int  `json:"rank"`
-	Eliminated              bool `json:"eliminated"`
+	OverallScore            int     `json:"overallScore"`
+	PossiblePointsMax       int     `json:"possiblePointsMax"`
+	PossiblePointsRemaining int     `json:"possiblePointsRemaining"`
+	PointsLost              int     `json:"pointsLost"`
+	Rank                    int     `json:"rank"`
+	Eliminated              bool    `json:"eliminated"`
+	Percentile              float64 `json:"percentile"`
+}
+
+type espnTiebreakAnswer struct {
+	Answer float64 `json:"answer"`
 }
 
 // Parsing functions

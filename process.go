@@ -49,6 +49,9 @@ type Bracket struct {
 	EntryName   string       `json:"entryName"`
 	Score       int          `json:"score"`
 	MaxPossible int          `json:"maxPossible"`
+	Percentile  float64      `json:"percentile"`
+	Eliminated  bool         `json:"eliminated"`
+	Tiebreaker  *float64     `json:"tiebreaker"`
 	Picks       BracketPicks `json:"picks"`
 	Champion    string       `json:"champion"`
 	FinalFour   []string     `json:"finalFour"`
@@ -262,11 +265,20 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 	// Process each entry into a Bracket
 	brackets := make([]Bracket, 0, len(group.Entries))
 	for _, entry := range group.Entries {
+		var tiebreaker *float64
+		if len(entry.TiebreakAnswers) > 0 {
+			t := entry.TiebreakAnswers[0].Answer
+			tiebreaker = &t
+		}
+
 		bracket := Bracket{
 			Member:      entry.Member.DisplayName,
 			EntryName:   entry.Name,
 			Score:       entry.Score.OverallScore,
 			MaxPossible: entry.Score.PossiblePointsMax,
+			Percentile:  entry.Score.Percentile,
+			Eliminated:  entry.Score.Eliminated,
+			Tiebreaker:  tiebreaker,
 			FinalFour:   []string{},
 			Picks: BracketPicks{
 				R64:          []Pick{},

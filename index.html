@@ -704,6 +704,93 @@ body {
   font-weight: 500;
 }
 
+/* Bracket detail modal */
+.bracket-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 400;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.bracket-modal-overlay.open { opacity: 1; pointer-events: auto; }
+.bracket-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  z-index: 401;
+  width: min(90vw, 360px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+.bracket-modal.open { opacity: 1; pointer-events: auto; transform: translate(-50%, -50%) scale(1); }
+.bracket-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  color: var(--muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bracket-modal-close:hover { color: var(--white); border-color: var(--muted); }
+.bracket-modal-champ {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.bracket-modal-champ img { width: 48px; height: 48px; }
+.bracket-modal-champ-info { flex: 1; }
+.bracket-modal-champ-name { font-weight: 700; font-size: 1rem; color: var(--white); }
+.bracket-modal-champ-sub { font-size: 0.7rem; color: var(--muted); }
+.bracket-modal-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+.bracket-modal-stat {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem;
+  text-align: center;
+}
+.bracket-modal-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.bracket-modal-stat-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.bracket-modal-eliminated {
+  text-align: center;
+  margin-top: 0.75rem;
+  padding: 0.4rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
 /* Help button & modal */
 .help-btn {
   width: 28px;
@@ -1012,6 +1099,13 @@ body {
 </div>
 <div class="tab-content" id="tab-whatif">
   <div id="whatif-content"><div class="loading-msg">Loading bracket data...</div></div>
+</div>
+
+<!-- Bracket detail modal -->
+<div class="bracket-modal-overlay" id="bracket-modal-overlay" onclick="closeBracketModal()"></div>
+<div class="bracket-modal" id="bracket-modal">
+  <button class="bracket-modal-close" onclick="closeBracketModal()">&times;</button>
+  <div id="bracket-modal-body"></div>
 </div>
 
 <!-- Slide-out drawer -->
@@ -1809,7 +1903,8 @@ function renderLeaderboard() {
     const placeClass = rankNum === 1 ? ' lb-1st' : rankNum === 2 ? ' lb-2nd' : rankNum === 3 ? ' lb-3rd' : '';
     const champTeam = DATA.teams[b.champion];
     const champLogo = champTeam ? `<img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy" style="width:32px;height:32px">` : '';
-    html += `<div class="lb-row${placeClass}">
+    const bIdx = DATA.brackets.indexOf(b);
+    html += `<div class="lb-row${placeClass}" style="cursor:pointer" onclick="openBracketModal(${bIdx})">
       <div class="lb-rank">${rank}</div>
       ${champLogo ? `<div class="lb-champ">${champLogo}</div>` : ''}
       <div class="lb-info">
@@ -1827,6 +1922,97 @@ function renderLeaderboard() {
 function setLbSort(mode) {
   lbSortMode = mode;
   renderLeaderboard();
+}
+
+function openBracketModal(idx) {
+  const b = DATA.brackets[idx];
+  if (!b) return;
+  const total = DATA.brackets.length;
+  const champTeam = DATA.teams[b.champion];
+  const name = ENTRY_NAMES[b.entryName] || b.member;
+  const pct = Math.round(b.percentile * 100);
+
+  // Final Four teams
+  // Sort Final Four by region: East(1) top-left, West(3) top-right, South(2) bottom-left, Midwest(4) bottom-right
+  const ffOrder = [1, 3, 2, 4]; // grid order: top-left, top-right, bottom-left, bottom-right
+  const ffSorted = ffOrder.map(region => {
+    const tid = b.finalFour.find(id => DATA.teams[id] && DATA.teams[id].region === region);
+    return tid ? DATA.teams[tid] : null;
+  });
+  const ffHtml = ffSorted.map(t => {
+    return t ? `<div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.75rem"><img src="${t.logo}" alt="${t.abbrev}" loading="lazy" style="width:40px;height:40px"><span style="font-size:0.9rem;font-weight:600;color:var(--text)">${t.name}</span></div>` : '';
+  }).join('');
+
+  // Pick record
+  let wins = 0, losses = 0;
+  b.picks.r64.forEach(p => {
+    if (p.result === 'CORRECT') wins++;
+    else if (p.result === 'INCORRECT') losses++;
+  });
+
+  let html = `<div style="font-weight:700;font-size:1.1rem;color:var(--white)">${b.entryName}</div>`;
+  html += `<div style="font-size:0.7rem;color:var(--muted);margin-bottom:1rem">${name}</div>`;
+
+  // Champion
+  if (champTeam) {
+    html += `<div class="bracket-modal-champ">
+      <img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy">
+      <div class="bracket-modal-champ-info">
+        <div class="bracket-modal-champ-name">${champTeam.name}</div>
+        <div class="bracket-modal-champ-sub">${champTeam.seed} seed · ${champTeam.record} · Champion Pick</div>
+      </div>
+    </div>`;
+  }
+
+  // Stats grid
+  html += '<div class="bracket-modal-stats">';
+  html += `<div class="bracket-modal-stat">
+    <div class="bracket-modal-stat-value">${b.score}</div>
+    <div class="bracket-modal-stat-label">Points</div>
+  </div>`;
+  html += `<div class="bracket-modal-stat">
+    <div class="bracket-modal-stat-value">${b.maxPossible}</div>
+    <div class="bracket-modal-stat-label">Max Possible</div>
+  </div>`;
+  html += `<div class="bracket-modal-stat">
+    <div class="bracket-modal-stat-value">Top ${pct > 0 ? (100 - pct) + '%' : '—'}</div>
+    <div class="bracket-modal-stat-label">National</div>
+  </div>`;
+  html += `<div class="bracket-modal-stat">
+    <div class="bracket-modal-stat-value">${wins}-${losses}</div>
+    <div class="bracket-modal-stat-label">R64 Record</div>
+  </div>`;
+  if (b.tiebreaker !== null && b.tiebreaker !== undefined) {
+    html += `<div class="bracket-modal-stat">
+      <div class="bracket-modal-stat-value">${Math.round(b.tiebreaker)}</div>
+      <div class="bracket-modal-stat-label">Tiebreaker</div>
+    </div>`;
+  }
+  html += '</div>';
+
+  // Final Four
+  if (ffHtml) {
+    html += `<div style="margin-top:0.75rem">
+      <div style="font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.35rem;text-align:center">Final Four</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem;justify-items:center">${ffHtml}</div>
+    </div>`;
+  }
+
+  // Eliminated badge
+  if (b.eliminated) {
+    html += `<div class="bracket-modal-eliminated" style="background:rgba(239,68,68,0.1);color:var(--danger)">Eliminated</div>`;
+  }
+
+  document.getElementById('bracket-modal-body').innerHTML = html;
+  document.getElementById('bracket-modal-overlay').classList.add('open');
+  document.getElementById('bracket-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeBracketModal() {
+  document.getElementById('bracket-modal-overlay').classList.remove('open');
+  document.getElementById('bracket-modal').classList.remove('open');
+  document.body.style.overflow = '';
 }
 
 // ============================================================
