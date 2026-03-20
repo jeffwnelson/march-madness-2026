@@ -683,8 +683,9 @@ body {
 .lb-info { flex: 1; }
 .lb-entry-name {
   font-weight: 600;
-  font-size: 0.8rem;
+  font-size: clamp(0.6rem, 2.5vw, 0.8rem);
   color: var(--white);
+  white-space: nowrap;
 }
 .lb-member {
   font-size: 0.7rem;
