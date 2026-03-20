@@ -92,7 +92,7 @@ jobs:
 
   deploy:
     needs: [version, update-version-file, release]
-    if: always() && !cancelled()
+    if: always() && !cancelled() && needs.version.result == 'success'
     runs-on: ubuntu-latest
     concurrency:
       group: pages-deploy
