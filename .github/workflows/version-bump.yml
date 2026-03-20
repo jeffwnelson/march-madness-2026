@@ -81,3 +81,35 @@ jobs:
         run: |
           cog changelog --at "${{ needs.version.outputs.version }}" > RELEASE_NOTES.md
           gh release create "${{ needs.version.outputs.version }}" --notes-file RELEASE_NOTES.md
+
+  deploy:
+    needs: [version, update-version-file, release]
+    if: always() && !cancelled()
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: true
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Pull latest (includes VERSION update)
+        run: git pull origin master
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
