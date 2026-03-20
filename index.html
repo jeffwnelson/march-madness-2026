@@ -881,6 +881,18 @@ body {
   line-height: 1.5;
 }
 .help-section p strong { color: var(--text); }
+.help-status-well {
+  margin-top: 1rem;
+  padding: 0.7rem 1rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.help-status-well span { color: var(--muted); }
+.help-status-well strong { color: var(--text); }
 
 /* Description wells — toggleable */
 .desc-toggle {
@@ -1076,7 +1088,6 @@ body {
     <h3>How it works</h3>
     <button class="drawer-close" onclick="toggleHelp()">&times;</button>
   </div>
-  <div style="padding:0.4rem 1.2rem 0;font-size:0.65rem;color:var(--muted)">Version <span id="app-version">...</span></div>
   <div class="help-modal-body">
     <div class="help-section">
       <div class="help-section-title">Leaderboard</div>
@@ -1086,6 +1097,7 @@ body {
       <div class="help-section-title">Bracket Picks</div>
       <p>See how our group of 19 picked each game. The numbers (e.g. "14/19") show how many brackets picked that team to win in each round. Tap any matchup to see exactly who picked each team. Decided games show the winner in green.</p>
     </div>
+    <div class="help-status-well" id="help-status-well"></div>
   </div>
 </div>
 
@@ -1151,6 +1163,7 @@ const ENTRY_NAMES = {
   'The Auditor 📈📉📊🧮': 'Andy',
 };
 let whatIfState = null;
+let APP_VERSION = '';
 
 // ============================================================
 // Tab switching
@@ -1171,8 +1184,9 @@ async function loadData() {
   DATA = await res.json();
   document.getElementById('group-name').textContent = DATA.groupName || '';
   fetch('VERSION?' + Date.now()).then(r => r.text()).then(v => {
-    document.getElementById('app-version').textContent = v.trim();
-  }).catch(() => {});
+    APP_VERSION = v.trim();
+    renderDataStatus();
+  }).catch(() => { renderDataStatus(); });
   renderConsensus();
   renderLeaderboard();
   initWhatIf();
@@ -1205,6 +1219,31 @@ async function refreshData() {
     btn.classList.remove('loading');
     btn.disabled = false;
   }
+}
+
+// ============================================================
+// Help: Data Status
+// ============================================================
+function renderDataStatus() {
+  const el = document.getElementById('help-status-well');
+  const updated = DATA && DATA.lastUpdated ? new Date(DATA.lastUpdated) : null;
+
+  let timeAgo = '';
+  if (updated) {
+    const mins = Math.floor((Date.now() - updated.getTime()) / 60000);
+    if (mins < 1) timeAgo = 'just now';
+    else if (mins < 60) timeAgo = mins + 'm ago';
+    else if (mins < 1440) timeAgo = Math.floor(mins / 60) + 'h ' + (mins % 60) + 'm ago';
+    else timeAgo = Math.floor(mins / 1440) + 'd ago';
+  }
+
+  const localTime = updated
+    ? updated.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' })
+    : 'Unknown';
+
+  el.innerHTML =
+    '<strong>Version:</strong> <span>' + (APP_VERSION || '...') + '</span><br>' +
+    '<strong>Last Updated:</strong> <span>' + localTime + '</span> (' + (timeAgo || '...') + ')';
 }
 
 // ============================================================
