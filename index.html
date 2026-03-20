@@ -1652,23 +1652,27 @@ function selectRound(roundKey, updateHash) {
     });
 
     const laterRounds = [
-      { key: 'r32', slotSize: 2, prevKey: 'r64', regionSlots: [[0,3,'East'],[4,7,'South'],[8,11,'West'],[12,15,'Midwest']] },
-      { key: 'sweet16', slotSize: 4, prevKey: 'r32', regionSlots: [[0,1,'East'],[2,3,'South'],[4,5,'West'],[6,7,'Midwest']] },
-      { key: 'elite8', slotSize: 8, prevKey: 'sweet16', regionSlots: [[0,0,'East'],[1,1,'South'],[2,2,'West'],[3,3,'Midwest']] },
-      { key: 'finalFour', slotSize: 16, prevKey: 'elite8', regionSlots: [[0,0,'Semifinal 1 (East/South)'],[1,1,'Semifinal 2 (West/Midwest)']] },
-      { key: 'championship', slotSize: 32, prevKey: 'finalFour', regionSlots: [[0,0,'Championship']] },
+      { key: 'r32', slotSize: 2, prevKey: 'r64', resultKey: 'sweet16', regionSlots: [[0,3,'East'],[4,7,'South'],[8,11,'West'],[12,15,'Midwest']] },
+      { key: 'sweet16', slotSize: 4, prevKey: 'r32', resultKey: 'elite8', regionSlots: [[0,1,'East'],[2,3,'South'],[4,5,'West'],[6,7,'Midwest']] },
+      { key: 'elite8', slotSize: 8, prevKey: 'sweet16', resultKey: 'finalFour', regionSlots: [[0,0,'East'],[1,1,'South'],[2,2,'West'],[3,3,'Midwest']] },
+      { key: 'finalFour', slotSize: 16, prevKey: 'elite8', resultKey: 'championship', regionSlots: [[0,0,'Semifinal 1 (East/South)'],[1,1,'Semifinal 2 (West/Midwest)']] },
+      { key: 'championship', slotSize: 32, prevKey: 'finalFour', resultKey: null, regionSlots: [[0,0,'Championship']] },
     ];
 
-    // Determine winners for each round from pick results (slot index → winnerId)
+    // Determine winners for each round from pick results (slot index → winnerId).
+    // ESPN pick results indicate whether a team REACHED that round, not whether they
+    // WON in that round. So to find who won round N, we check round N+1's picks:
+    // a CORRECT pick in S16 means the team reached S16, i.e. they won R32.
     const allWinners = { r64: r64Winners };
     const ref = DATA.brackets.length > 0 ? DATA.brackets[0] : null;
 
     for (const round of laterRounds) {
       const winners = {};
       allWinners[round.key] = winners;
-      if (!ref) continue;
+      if (!ref || !round.resultKey) continue;
 
-      const picks = ref.picks[round.key] || [];
+      // Use the NEXT round's picks to determine this round's winners
+      const picks = ref.picks[round.resultKey] || [];
       const numSlots = 32 / round.slotSize;
 
       for (let s = 0; s < numSlots; s++) {
@@ -1678,8 +1682,7 @@ function selectRound(roundKey, updateHash) {
           if (m.displayOrder >= minDO && m.displayOrder < minDO + round.slotSize) r64IdsInSlot.add(m.id);
         });
 
-        const rk = round.key === 'championship' ? 'championship' : round.key;
-        const pick = picks.find(p => rk === 'championship' || r64IdsInSlot.has(p.matchupId));
+        const pick = picks.find(p => round.resultKey === 'championship' || r64IdsInSlot.has(p.matchupId));
         if (!pick || pick.result === 'UNDECIDED') continue;
 
         if (pick.result === 'CORRECT') {
