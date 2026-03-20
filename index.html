@@ -190,7 +190,7 @@ body {
   border-radius: 6px;
   overflow: hidden;
   margin: 2px 4px;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   position: relative;
   flex-shrink: 0;
 }
@@ -209,13 +209,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 8px;
+  padding: 0 10px;
   border-left: 1px solid var(--border);
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--muted);
   white-space: nowrap;
-  min-width: 50px;
+  min-width: 55px;
   text-align: center;
   line-height: 1.3;
 }
@@ -223,9 +223,9 @@ body {
 .bk-team {
   display: flex;
   align-items: center;
-  gap: 3px;
-  padding: 3px 5px;
-  min-height: 24px;
+  gap: 4px;
+  padding: 4px 6px;
+  min-height: 28px;
 }
 .bk-team + .bk-team {
   border-top: 1px solid var(--border);
@@ -236,17 +236,17 @@ body {
 .bk-team.winner .bk-team-name { color: var(--success); font-weight: 700; }
 .bk-team.loser { opacity: 0.45; }
 .bk-team-logo {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   border-radius: 2px;
   flex-shrink: 0;
 }
 .bk-team-seed {
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   color: var(--muted);
   font-weight: 700;
-  min-width: 12px;
+  min-width: 14px;
   text-align: center;
 }
 .bk-team-name {
@@ -258,7 +258,7 @@ body {
 }
 .bk-team-count {
   font-family: var(--font-display);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--muted);
   white-space: nowrap;
@@ -751,11 +751,12 @@ body {
 .bracket-modal-champ {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
 }
 .bracket-modal-champ img { width: 48px; height: 48px; }
-.bracket-modal-champ-info { flex: 1; }
+.bracket-modal-champ-info { }
 .bracket-modal-champ-name { font-weight: 700; font-size: 1rem; color: var(--white); }
 .bracket-modal-champ-sub { font-size: 0.7rem; color: var(--muted); }
 .bracket-modal-stats {
@@ -785,8 +786,10 @@ body {
 .bracket-modal-eliminated {
   text-align: center;
   margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
   padding: 0.4rem;
   border-radius: 6px;
+  border: 2px solid rgba(220, 38, 38, 0.6);
   font-size: 0.75rem;
   font-weight: 600;
 }
@@ -1882,10 +1885,35 @@ function renderLeaderboard() {
   let html = '<div class="lb-pills">';
   html += `<button class="lb-pill${lbSortMode === 'current' ? ' active' : ''}" onclick="setLbSort('current')">Current Points</button>`;
   html += `<button class="lb-pill${lbSortMode === 'possible' ? ' active' : ''}" onclick="setLbSort('possible')">Possible Points</button>`;
+  html += `<button class="lb-pill${lbSortMode === 'correct' ? ' active' : ''}" onclick="setLbSort('correct')">Most Correct</button>`;
   html += '</div>';
+
+  function countPicks(bracket) {
+    const rounds = ['r64', 'r32', 's16', 'e8', 'ff', 'championship'];
+    let correct = 0, total = 0;
+    rounds.forEach(r => {
+      (bracket.picks[r] || []).forEach(p => {
+        if (p.result === 'CORRECT') { correct++; total++; }
+        else if (p.result === 'INCORRECT') { total++; }
+      });
+    });
+    return { correct, total };
+  }
+
+  const eliminatedTeams = new Set();
+  DATA.matchups.forEach(m => {
+    if (m.winnerId) {
+      if (m.team1Id && m.team1Id !== m.winnerId) eliminatedTeams.add(m.team1Id);
+      if (m.team2Id && m.team2Id !== m.winnerId) eliminatedTeams.add(m.team2Id);
+    }
+  });
 
   const sorted = [...DATA.brackets].sort((a, b) => {
     if (lbSortMode === 'current') return b.score - a.score || b.maxPossible - a.maxPossible;
+    if (lbSortMode === 'correct') {
+      const ac = countPicks(a), bc = countPicks(b);
+      return bc.correct - ac.correct || b.score - a.score;
+    }
     return b.maxPossible - a.maxPossible || b.score - a.score;
   });
 
@@ -1897,15 +1925,18 @@ function renderLeaderboard() {
   }
 
   sorted.forEach((b, i) => {
-    const pts = lbSortMode === 'current' ? b.score : b.maxPossible;
-    const subPts = lbSortMode === 'current' ? `/${b.maxPossible}` : `/${b.score}`;
-    // Handle ties — same rank if same points
-    const rank = (i === 0 || pts !== (lbSortMode === 'current' ? sorted[i-1].score : sorted[i-1].maxPossible))
-      ? ordinal(i + 1) : ordinal(sorted.findIndex(x => (lbSortMode === 'current' ? x.score : x.maxPossible) === pts) + 1);
-    const rankNum = sorted.findIndex(x => (lbSortMode === 'current' ? x.score : x.maxPossible) === pts) + 1;
+    const picks = countPicks(b);
+    const pts = lbSortMode === 'current' ? b.score : lbSortMode === 'possible' ? b.maxPossible : picks.correct;
+    const subPts = lbSortMode === 'current' ? `/${b.maxPossible}` : lbSortMode === 'possible' ? `/${b.score}` : `/${picks.total}`;
+    // Handle ties — same rank if same primary value
+    const getPrimary = x => lbSortMode === 'current' ? x.score : lbSortMode === 'possible' ? x.maxPossible : countPicks(x).correct;
+    const rank = (i === 0 || pts !== getPrimary(sorted[i-1]))
+      ? ordinal(i + 1) : ordinal(sorted.findIndex(x => getPrimary(x) === pts) + 1);
+    const rankNum = sorted.findIndex(x => getPrimary(x) === pts) + 1;
     const placeClass = rankNum === 1 ? ' lb-1st' : rankNum === 2 ? ' lb-2nd' : rankNum === 3 ? ' lb-3rd' : '';
     const champTeam = DATA.teams[b.champion];
-    const champLogo = champTeam ? `<img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy" style="width:32px;height:32px">` : '';
+    const champOut = eliminatedTeams.has(b.champion);
+    const champLogo = champTeam ? `<img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy" style="width:32px;height:32px;${champOut ? 'filter:grayscale(100%);opacity:0.5;' : ''}">` : '';
     const bIdx = DATA.brackets.indexOf(b);
     html += `<div class="lb-row${placeClass}" style="cursor:pointer" onclick="openBracketModal(${bIdx})">
       <div class="lb-rank">${rank}</div>
@@ -1938,33 +1969,73 @@ function openBracketModal(idx) {
   // Final Four teams
   // Sort Final Four by region: East(1) top-left, West(3) top-right, South(2) bottom-left, Midwest(4) bottom-right
   const ffOrder = [1, 3, 2, 4]; // grid order: top-left, top-right, bottom-left, bottom-right
+  // Build set of teams eliminated from the tournament
+  const eliminatedTeams = new Set();
+  DATA.matchups.forEach(m => {
+    if (m.winnerId) {
+      if (m.team1Id && m.team1Id !== m.winnerId) eliminatedTeams.add(m.team1Id);
+      if (m.team2Id && m.team2Id !== m.winnerId) eliminatedTeams.add(m.team2Id);
+    }
+  });
+
   const ffSorted = ffOrder.map(region => {
     const tid = b.finalFour.find(id => DATA.teams[id] && DATA.teams[id].region === region);
-    return tid ? DATA.teams[tid] : null;
+    return tid ? { ...DATA.teams[tid], id: tid } : null;
   });
+  // Teams that actually made the Final Four (won E8 = appear in round 5 matchups, or won a round 4 matchup)
+  const actualFF = new Set();
+  DATA.matchups.forEach(m => {
+    if (m.round === 4 && m.winnerId) actualFF.add(m.winnerId);
+    if (m.round === 5) { if (m.team1Id) actualFF.add(m.team1Id); if (m.team2Id) actualFF.add(m.team2Id); }
+  });
+
   const ffHtml = ffSorted.map(t => {
-    return t ? `<div style="display:flex;align-items:center;justify-content:center;gap:0.5rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:0.7rem 0.75rem"><img src="${t.logo}" alt="${t.abbrev}" loading="lazy" style="width:40px;height:40px"><span style="font-size:0.9rem;font-weight:600;color:var(--text)">${t.name}</span></div>` : '';
+    if (!t) return '';
+    const isOut = eliminatedTeams.has(t.id);
+    const madeIt = actualFF.has(t.id);
+    const borderStyle = isOut ? '2px solid rgba(220,38,38,0.6)' : madeIt ? '2px solid rgba(34,197,94,0.6)' : '1px solid var(--border)';
+    return `<div style="display:flex;align-items:center;gap:0.5rem;background:var(--bg2);border:${borderStyle};border-radius:10px;padding:0.7rem 0.75rem;width:100%;box-sizing:border-box;position:relative">
+      <img src="${t.logo}" alt="${t.abbrev}" loading="lazy" style="width:40px;height:40px;flex-shrink:0;${isOut ? 'filter:grayscale(100%);opacity:0.5;' : ''}">
+      <div style="${isOut ? 'opacity:0.5;' : ''}">
+        <div style="font-size:0.9rem;font-weight:600;color:var(--text)">${t.name}</div>
+        <div style="font-size:0.6rem;color:var(--muted)">${REGION_NAMES[t.region]}</div>
+      </div>
+      ${isOut ? '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:2.5rem;opacity:0.25;pointer-events:none">&#10060;</div>' : ''}
+    </div>`;
   }).join('');
 
-  // Pick record
+  // Pick record (all rounds)
   let wins = 0, losses = 0;
-  b.picks.r64.forEach(p => {
-    if (p.result === 'CORRECT') wins++;
-    else if (p.result === 'INCORRECT') losses++;
+  ['r64', 'r32', 's16', 'e8', 'ff', 'championship'].forEach(r => {
+    (b.picks[r] || []).forEach(p => {
+      if (p.result === 'CORRECT') wins++;
+      else if (p.result === 'INCORRECT') losses++;
+    });
   });
+  const pickPct = (wins + losses) > 0 ? Math.round(wins / (wins + losses) * 100) : 0;
 
   let html = `<div style="font-weight:700;font-size:1.1rem;color:var(--white)">${b.entryName}</div>`;
   html += `<div style="font-size:0.7rem;color:var(--muted);margin-bottom:1rem">${name}</div>`;
 
   // Champion
+  const champEliminated = eliminatedTeams.has(b.champion);
   if (champTeam) {
     html += `<div class="bracket-modal-champ">
-      <img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy">
+      <img src="${champTeam.logo}" alt="${champTeam.abbrev}" loading="lazy" style="${champEliminated ? 'filter:grayscale(100%);opacity:0.5;' : ''}">
       <div class="bracket-modal-champ-info">
         <div class="bracket-modal-champ-name">${champTeam.name}</div>
         <div class="bracket-modal-champ-sub">${champTeam.seed} seed · ${champTeam.record} · Champion Pick</div>
       </div>
     </div>`;
+  }
+
+  // Bracket status badge
+  if (b.eliminated) {
+    html += `<div class="bracket-modal-eliminated" style="background:rgba(239,68,68,0.1);color:var(--danger)">Eliminated</div>`;
+  } else if (losses > 0) {
+    html += `<div class="bracket-modal-eliminated" style="background:rgba(239,68,68,0.1);color:var(--danger)">Perfect Bracket Busted</div>`;
+  } else if (wins > 0) {
+    html += `<div class="bracket-modal-eliminated" style="background:rgba(34,197,94,0.1);color:#22c55e">Perfect Bracket</div>`;
   }
 
   // Stats grid
@@ -1982,8 +2053,12 @@ function openBracketModal(idx) {
     <div class="bracket-modal-stat-label">National</div>
   </div>`;
   html += `<div class="bracket-modal-stat">
-    <div class="bracket-modal-stat-value">${wins}-${losses}</div>
-    <div class="bracket-modal-stat-label">R64 Record</div>
+    <div class="bracket-modal-stat-value">${wins}/${wins + losses}</div>
+    <div class="bracket-modal-stat-label">Pick Record</div>
+  </div>`;
+  html += `<div class="bracket-modal-stat">
+    <div class="bracket-modal-stat-value">${pickPct}%</div>
+    <div class="bracket-modal-stat-label">Pick Accuracy</div>
   </div>`;
   if (b.tiebreaker !== null && b.tiebreaker !== undefined) {
     html += `<div class="bracket-modal-stat">
@@ -1997,13 +2072,8 @@ function openBracketModal(idx) {
   if (ffHtml) {
     html += `<div style="margin-top:0.75rem">
       <div style="font-size:0.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.35rem;text-align:center">Final Four</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem;justify-items:center">${ffHtml}</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.35rem">${ffHtml}</div>
     </div>`;
-  }
-
-  // Eliminated badge
-  if (b.eliminated) {
-    html += `<div class="bracket-modal-eliminated" style="background:rgba(239,68,68,0.1);color:var(--danger)">Eliminated</div>`;
   }
 
   document.getElementById('bracket-modal-body').innerHTML = html;
