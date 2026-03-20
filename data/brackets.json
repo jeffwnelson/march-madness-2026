@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T20:14:11Z",
+  "lastUpdated": "2026-03-20T20:30:33Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -884,7 +884,7 @@
       "entryName": "Jack Jack Attack 💥",
       "score": 180,
       "maxPossible": 1860,
-      "percentile": 0.99722168,
+      "percentile": 0.99735557,
       "eliminated": false,
       "tiebreaker": 110,
       "picks": {
@@ -1229,7 +1229,7 @@
       "entryName": "Luke's Hoops",
       "score": 170,
       "maxPossible": 1870,
-      "percentile": 0.97968071,
+      "percentile": 0.9804698,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -1574,7 +1574,7 @@
       "entryName": "Cornhusker Hustlers 🌽🏀",
       "score": 160,
       "maxPossible": 1880,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": 158,
       "picks": {
@@ -1919,7 +1919,7 @@
       "entryName": "John’s Final Fourcast",
       "score": 160,
       "maxPossible": 1880,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -2264,7 +2264,7 @@
       "entryName": "Nautical Nate ⚓",
       "score": 160,
       "maxPossible": 1860,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": 138,
       "picks": {
@@ -2609,7 +2609,7 @@
       "entryName": "Vasquez fam intern👩🏿‍💻",
       "score": 160,
       "maxPossible": 1860,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": 105,
       "picks": {
@@ -2954,7 +2954,7 @@
       "entryName": "Binkies \u0026 Buckets",
       "score": 160,
       "maxPossible": 1860,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": 141,
       "picks": {
@@ -3299,7 +3299,7 @@
       "entryName": "March sadness ft Tressa ",
       "score": 160,
       "maxPossible": 1860,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": 107,
       "picks": {
@@ -3644,7 +3644,7 @@
       "entryName": "Delka’s Dunk Dynasty",
       "score": 160,
       "maxPossible": 1860,
-      "percentile": 0.91163861,
+      "percentile": 0.91426535,
       "eliminated": false,
       "tiebreaker": 138,
       "picks": {
@@ -3989,7 +3989,7 @@
       "entryName": "Jeff's Worst Picks Ever",
       "score": 150,
       "maxPossible": 1870,
-      "percentile": 0.75166181,
+      "percentile": 0.75730821,
       "eliminated": false,
       "tiebreaker": 110,
       "picks": {
@@ -4334,7 +4334,7 @@
       "entryName": "9th Time's The Charm",
       "score": 150,
       "maxPossible": 1850,
-      "percentile": 0.75166181,
+      "percentile": 0.75730821,
       "eliminated": false,
       "tiebreaker": 150,
       "picks": {
@@ -4679,7 +4679,7 @@
       "entryName": "Swishers Sweet",
       "score": 150,
       "maxPossible": 1850,
-      "percentile": 0.75166181,
+      "percentile": 0.75730821,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -5024,7 +5024,7 @@
       "entryName": "Frat Rat 🏓 🍻",
       "score": 140,
       "maxPossible": 1860,
-      "percentile": 0.5123176,
+      "percentile": 0.52071276,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -5369,7 +5369,7 @@
       "entryName": "Blair N Nelson's Picks 1",
       "score": 140,
       "maxPossible": 1820,
-      "percentile": 0.5123176,
+      "percentile": 0.52071276,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -5714,7 +5714,7 @@
       "entryName": "The Auditor 📈📉📊🧮",
       "score": 140,
       "maxPossible": 1600,
-      "percentile": 0.5123176,
+      "percentile": 0.52071276,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -6059,7 +6059,7 @@
       "entryName": "Eli's Grandpa",
       "score": 130,
       "maxPossible": 1850,
-      "percentile": 0.26708339,
+      "percentile": 0.27634659,
       "eliminated": false,
       "tiebreaker": 160,
       "picks": {
@@ -6404,7 +6404,7 @@
       "entryName": "M\u0026M's",
       "score": 130,
       "maxPossible": 1810,
-      "percentile": 0.26708339,
+      "percentile": 0.27634659,
       "eliminated": false,
       "tiebreaker": 101,
       "picks": {
@@ -6749,7 +6749,7 @@
       "entryName": "Just Rae-ndom ",
       "score": 70,
       "maxPossible": 1570,
-      "percentile": 0.04843251,
+      "percentile": 0.04628179,
       "eliminated": false,
       "tiebreaker": 123,
       "picks": {
@@ -7094,7 +7094,7 @@
       "entryName": "Lenny 🐶🐾",
       "score": 70,
       "maxPossible": 890,
-      "percentile": 0.04843251,
+      "percentile": 0.04628179,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
