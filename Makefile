@@ -68,8 +68,11 @@ load-real: ## Restore real ESPN data
 	go run ./backend --fetch-only
 	@echo "Restored real ESPN data"
 
-test: ## Run all tests
+test: ## Run all Go tests
 	go test ./backend/... -v
+
+test-e2e: ## Run Playwright smoke tests
+	cd tests && npx playwright test
 
 help: ## Show this help
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'

@@ -32,6 +32,15 @@ Thumbs.db
 .env
 .env.*
 
+# Node
+node_modules/
+
+# Playwright
+.playwright-mcp/
+test-results/
+tests/test-results/
+tests/playwright-report/
+
 # Backup files
 *.bak
 *.orig
