@@ -5,7 +5,8 @@ import { resolve } from 'path';
 
 const ROOT = resolve(__dirname, '..');
 const SERVER_BIN = resolve(ROOT, '.server');
-const DATA_PATH = resolve(ROOT, 'data/brackets.json');
+const LEADERBOARD_PATH = resolve(ROOT, 'data/leaderboard.json');
+const BRACKET_PICKS_PATH = resolve(ROOT, 'data/bracket-picks.json');
 const SCENARIOS_DIR = resolve(ROOT, 'backend/testdata/scenarios');
 
 // Round keys match the data-round attributes in the UI
@@ -44,8 +45,10 @@ for (const scenario of scenarios) {
 
     test.beforeAll(async () => {
       // Copy scenario data into place
-      const src = resolve(SCENARIOS_DIR, scenario.dir, 'brackets.json');
-      copyFileSync(src, DATA_PATH);
+      const srcLB = resolve(SCENARIOS_DIR, scenario.dir, 'leaderboard.json');
+      const srcBP = resolve(SCENARIOS_DIR, scenario.dir, 'bracket-picks.json');
+      copyFileSync(srcLB, LEADERBOARD_PATH);
+      copyFileSync(srcBP, BRACKET_PICKS_PATH);
 
       // Start the server
       server = spawn(SERVER_BIN, [], { cwd: ROOT, stdio: 'pipe' });

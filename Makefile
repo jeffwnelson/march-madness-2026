@@ -41,27 +41,33 @@ generate-scenarios: ## Generate all scenario files
 	cd backend && GENERATE_SCENARIOS=1 go test -run TestGenerateScenarioFiles -v
 
 load-r64: ## Load R64-complete scenario
-	cp backend/testdata/scenarios/R64_1/brackets.json data/brackets.json
+	cp backend/testdata/scenarios/R64_1/leaderboard.json data/leaderboard.json
+	cp backend/testdata/scenarios/R64_1/bracket-picks.json data/bracket-picks.json
 	@echo "Loaded R64_1 scenario"
 
 load-r32: ## Load R32-complete scenario
-	cp backend/testdata/scenarios/R32_1/brackets.json data/brackets.json
+	cp backend/testdata/scenarios/R32_1/leaderboard.json data/leaderboard.json
+	cp backend/testdata/scenarios/R32_1/bracket-picks.json data/bracket-picks.json
 	@echo "Loaded R32_1 scenario"
 
 load-s16: ## Load S16-complete scenario
-	cp backend/testdata/scenarios/S16_1/brackets.json data/brackets.json
+	cp backend/testdata/scenarios/S16_1/leaderboard.json data/leaderboard.json
+	cp backend/testdata/scenarios/S16_1/bracket-picks.json data/bracket-picks.json
 	@echo "Loaded S16_1 scenario"
 
 load-e8: ## Load E8-complete scenario
-	cp backend/testdata/scenarios/E8_1/brackets.json data/brackets.json
+	cp backend/testdata/scenarios/E8_1/leaderboard.json data/leaderboard.json
+	cp backend/testdata/scenarios/E8_1/bracket-picks.json data/bracket-picks.json
 	@echo "Loaded E8_1 scenario"
 
 load-ff: ## Load FF-complete scenario
-	cp backend/testdata/scenarios/FF_1/brackets.json data/brackets.json
+	cp backend/testdata/scenarios/FF_1/leaderboard.json data/leaderboard.json
+	cp backend/testdata/scenarios/FF_1/bracket-picks.json data/bracket-picks.json
 	@echo "Loaded FF_1 scenario"
 
 load-champ: ## Load Championship-complete scenario
-	cp backend/testdata/scenarios/Champ_1/brackets.json data/brackets.json
+	cp backend/testdata/scenarios/Champ_1/leaderboard.json data/leaderboard.json
+	cp backend/testdata/scenarios/Champ_1/bracket-picks.json data/bracket-picks.json
 	@echo "Loaded Champ_1 scenario"
 
 load-real: ## Restore real ESPN data

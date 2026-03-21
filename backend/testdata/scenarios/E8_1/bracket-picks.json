@@ -1,0 +1,2984 @@
+{
+  "lastUpdated": "2026-03-21T21:18:08Z",
+  "teams": {
+    "r1-s1": {
+      "name": "Duke",
+      "abbrev": "DUKE",
+      "seed": 1,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/150.png"
+    },
+    "r1-s10": {
+      "name": "UCF",
+      "abbrev": "UCF",
+      "seed": 10,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2116.png"
+    },
+    "r1-s11": {
+      "name": "South Florida",
+      "abbrev": "USF",
+      "seed": 11,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/58.png"
+    },
+    "r1-s12": {
+      "name": "Northern Iowa",
+      "abbrev": "UNI",
+      "seed": 12,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2460.png"
+    },
+    "r1-s13": {
+      "name": "CA Baptist",
+      "abbrev": "CBU",
+      "seed": 13,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2856.png"
+    },
+    "r1-s14": {
+      "name": "N Dakota St",
+      "abbrev": "NDSU",
+      "seed": 14,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2449.png"
+    },
+    "r1-s15": {
+      "name": "Furman",
+      "abbrev": "FUR",
+      "seed": 15,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/231.png"
+    },
+    "r1-s16": {
+      "name": "Siena",
+      "abbrev": "SIE",
+      "seed": 16,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2561.png"
+    },
+    "r1-s2": {
+      "name": "UConn",
+      "abbrev": "CONN",
+      "seed": 2,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png"
+    },
+    "r1-s3": {
+      "name": "Michigan St",
+      "abbrev": "MSU",
+      "seed": 3,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/127.png"
+    },
+    "r1-s4": {
+      "name": "Kansas",
+      "abbrev": "KU",
+      "seed": 4,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png"
+    },
+    "r1-s5": {
+      "name": "St John's",
+      "abbrev": "SJU",
+      "seed": 5,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2599.png"
+    },
+    "r1-s6": {
+      "name": "Louisville",
+      "abbrev": "LOU",
+      "seed": 6,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png"
+    },
+    "r1-s7": {
+      "name": "UCLA",
+      "abbrev": "UCLA",
+      "seed": 7,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png"
+    },
+    "r1-s8": {
+      "name": "Ohio State",
+      "abbrev": "OSU",
+      "seed": 8,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/194.png"
+    },
+    "r1-s9": {
+      "name": "TCU",
+      "abbrev": "TCU",
+      "seed": 9,
+      "region": 1,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png"
+    },
+    "r2-s1": {
+      "name": "Florida",
+      "abbrev": "FLA",
+      "seed": 1,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png"
+    },
+    "r2-s10": {
+      "name": "Texas A\u0026M",
+      "abbrev": "TA\u0026M",
+      "seed": 10,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png"
+    },
+    "r2-s11": {
+      "name": "VCU",
+      "abbrev": "VCU",
+      "seed": 11,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png"
+    },
+    "r2-s12": {
+      "name": "McNeese",
+      "abbrev": "MCN",
+      "seed": 12,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2377.png"
+    },
+    "r2-s13": {
+      "name": "Troy",
+      "abbrev": "TROY",
+      "seed": 13,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2653.png"
+    },
+    "r2-s14": {
+      "name": "Penn",
+      "abbrev": "PENN",
+      "seed": 14,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/219.png"
+    },
+    "r2-s15": {
+      "name": "Idaho",
+      "abbrev": "IDHO",
+      "seed": 15,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/70.png"
+    },
+    "r2-s16": {
+      "name": "Prairie View",
+      "abbrev": "PV",
+      "seed": 16,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2504.png"
+    },
+    "r2-s2": {
+      "name": "Houston",
+      "abbrev": "HOU",
+      "seed": 2,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/248.png"
+    },
+    "r2-s3": {
+      "name": "Illinois",
+      "abbrev": "ILL",
+      "seed": 3,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png"
+    },
+    "r2-s4": {
+      "name": "Nebraska",
+      "abbrev": "NEB",
+      "seed": 4,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/158.png"
+    },
+    "r2-s5": {
+      "name": "Vanderbilt",
+      "abbrev": "VAN",
+      "seed": 5,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png"
+    },
+    "r2-s6": {
+      "name": "North Carolina",
+      "abbrev": "UNC",
+      "seed": 6,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/153.png"
+    },
+    "r2-s7": {
+      "name": "Saint Mary's",
+      "abbrev": "SMC",
+      "seed": 7,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2608.png"
+    },
+    "r2-s8": {
+      "name": "Clemson",
+      "abbrev": "CLEM",
+      "seed": 8,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/228.png"
+    },
+    "r2-s9": {
+      "name": "Iowa",
+      "abbrev": "IOWA",
+      "seed": 9,
+      "region": 2,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png"
+    },
+    "r3-s1": {
+      "name": "Arizona",
+      "abbrev": "ARIZ",
+      "seed": 1,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png"
+    },
+    "r3-s10": {
+      "name": "Missouri",
+      "abbrev": "MIZ",
+      "seed": 10,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/142.png"
+    },
+    "r3-s11": {
+      "name": "Texas",
+      "abbrev": "TEX",
+      "seed": 11,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/251.png"
+    },
+    "r3-s12": {
+      "name": "High Point",
+      "abbrev": "HPU",
+      "seed": 12,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2272.png"
+    },
+    "r3-s13": {
+      "name": "Hawai'i",
+      "abbrev": "HAW",
+      "seed": 13,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/62.png"
+    },
+    "r3-s14": {
+      "name": "Kennesaw St",
+      "abbrev": "KENN",
+      "seed": 14,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/338.png"
+    },
+    "r3-s15": {
+      "name": "Queens",
+      "abbrev": "QUC",
+      "seed": 15,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2511.png"
+    },
+    "r3-s16": {
+      "name": "Long Island",
+      "abbrev": "LIU",
+      "seed": 16,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/112358.png"
+    },
+    "r3-s2": {
+      "name": "Purdue",
+      "abbrev": "PUR",
+      "seed": 2,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png"
+    },
+    "r3-s3": {
+      "name": "Gonzaga",
+      "abbrev": "GONZ",
+      "seed": 3,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png"
+    },
+    "r3-s4": {
+      "name": "Arkansas",
+      "abbrev": "ARK",
+      "seed": 4,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/8.png"
+    },
+    "r3-s5": {
+      "name": "Wisconsin",
+      "abbrev": "WIS",
+      "seed": 5,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/275.png"
+    },
+    "r3-s6": {
+      "name": "BYU",
+      "abbrev": "BYU",
+      "seed": 6,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/252.png"
+    },
+    "r3-s7": {
+      "name": "Miami",
+      "abbrev": "MIA",
+      "seed": 7,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png"
+    },
+    "r3-s8": {
+      "name": "Villanova",
+      "abbrev": "VILL",
+      "seed": 8,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/222.png"
+    },
+    "r3-s9": {
+      "name": "Utah State",
+      "abbrev": "USU",
+      "seed": 9,
+      "region": 3,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png"
+    },
+    "r4-s1": {
+      "name": "Michigan",
+      "abbrev": "MICH",
+      "seed": 1,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png"
+    },
+    "r4-s10": {
+      "name": "Santa Clara",
+      "abbrev": "SCU",
+      "seed": 10,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2541.png"
+    },
+    "r4-s11": {
+      "name": "Miami OH",
+      "abbrev": "M-OH",
+      "seed": 11,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/193.png"
+    },
+    "r4-s12": {
+      "name": "Akron",
+      "abbrev": "AKR",
+      "seed": 12,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2006.png"
+    },
+    "r4-s13": {
+      "name": "Hofstra",
+      "abbrev": "HOF",
+      "seed": 13,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2275.png"
+    },
+    "r4-s14": {
+      "name": "Wright St",
+      "abbrev": "WRST",
+      "seed": 14,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2750.png"
+    },
+    "r4-s15": {
+      "name": "Tennessee St",
+      "abbrev": "TNST",
+      "seed": 15,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2634.png"
+    },
+    "r4-s16": {
+      "name": "Howard",
+      "abbrev": "HOW",
+      "seed": 16,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/47.png"
+    },
+    "r4-s2": {
+      "name": "Iowa State",
+      "abbrev": "ISU",
+      "seed": 2,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png"
+    },
+    "r4-s3": {
+      "name": "Virginia",
+      "abbrev": "UVA",
+      "seed": 3,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png"
+    },
+    "r4-s4": {
+      "name": "Alabama",
+      "abbrev": "ALA",
+      "seed": 4,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/333.png"
+    },
+    "r4-s5": {
+      "name": "Texas Tech",
+      "abbrev": "TTU",
+      "seed": 5,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png"
+    },
+    "r4-s6": {
+      "name": "Tennessee",
+      "abbrev": "TENN",
+      "seed": 6,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2633.png"
+    },
+    "r4-s7": {
+      "name": "Kentucky",
+      "abbrev": "UK",
+      "seed": 7,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png"
+    },
+    "r4-s8": {
+      "name": "Georgia",
+      "abbrev": "UGA",
+      "seed": 8,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/61.png"
+    },
+    "r4-s9": {
+      "name": "Saint Louis",
+      "abbrev": "SLU",
+      "seed": 9,
+      "region": 4,
+      "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png"
+    }
+  },
+  "rounds": {
+    "championship": {
+      "status": "future",
+      "matchups": []
+    },
+    "elite8": {
+      "status": "complete",
+      "matchups": [
+        {
+          "id": "syn-elite8-0",
+          "region": 2,
+          "displayOrder": 1,
+          "team1": "r2-s8",
+          "team2": "r3-s1",
+          "winner": "r3-s1",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s8": {
+              "count": 9,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9"
+              ]
+            },
+            "r3-s1": {
+              "count": 10,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-elite8-1",
+          "region": 1,
+          "displayOrder": 2,
+          "team1": "r4-s14",
+          "team2": "r1-s11",
+          "winner": "r4-s14",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s11": {
+              "count": 9,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9"
+              ]
+            },
+            "r4-s14": {
+              "count": 10,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-elite8-2",
+          "region": 2,
+          "displayOrder": 3,
+          "team1": "r2-s5",
+          "team2": "r2-s15",
+          "winner": "r2-s15",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s15": {
+              "count": 12,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12"
+              ]
+            },
+            "r2-s5": {
+              "count": 7,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-elite8-3",
+          "region": 2,
+          "displayOrder": 4,
+          "team1": "r2-s13",
+          "team2": "r1-s13",
+          "winner": "r2-s13",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s13": {
+              "count": 11,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11"
+              ]
+            },
+            "r2-s13": {
+              "count": 8,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "finalFour": {
+      "status": "in_progress",
+      "matchups": [
+        {
+          "id": "syn-finalFour-0",
+          "region": 2,
+          "displayOrder": 1,
+          "team1": "r3-s1",
+          "team2": "r4-s14",
+          "status": "FUTURE",
+          "picks": {
+            "r3-s1": {
+              "count": 8,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8"
+              ]
+            },
+            "r4-s14": {
+              "count": 11,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-finalFour-1",
+          "region": 2,
+          "displayOrder": 2,
+          "team1": "r2-s15",
+          "team2": "r2-s13",
+          "status": "FUTURE",
+          "picks": {
+            "r2-s13": {
+              "count": 12,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12"
+              ]
+            },
+            "r2-s15": {
+              "count": 7,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "r32": {
+      "status": "complete",
+      "matchups": [
+        {
+          "id": "syn-r32-0",
+          "region": 2,
+          "displayOrder": 1,
+          "team1": "r2-s14",
+          "team2": "r2-s8",
+          "winner": "r2-s8",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s14": {
+              "count": 15,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15"
+              ]
+            },
+            "r2-s8": {
+              "count": 4,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-1",
+          "region": 1,
+          "displayOrder": 2,
+          "team1": "r1-s2",
+          "team2": "r4-s11",
+          "winner": "r1-s2",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s2": {
+              "count": 16,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16"
+              ]
+            },
+            "r4-s11": {
+              "count": 3,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-2",
+          "region": 4,
+          "displayOrder": 3,
+          "team1": "r4-s15",
+          "team2": "r3-s6",
+          "winner": "r3-s6",
+          "status": "COMPLETE",
+          "picks": {
+            "r3-s6": {
+              "count": 6,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6"
+              ]
+            },
+            "r4-s15": {
+              "count": 13,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-3",
+          "region": 3,
+          "displayOrder": 4,
+          "team1": "r3-s1",
+          "team2": "r1-s16",
+          "winner": "r3-s1",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s16": {
+              "count": 5,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5"
+              ]
+            },
+            "r3-s1": {
+              "count": 14,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-4",
+          "region": 1,
+          "displayOrder": 5,
+          "team1": "r1-s7",
+          "team2": "r4-s14",
+          "winner": "r4-s14",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s7": {
+              "count": 4,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4"
+              ]
+            },
+            "r4-s14": {
+              "count": 15,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-5",
+          "region": 3,
+          "displayOrder": 6,
+          "team1": "r3-s15",
+          "team2": "r4-s12",
+          "winner": "r3-s15",
+          "status": "COMPLETE",
+          "picks": {
+            "r3-s15": {
+              "count": 5,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5"
+              ]
+            },
+            "r4-s12": {
+              "count": 14,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-6",
+          "region": 3,
+          "displayOrder": 7,
+          "team1": "r3-s8",
+          "team2": "r3-s4",
+          "winner": "r3-s4",
+          "status": "COMPLETE",
+          "picks": {
+            "r3-s4": {
+              "count": 17,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16",
+                "Entry_17"
+              ]
+            },
+            "r3-s8": {
+              "count": 2,
+              "entries": [
+                "Entry_1",
+                "Entry_2"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-7",
+          "region": 1,
+          "displayOrder": 8,
+          "team1": "r1-s11",
+          "team2": "r2-s10",
+          "winner": "r1-s11",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s11": {
+              "count": 3,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3"
+              ]
+            },
+            "r2-s10": {
+              "count": 16,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-8",
+          "region": 2,
+          "displayOrder": 9,
+          "team1": "r2-s1",
+          "team2": "r2-s5",
+          "winner": "r2-s5",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s1": {
+              "count": 8,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8"
+              ]
+            },
+            "r2-s5": {
+              "count": 11,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-9",
+          "region": 4,
+          "displayOrder": 10,
+          "team1": "r4-s16",
+          "team2": "r4-s13",
+          "winner": "r4-s16",
+          "status": "COMPLETE",
+          "picks": {
+            "r4-s13": {
+              "count": 10,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10"
+              ]
+            },
+            "r4-s16": {
+              "count": 9,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-10",
+          "region": 3,
+          "displayOrder": 11,
+          "team1": "r3-s3",
+          "team2": "r1-s12",
+          "winner": "r3-s3",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s12": {
+              "count": 3,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3"
+              ]
+            },
+            "r3-s3": {
+              "count": 16,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-11",
+          "region": 2,
+          "displayOrder": 12,
+          "team1": "r2-s11",
+          "team2": "r2-s15",
+          "winner": "r2-s15",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s11": {
+              "count": 15,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15"
+              ]
+            },
+            "r2-s15": {
+              "count": 4,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-12",
+          "region": 2,
+          "displayOrder": 13,
+          "team1": "r2-s13",
+          "team2": "r1-s3",
+          "winner": "r2-s13",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s3": {
+              "count": 16,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16"
+              ]
+            },
+            "r2-s13": {
+              "count": 3,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-13",
+          "region": 4,
+          "displayOrder": 14,
+          "team1": "r4-s10",
+          "team2": "r4-s9",
+          "winner": "r4-s9",
+          "status": "COMPLETE",
+          "picks": {
+            "r4-s10": {
+              "count": 2,
+              "entries": [
+                "Entry_1",
+                "Entry_2"
+              ]
+            },
+            "r4-s9": {
+              "count": 17,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16",
+                "Entry_17"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-14",
+          "region": 3,
+          "displayOrder": 15,
+          "team1": "r3-s7",
+          "team2": "r3-s5",
+          "winner": "r3-s7",
+          "status": "COMPLETE",
+          "picks": {
+            "r3-s5": {
+              "count": 7,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7"
+              ]
+            },
+            "r3-s7": {
+              "count": 12,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-r32-15",
+          "region": 1,
+          "displayOrder": 16,
+          "team1": "r1-s9",
+          "team2": "r1-s13",
+          "winner": "r1-s13",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s13": {
+              "count": 8,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8"
+              ]
+            },
+            "r1-s9": {
+              "count": 11,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "r64": {
+      "status": "complete",
+      "matchups": [
+        {
+          "id": "c90b70e0-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 13,
+          "team1": "r2-s3",
+          "team2": "r2-s14",
+          "winner": "r2-s14",
+          "status": "COMPLETE",
+          "gameTime": 1773969900000,
+          "picks": {
+            "r2-s14": {
+              "count": 4,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Just Rae-ndom ",
+                "The Auditor 📈📉📊🧮",
+                "M\u0026M's"
+              ]
+            },
+            "r2-s3": {
+              "count": 15,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9099c20-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 9,
+          "team1": "r2-s8",
+          "team2": "r2-s9",
+          "winner": "r2-s8",
+          "status": "COMPLETE",
+          "gameTime": 1774047000000,
+          "picks": {
+            "r2-s8": {
+              "count": 6,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "Just Rae-ndom ",
+                "Eli's Grandpa",
+                "Swishers Sweet",
+                "M\u0026M's"
+              ]
+            },
+            "r2-s9": {
+              "count": 13,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c908ffe0-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 7,
+          "team1": "r1-s2",
+          "team2": "r1-s15",
+          "winner": "r1-s2",
+          "status": "COMPLETE",
+          "gameTime": 1774058400000,
+          "picks": {
+            "r1-s2": {
+              "count": 19,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90f1a60-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 28,
+          "team1": "r4-s6",
+          "team2": "r4-s11",
+          "winner": "r4-s11",
+          "status": "COMPLETE",
+          "gameTime": 1774038300000,
+          "picks": {
+            "r4-s11": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Just Rae-ndom "
+              ]
+            },
+            "r4-s6": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 31,
+          "team1": "r4-s2",
+          "team2": "r4-s15",
+          "winner": "r4-s15",
+          "status": "COMPLETE",
+          "gameTime": 1774032600000,
+          "picks": {
+            "r4-s15": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "M\u0026M's"
+              ]
+            },
+            "r4-s2": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90d45a0-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 20,
+          "team1": "r3-s6",
+          "team2": "r3-s11",
+          "winner": "r3-s6",
+          "status": "COMPLETE",
+          "gameTime": 1773962700000,
+          "picks": {
+            "r3-s11": {
+              "count": 6,
+              "entries": [
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa ",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Luke's Hoops",
+                "M\u0026M's"
+              ]
+            },
+            "r3-s6": {
+              "count": 13,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "Delka’s Dunk Dynasty",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90c0d20-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 16,
+          "team1": "r3-s1",
+          "team2": "r3-s16",
+          "winner": "r3-s1",
+          "status": "COMPLETE",
+          "gameTime": 1774028100000,
+          "picks": {
+            "r3-s1": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r3-s16": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Just Rae-ndom "
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9068ee0-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 0,
+          "team1": "r1-s1",
+          "team2": "r1-s16",
+          "winner": "r1-s16",
+          "status": "COMPLETE",
+          "gameTime": 1773946800000,
+          "picks": {
+            "r1-s1": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r1-s16": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9088ab0-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 6,
+          "team1": "r1-s7",
+          "team2": "r1-s10",
+          "winner": "r1-s7",
+          "status": "COMPLETE",
+          "gameTime": 1774049100000,
+          "picks": {
+            "r1-s10": {
+              "count": 6,
+              "entries": [
+                "9th Time's The Charm",
+                "Cornhusker Hustlers 🌽🏀",
+                "Lenny 🐶🐾",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Binkies \u0026 Buckets"
+              ]
+            },
+            "r1-s7": {
+              "count": 13,
+              "entries": [
+                "Vasquez fam intern👩🏿‍💻",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90f4170-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 29,
+          "team1": "r4-s3",
+          "team2": "r4-s14",
+          "winner": "r4-s14",
+          "status": "COMPLETE",
+          "gameTime": 1774029000000,
+          "picks": {
+            "r4-s14": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Just Rae-ndom "
+              ]
+            },
+            "r4-s3": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90e08f0-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 23,
+          "team1": "r3-s2",
+          "team2": "r3-s15",
+          "winner": "r3-s15",
+          "status": "COMPLETE",
+          "gameTime": 1774049700000,
+          "picks": {
+            "r3-s15": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            },
+            "r3-s2": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90ea530-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 26,
+          "team1": "r4-s5",
+          "team2": "r4-s12",
+          "winner": "r4-s12",
+          "status": "COMPLETE",
+          "gameTime": 1774024800000,
+          "picks": {
+            "r4-s12": {
+              "count": 3,
+              "entries": [
+                "Cornhusker Hustlers 🌽🏀",
+                "Lenny 🐶🐾",
+                "Just Rae-ndom "
+              ]
+            },
+            "r4-s5": {
+              "count": 16,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90c3430-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 17,
+          "team1": "r3-s8",
+          "team2": "r3-s9",
+          "winner": "r3-s8",
+          "status": "COMPLETE",
+          "gameTime": 1774037400000,
+          "picks": {
+            "r3-s8": {
+              "count": 8,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets"
+              ]
+            },
+            "r3-s9": {
+              "count": 11,
+              "entries": [
+                "Cornhusker Hustlers 🌽🏀",
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Luke's Hoops",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90cd070-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 19,
+          "team1": "r3-s4",
+          "team2": "r3-s13",
+          "winner": "r3-s4",
+          "status": "COMPLETE",
+          "gameTime": 1773951900000,
+          "picks": {
+            "r3-s13": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            },
+            "r3-s4": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c907ee70-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 4,
+          "team1": "r1-s6",
+          "team2": "r1-s11",
+          "winner": "r1-s11",
+          "status": "COMPLETE",
+          "gameTime": 1773941400000,
+          "picks": {
+            "r1-s11": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa "
+              ]
+            },
+            "r1-s6": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90bbf00-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 14,
+          "team1": "r2-s7",
+          "team2": "r2-s10",
+          "winner": "r2-s10",
+          "status": "COMPLETE",
+          "gameTime": 1773963300000,
+          "picks": {
+            "r2-s10": {
+              "count": 10,
+              "entries": [
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "Luke's Hoops",
+                "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r2-s7": {
+              "count": 9,
+              "entries": [
+                "9th Time's The Charm",
+                "Blair N Nelson's Picks 1",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "The Auditor 📈📉📊🧮",
+                "Swishers Sweet"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9094e00-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 8,
+          "team1": "r2-s1",
+          "team2": "r2-s16",
+          "winner": "r2-s1",
+          "status": "COMPLETE",
+          "gameTime": 1774056300000,
+          "picks": {
+            "r2-s1": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r2-s16": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c909ea40-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 10,
+          "team1": "r2-s5",
+          "team2": "r2-s12",
+          "winner": "r2-s5",
+          "status": "COMPLETE",
+          "gameTime": 1773947700000,
+          "picks": {
+            "r2-s12": {
+              "count": 4,
+              "entries": [
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa ",
+                "Just Rae-ndom ",
+                "M\u0026M's"
+              ]
+            },
+            "r2-s5": {
+              "count": 15,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90e3000-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 24,
+          "team1": "r4-s1",
+          "team2": "r4-s16",
+          "winner": "r4-s16",
+          "status": "COMPLETE",
+          "gameTime": 1773961800000,
+          "picks": {
+            "r4-s1": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r4-s16": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90ecc40-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 27,
+          "team1": "r4-s4",
+          "team2": "r4-s13",
+          "winner": "r4-s13",
+          "status": "COMPLETE",
+          "gameTime": 1774034100000,
+          "picks": {
+            "r4-s13": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            },
+            "r4-s4": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90d93c0-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 21,
+          "team1": "r3-s3",
+          "team2": "r3-s14",
+          "winner": "r3-s3",
+          "status": "COMPLETE",
+          "gameTime": 1773972000000,
+          "picks": {
+            "r3-s14": {
+              "count": 2,
+              "entries": [
+                "Just Rae-ndom ",
+                "M\u0026M's"
+              ]
+            },
+            "r3-s3": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9077940-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 2,
+          "team1": "r1-s5",
+          "team2": "r1-s12",
+          "winner": "r1-s12",
+          "status": "COMPLETE",
+          "gameTime": 1774048200000,
+          "picks": {
+            "r1-s12": {
+              "count": 5,
+              "entries": [
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa ",
+                "Just Rae-ndom ",
+                "The Auditor 📈📉📊🧮",
+                "M\u0026M's"
+              ]
+            },
+            "r1-s5": {
+              "count": 14,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90b49d0-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 12,
+          "team1": "r2-s6",
+          "team2": "r2-s11",
+          "winner": "r2-s11",
+          "status": "COMPLETE",
+          "gameTime": 1773960600000,
+          "picks": {
+            "r2-s11": {
+              "count": 5,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮"
+              ]
+            },
+            "r2-s6": {
+              "count": 14,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90be610-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 15,
+          "team1": "r2-s2",
+          "team2": "r2-s15",
+          "winner": "r2-s15",
+          "status": "COMPLETE",
+          "gameTime": 1773972600000,
+          "picks": {
+            "r2-s15": {
+              "count": 1,
+              "entries": [
+                "Lenny 🐶🐾"
+              ]
+            },
+            "r2-s2": {
+              "count": 18,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90a1150-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 11,
+          "team1": "r2-s4",
+          "team2": "r2-s13",
+          "winner": "r2-s13",
+          "status": "COMPLETE",
+          "gameTime": 1773938400000,
+          "picks": {
+            "r2-s4": {
+              "count": 19,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9083c90-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 5,
+          "team1": "r1-s3",
+          "team2": "r1-s14",
+          "winner": "r1-s3",
+          "status": "COMPLETE",
+          "gameTime": 1773950700000,
+          "picks": {
+            "r1-s14": {
+              "count": 3,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Just Rae-ndom ",
+                "The Auditor 📈📉📊🧮"
+              ]
+            },
+            "r1-s3": {
+              "count": 16,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90f8f90-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 30,
+          "team1": "r4-s7",
+          "team2": "r4-s10",
+          "winner": "r4-s10",
+          "status": "COMPLETE",
+          "gameTime": 1774023300000,
+          "picks": {
+            "r4-s10": {
+              "count": 5,
+              "entries": [
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa ",
+                "Just Rae-ndom ",
+                "Eli's Grandpa"
+              ]
+            },
+            "r4-s7": {
+              "count": 14,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Jack Jack Attack 💥",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90e5710-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 25,
+          "team1": "r4-s8",
+          "team2": "r4-s9",
+          "winner": "r4-s9",
+          "status": "COMPLETE",
+          "gameTime": 1773971100000,
+          "picks": {
+            "r4-s8": {
+              "count": 12,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r4-s9": {
+              "count": 7,
+              "entries": [
+                "Cornhusker Hustlers 🌽🏀",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Nautical Nate ⚓",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90dbad0-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 22,
+          "team1": "r3-s7",
+          "team2": "r3-s10",
+          "winner": "r3-s7",
+          "status": "COMPLETE",
+          "gameTime": 1774059000000,
+          "picks": {
+            "r3-s10": {
+              "count": 8,
+              "entries": [
+                "9th Time's The Charm",
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets"
+              ]
+            },
+            "r3-s7": {
+              "count": 11,
+              "entries": [
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Jack Jack Attack 💥",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c90c8250-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 18,
+          "team1": "r3-s5",
+          "team2": "r3-s12",
+          "winner": "r3-s5",
+          "status": "COMPLETE",
+          "gameTime": 1773942600000,
+          "picks": {
+            "r3-s12": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Just Rae-ndom "
+              ]
+            },
+            "r3-s5": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9070410-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 1,
+          "team1": "r1-s8",
+          "team2": "r1-s9",
+          "winner": "r1-s9",
+          "status": "COMPLETE",
+          "gameTime": 1773937440000,
+          "picks": {
+            "r1-s8": {
+              "count": 10,
+              "entries": [
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            },
+            "r1-s9": {
+              "count": 9,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c907a050-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 3,
+          "team1": "r1-s4",
+          "team2": "r1-s13",
+          "winner": "r1-s13",
+          "status": "COMPLETE",
+          "gameTime": 1774057500000,
+          "picks": {
+            "r1-s13": {
+              "count": 2,
+              "entries": [
+                "Lenny 🐶🐾",
+                "Jack Jack Attack 💥"
+              ]
+            },
+            "r1-s4": {
+              "count": 17,
+              "entries": [
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Cornhusker Hustlers 🌽🏀",
+                "Blair N Nelson's Picks 1",
+                "March sadness ft Tressa ",
+                "Delka’s Dunk Dynasty",
+                "John’s Final Fourcast",
+                "Nautical Nate ⚓",
+                "Just Rae-ndom ",
+                "Frat Rat 🏓 🍻",
+                "Eli's Grandpa",
+                "Luke's Hoops",
+                "The Auditor 📈📉📊🧮",
+                "Binkies \u0026 Buckets",
+                "Swishers Sweet",
+                "Jeff's Worst Picks Ever",
+                "M\u0026M's"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "sweet16": {
+      "status": "complete",
+      "matchups": [
+        {
+          "id": "syn-sweet16-0",
+          "region": 2,
+          "displayOrder": 1,
+          "team1": "r2-s8",
+          "team2": "r1-s2",
+          "winner": "r2-s8",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s2": {
+              "count": 17,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16",
+                "Entry_17"
+              ]
+            },
+            "r2-s8": {
+              "count": 2,
+              "entries": [
+                "Entry_1",
+                "Entry_2"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-1",
+          "region": 4,
+          "displayOrder": 2,
+          "team1": "r3-s6",
+          "team2": "r3-s1",
+          "winner": "r3-s1",
+          "status": "COMPLETE",
+          "picks": {
+            "r3-s1": {
+              "count": 16,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15",
+                "Entry_16"
+              ]
+            },
+            "r3-s6": {
+              "count": 3,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-2",
+          "region": 1,
+          "displayOrder": 3,
+          "team1": "r4-s14",
+          "team2": "r3-s15",
+          "winner": "r4-s14",
+          "status": "COMPLETE",
+          "picks": {
+            "r3-s15": {
+              "count": 15,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14",
+                "Entry_15"
+              ]
+            },
+            "r4-s14": {
+              "count": 4,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-3",
+          "region": 3,
+          "displayOrder": 4,
+          "team1": "r3-s4",
+          "team2": "r1-s11",
+          "winner": "r1-s11",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s11": {
+              "count": 14,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13",
+                "Entry_14"
+              ]
+            },
+            "r3-s4": {
+              "count": 5,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-4",
+          "region": 2,
+          "displayOrder": 5,
+          "team1": "r2-s5",
+          "team2": "r4-s16",
+          "winner": "r2-s5",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s5": {
+              "count": 6,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6"
+              ]
+            },
+            "r4-s16": {
+              "count": 13,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12",
+                "Entry_13"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-5",
+          "region": 3,
+          "displayOrder": 6,
+          "team1": "r3-s3",
+          "team2": "r2-s15",
+          "winner": "r2-s15",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s15": {
+              "count": 12,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11",
+                "Entry_12"
+              ]
+            },
+            "r3-s3": {
+              "count": 7,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-6",
+          "region": 2,
+          "displayOrder": 7,
+          "team1": "r2-s13",
+          "team2": "r4-s9",
+          "winner": "r2-s13",
+          "status": "COMPLETE",
+          "picks": {
+            "r2-s13": {
+              "count": 8,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8"
+              ]
+            },
+            "r4-s9": {
+              "count": 11,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10",
+                "Entry_11"
+              ]
+            }
+          }
+        },
+        {
+          "id": "syn-sweet16-7",
+          "region": 3,
+          "displayOrder": 8,
+          "team1": "r3-s7",
+          "team2": "r1-s13",
+          "winner": "r1-s13",
+          "status": "COMPLETE",
+          "picks": {
+            "r1-s13": {
+              "count": 10,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9",
+                "Entry_10"
+              ]
+            },
+            "r3-s7": {
+              "count": 9,
+              "entries": [
+                "Entry_1",
+                "Entry_2",
+                "Entry_3",
+                "Entry_4",
+                "Entry_5",
+                "Entry_6",
+                "Entry_7",
+                "Entry_8",
+                "Entry_9"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}
