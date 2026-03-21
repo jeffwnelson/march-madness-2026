@@ -50,6 +50,7 @@ type Bracket struct {
 	Score       int          `json:"score"`
 	MaxPossible int          `json:"maxPossible"`
 	Percentile  float64      `json:"percentile"`
+	Rank        int          `json:"rank"`
 	Eliminated  bool         `json:"eliminated"`
 	Tiebreaker  *float64     `json:"tiebreaker"`
 	Picks       BracketPicks `json:"picks"`
@@ -277,6 +278,7 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			Score:       entry.Score.OverallScore,
 			MaxPossible: entry.Score.PossiblePointsMax,
 			Percentile:  entry.Score.Percentile,
+			Rank:        entry.Score.Rank,
 			Eliminated:  entry.Score.Eliminated,
 			Tiebreaker:  tiebreaker,
 			FinalFour:   []string{},
@@ -311,25 +313,32 @@ func processData(challenge *espnChallenge, group *espnGroup) *BracketData {
 			// All R64 picks advance to at least round 2 (periodReached >= 2)
 			bracket.Picks.R64 = append(bracket.Picks.R64, p)
 
+			// For rounds beyond R64, the pick result is UNDECIDED until that round's games are played.
+			futurePick := Pick{
+				MatchupID:    pick.PropositionID,
+				PickedTeamID: pickedOutcome.OutcomeID,
+				Result:       "UNDECIDED",
+			}
+
 			// R32 winners advance to S16 = periodReached >= 3
 			if pick.PeriodReached >= 3 {
-				bracket.Picks.R32 = append(bracket.Picks.R32, p)
+				bracket.Picks.R32 = append(bracket.Picks.R32, futurePick)
 			}
 
 			// S16 winners advance to E8 = periodReached >= 4
 			if pick.PeriodReached >= 4 {
-				bracket.Picks.Sweet16 = append(bracket.Picks.Sweet16, p)
+				bracket.Picks.Sweet16 = append(bracket.Picks.Sweet16, futurePick)
 			}
 
 			// E8 winners reach Final Four = periodReached >= 5
 			if pick.PeriodReached >= 5 {
-				bracket.Picks.Elite8 = append(bracket.Picks.Elite8, p)
+				bracket.Picks.Elite8 = append(bracket.Picks.Elite8, futurePick)
 				bracket.FinalFour = append(bracket.FinalFour, pickedOutcome.OutcomeID)
 			}
 
 			// Championship finalists = periodReached >= 6
 			if pick.PeriodReached >= 6 {
-				bracket.Picks.FinalFour = append(bracket.Picks.FinalFour, p)
+				bracket.Picks.FinalFour = append(bracket.Picks.FinalFour, futurePick)
 			}
 		}
 

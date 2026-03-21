@@ -1,2 +1,38 @@
+# Compiled binaries
 march-madness-2026
 march-madness-server
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary, built with `go test -c`
+*.test
+
+# Go build/coverage output
+*.out
+*.prof
+
+# Server binary
+.server
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment and secrets
+.env
+.env.*
+
+# Backup files
+*.bak
+*.orig
+*.real

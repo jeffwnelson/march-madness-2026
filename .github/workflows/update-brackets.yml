@@ -26,7 +26,7 @@ jobs:
           go-version-file: 'go.mod'
 
       - name: Fetch latest bracket data
-        run: go run . --fetch-only
+        run: go run ./backend --fetch-only
 
       - name: Check for changes
         id: diff

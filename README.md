@@ -13,6 +13,22 @@ Bracket tracking and scoring app for the NCAA March Madness tournament. Pulls br
 - **Deep linking** via URI fragments for tabs and rounds
 - **Automated updates** via GitHub Actions cron (noon–1am CST during the tournament)
 
+## Project Structure
+
+```
+├── backend/               Go server and data processing
+│   ├── server.go          HTTP server, ESPN API client
+│   ├── process.go         ESPN data → bracket JSON transform
+│   ├── *_test.go          Tests and scenario generator
+│   └── testdata/          ESPN snapshots and generated scenarios
+├── css/style.css          Styles
+├── js/app.js              Frontend application
+├── index.html             HTML shell
+├── data/brackets.json     Processed bracket data (served to frontend)
+├── Makefile               Server and test data management
+└── .github/workflows/     CI/CD (cron updates, versioning, Pages deploy)
+```
+
 ## Architecture
 
 ```
@@ -21,43 +37,40 @@ ESPN Tournament Challenge API
   └─ /challenges/.../groups/{groupId}?view=entries      (bracket entries, picks, scores)
         │
         ▼
-  ┌─────────────────┐
-  │   process.go    │  Transforms ESPN data → processed bracket JSON
-  │                 │  - Teams, matchups (with winners)
-  │                 │  - Per-entry picks bucketed by round (R64→Championship)
-  │                 │  - Champion resolution via finalPick cross-entry correlation
-  │                 │  - ESPN stats: percentile, eliminated, tiebreaker
-  └────────┬────────┘
-           │
-           ▼
-  ┌─────────────────┐
-  │   server.go     │  HTTP server (:8000)
-  │                 │  - GET  /              → index.html
-  │                 │  - GET  /api/brackets  → cached bracket JSON
-  │                 │  - POST /api/refresh   → re-fetch from ESPN
-  └────────┬────────┘
-           │
-           ▼
-  ┌─────────────────┐
-  │   index.html    │  Single-page app (vanilla JS)
-  │                 │  - Matchup cards with pick counts
-  │                 │  - Hierarchical round rendering
-  │                 │  - Bracket detail modal with stats
-  │                 │  - What-if score simulator
-  └─────────────────┘
+  ┌──────────────────────┐
+  │  backend/process.go  │  Transforms ESPN data → processed bracket JSON
+  │                      │  - Teams, matchups (with winners)
+  │                      │  - Per-entry picks bucketed by round (R64→Championship)
+  │                      │  - Champion resolution via finalPick cross-entry correlation
+  │                      │  - ESPN stats: percentile, eliminated, tiebreaker
+  └──────────┬───────────┘
+             │
+             ▼
+  ┌──────────────────────┐
+  │  backend/server.go   │  HTTP server (:8000)
+  │                      │  - GET  /              → index.html
+  │                      │  - GET  /api/brackets  → cached bracket JSON
+  │                      │  - POST /api/refresh   → re-fetch from ESPN
+  └──────────┬───────────┘
+             │
+             ▼
+  ┌──────────────────────┐
+  │  index.html          │  Single-page app (vanilla JS)
+  │  css/style.css       │  - Matchup cards with pick counts
+  │  js/app.js           │  - Hierarchical round rendering
+  │                      │  - Bracket detail modal with stats
+  │                      │  - What-if score simulator
+  └──────────────────────┘
 ```
 
 ## Quick Start
 
 ```bash
-# Run the server (loads cached data or fetches from ESPN)
-go run .
-
-# Fetch fresh data only (for CI/cron jobs)
-go run . --fetch-only
-
-# Run tests
-go test ./...
+make start          # Start server in background
+make stop           # Stop server
+make restart        # Restart server
+make test           # Run all tests
+make help           # Show all commands
 ```
 
 The server runs at `http://localhost:8000`.
@@ -76,9 +89,9 @@ ESPN provides 32 R64 propositions. Each bracket entry's picks reference these pr
 
 ### Pick Results
 
-ESPN pick `result` fields (CORRECT/INCORRECT/UNDECIDED) indicate whether a team **reached** that round, not whether they won in that round. For example, an R32 pick marked CORRECT means the team won R64 and reached R32.
+Each round's pick `result` fields (CORRECT/INCORRECT/UNDECIDED) indicate whether the team won that round's game. For example, an R32 pick marked CORRECT means the team won their R32 game.
 
-The frontend uses a **hierarchical winner chain** to determine matchup visibility. To find who won round N, it checks round N+1's pick results (since reaching round N+1 means winning round N). This prevents later-round matchups from appearing prematurely.
+The frontend uses a **hierarchical winner chain** to determine matchup visibility. Each round's pick results directly determine that round's winners. Later-round matchups only appear once the previous round's games are decided.
 
 ### Champion Resolution
 
@@ -101,13 +114,46 @@ ESPN's `finalPick` field uses championship-proposition outcome IDs that differ f
 
 ## Testing
 
-12 bracket progression tests validate the hierarchical winner chain:
-
 ```bash
-go test -v -run "TestR64|TestAll|TestR32|TestS16|TestIncorrect|TestFull|TestPartial|TestUpset|TestCross|TestE8" ./...
+make test
 ```
 
-Tests cover: R64→R32→S16→E8→FF progression, partial results, upset chains, cross-region isolation, and the off-by-one pick result semantics.
+Tests include structural validation (`TestProcessData`), HTTP endpoint tests, and 12 scenario-based integration tests (`TestScenarios`) that validate pick results at each tournament completion level.
+
+## Mock Tournament Data
+
+`testdata_gen_test.go` generates simulated tournament scenarios for end-to-end testing without waiting for real games. It loads real ESPN snapshots from `testdata/`, mutates them with random outcomes, and produces processed `brackets.json` files.
+
+### Scenarios
+
+12 scenarios are generated — 2 at each completion level:
+
+| Scenarios | Completed through | Decided games |
+|-----------|------------------|---------------|
+| `R64_1`, `R64_2` | Round of 64 | 32 |
+| `R32_1`, `R32_2` | Round of 32 | 48 |
+| `S16_1`, `S16_2` | Sweet 16 | 56 |
+| `E8_1`, `E8_2` | Elite 8 | 60 |
+| `FF_1`, `FF_2` | Final Four | 62 |
+| `Champ_1`, `Champ_2` | Championship | 63 |
+
+Each scenario uses a deterministic PRNG seed so results are reproducible.
+
+### Generating scenario files
+
+```bash
+make generate-scenarios   # Generate all scenario files
+make test                 # Run validation tests
+```
+
+### Loading a scenario locally
+
+```bash
+make load-e8              # Load Elite 8 scenario (or load-r64, load-r32, etc.)
+make restart              # Restart server with new data
+
+make load-real            # Restore real ESPN data
+```
 
 ## CI/CD
 

@@ -5,6 +5,3 @@ skip_untracked = true
 disable_changelog = false
 disable_bump_commit = true
 tag_prefix = ""
-
-[changelog]
-path = "CHANGELOG.md"
