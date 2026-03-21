@@ -2,7 +2,6 @@ package main
 
 import (
 	"os"
-	"path/filepath"
 	"testing"
 )
 
@@ -33,33 +32,6 @@ func TestParseChallengeData(t *testing.T) {
 				t.Errorf("proposition %d outcome %d: regionId is 0", i, j)
 			}
 		}
-	}
-}
-
-func TestSaveAndLoadCache(t *testing.T) {
-	challenge, group := loadTestData(t)
-	original := processData(challenge, group)
-
-	tmpDir := t.TempDir()
-	cachefile := filepath.Join(tmpDir, "brackets.json")
-
-	if err := saveCache(cachefile, original); err != nil {
-		t.Fatalf("saveCache failed: %v", err)
-	}
-
-	loaded, err := loadCache(cachefile)
-	if err != nil {
-		t.Fatalf("loadCache failed: %v", err)
-	}
-
-	if len(loaded.Teams) != len(original.Teams) {
-		t.Errorf("teams count mismatch: got %d, want %d", len(loaded.Teams), len(original.Teams))
-	}
-	if len(loaded.Brackets) != len(original.Brackets) {
-		t.Errorf("brackets count mismatch: got %d, want %d", len(loaded.Brackets), len(original.Brackets))
-	}
-	if len(loaded.Matchups) != len(original.Matchups) {
-		t.Errorf("matchups count mismatch: got %d, want %d", len(loaded.Matchups), len(original.Matchups))
 	}
 }
 

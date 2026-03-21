@@ -41,6 +41,9 @@ test-results/
 tests/test-results/
 tests/playwright-report/
 
+# Raw ESPN snapshots
+data/snapshots/
+
 # Backup files
 *.bak
 *.orig
