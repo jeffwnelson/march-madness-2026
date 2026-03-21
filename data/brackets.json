@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-20T23:56:03Z",
+  "lastUpdated": "2026-03-21T00:10:45Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -885,6 +885,7 @@
       "score": 210,
       "maxPossible": 1870,
       "percentile": 0.99202345,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -1054,7 +1055,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -1064,7 +1065,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -1079,32 +1080,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d45a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d45a2-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -1114,29 +1115,29 @@
           {
             "matchupId": "c90e5710-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e5711-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -1146,17 +1147,17 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -1166,46 +1167,46 @@
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -1230,6 +1231,7 @@
       "score": 210,
       "maxPossible": 1850,
       "percentile": 0.99202345,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": 110,
       "picks": {
@@ -1399,7 +1401,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -1409,7 +1411,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -1424,32 +1426,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d45a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d45a1-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -1459,29 +1461,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -1496,12 +1498,12 @@
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -1511,12 +1513,12 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
@@ -1533,12 +1535,12 @@
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
@@ -1550,7 +1552,7 @@
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -1575,6 +1577,7 @@
       "score": 200,
       "maxPossible": 1880,
       "percentile": 0.9604263,
+      "rank": 3,
       "eliminated": false,
       "tiebreaker": 158,
       "picks": {
@@ -1744,7 +1747,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -1754,7 +1757,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -1769,32 +1772,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -1804,29 +1807,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -1836,66 +1839,66 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -1920,6 +1923,7 @@
       "score": 200,
       "maxPossible": 1880,
       "percentile": 0.9604263,
+      "rank": 3,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -2089,7 +2093,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -2099,7 +2103,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -2114,32 +2118,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -2149,34 +2153,34 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -2186,12 +2190,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -2201,46 +2205,46 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -2265,6 +2269,7 @@
       "score": 200,
       "maxPossible": 1860,
       "percentile": 0.9604263,
+      "rank": 3,
       "eliminated": false,
       "tiebreaker": 138,
       "picks": {
@@ -2434,7 +2439,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -2444,7 +2449,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -2459,32 +2464,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -2494,29 +2499,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -2531,34 +2536,34 @@
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -2568,24 +2573,24 @@
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -2610,6 +2615,7 @@
       "score": 200,
       "maxPossible": 1860,
       "percentile": 0.9604263,
+      "rank": 3,
       "eliminated": false,
       "tiebreaker": 107,
       "picks": {
@@ -2779,7 +2785,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -2789,7 +2795,7 @@
           {
             "matchupId": "c907ee70-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c907ee72-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -2804,32 +2810,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -2839,22 +2845,22 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
@@ -2871,17 +2877,17 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -2891,12 +2897,12 @@
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
@@ -2908,17 +2914,17 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
@@ -2930,7 +2936,7 @@
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -2955,6 +2961,7 @@
       "score": 200,
       "maxPossible": 1860,
       "percentile": 0.9604263,
+      "rank": 3,
       "eliminated": false,
       "tiebreaker": 138,
       "picks": {
@@ -3124,7 +3131,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -3134,7 +3141,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -3149,32 +3156,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3184,34 +3191,34 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -3221,12 +3228,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3236,46 +3243,46 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -3300,6 +3307,7 @@
       "score": 190,
       "maxPossible": 1870,
       "percentile": 0.86948751,
+      "rank": 8,
       "eliminated": false,
       "tiebreaker": 110,
       "picks": {
@@ -3469,7 +3477,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -3479,7 +3487,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -3494,32 +3502,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3529,29 +3537,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f8f90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f8f91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -3566,12 +3574,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3581,24 +3589,24 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f8f90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f8f91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3608,14 +3616,14 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3645,6 +3653,7 @@
       "score": 190,
       "maxPossible": 1850,
       "percentile": 0.86948751,
+      "rank": 8,
       "eliminated": false,
       "tiebreaker": 105,
       "picks": {
@@ -3814,7 +3823,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -3824,7 +3833,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -3839,32 +3848,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b49d0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b49d1-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -3874,29 +3883,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -3911,27 +3920,27 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
@@ -3948,12 +3957,12 @@
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
@@ -3965,7 +3974,7 @@
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -3990,6 +3999,7 @@
       "score": 190,
       "maxPossible": 1850,
       "percentile": 0.86948751,
+      "rank": 8,
       "eliminated": false,
       "tiebreaker": 141,
       "picks": {
@@ -4159,7 +4169,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -4169,7 +4179,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -4184,32 +4194,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -4219,29 +4229,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -4251,66 +4261,66 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -4335,6 +4345,7 @@
       "score": 190,
       "maxPossible": 1850,
       "percentile": 0.86948751,
+      "rank": 8,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -4504,7 +4515,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -4514,7 +4525,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -4529,32 +4540,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -4564,29 +4575,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -4601,12 +4612,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -4616,19 +4627,19 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -4643,7 +4654,7 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
@@ -4655,7 +4666,7 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -4680,6 +4691,7 @@
       "score": 180,
       "maxPossible": 1840,
       "percentile": 0.68953731,
+      "rank": 12,
       "eliminated": false,
       "tiebreaker": 150,
       "picks": {
@@ -4849,7 +4861,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -4859,7 +4871,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -4874,32 +4886,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d45a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d45a1-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -4909,29 +4921,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -4946,12 +4958,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -4961,46 +4973,46 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -5025,6 +5037,7 @@
       "score": 170,
       "maxPossible": 1850,
       "percentile": 0.47960119,
+      "rank": 13,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -5194,7 +5207,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -5204,7 +5217,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -5219,32 +5232,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5254,29 +5267,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -5291,12 +5304,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5306,19 +5319,19 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -5328,24 +5341,24 @@
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -5370,6 +5383,7 @@
       "score": 170,
       "maxPossible": 1810,
       "percentile": 0.47960119,
+      "rank": 13,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -5539,7 +5553,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -5549,7 +5563,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -5564,32 +5578,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b49d0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b49d1-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5599,29 +5613,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -5631,17 +5645,17 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5651,24 +5665,24 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5678,14 +5692,14 @@
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5715,6 +5729,7 @@
       "score": 170,
       "maxPossible": 1590,
       "percentile": 0.47960119,
+      "rank": 13,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -5884,7 +5899,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -5894,7 +5909,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c92-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -5909,32 +5924,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5944,49 +5959,49 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c92-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8251-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -5996,24 +6011,24 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c92-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -6023,19 +6038,19 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -6060,6 +6075,7 @@
       "score": 160,
       "maxPossible": 1840,
       "percentile": 0.2709563,
+      "rank": 16,
       "eliminated": false,
       "tiebreaker": 160,
       "picks": {
@@ -6229,7 +6245,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -6239,7 +6255,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -6254,32 +6270,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea41-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -6289,29 +6305,29 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4171-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -6326,12 +6342,12 @@
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -6341,46 +6357,46 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be611-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d21-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -6405,6 +6421,7 @@
       "score": 160,
       "maxPossible": 1800,
       "percentile": 0.2709563,
+      "rank": 16,
       "eliminated": false,
       "tiebreaker": 101,
       "picks": {
@@ -6574,7 +6591,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -6584,7 +6601,7 @@
           {
             "matchupId": "c907ee70-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c907ee71-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -6599,32 +6616,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90bbf00-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90bbf02-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c3430-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c3432-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd071-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d45a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d45a2-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -6634,49 +6651,49 @@
           {
             "matchupId": "c90e5710-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e5711-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f8f90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f8f91-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907ee70-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c907ee71-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90bbf00-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90bbf02-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c3430-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c3432-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -6686,24 +6703,24 @@
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea531-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -6713,19 +6730,19 @@
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a61-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
@@ -6750,6 +6767,7 @@
       "score": 100,
       "maxPossible": 1500,
       "percentile": 0.05224653,
+      "rank": 18,
       "eliminated": false,
       "tiebreaker": 123,
       "picks": {
@@ -6919,7 +6937,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9077940-0695-11f1-af21-ff98afcfd072",
@@ -6929,7 +6947,7 @@
           {
             "matchupId": "c907ee70-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c907ee71-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9088ab0-0695-11f1-af21-ff98afcfd072",
@@ -6944,32 +6962,32 @@
           {
             "matchupId": "c909ea40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c909ea42-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b49d0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b49d1-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90bbf00-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90bbf01-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d22-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c8250-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c8252-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d45a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d45a1-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90dbad0-0695-11f1-af21-ff98afcfd072",
@@ -6979,34 +6997,34 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ea530-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ea532-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a62-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f8f90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f8f92-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907ee70-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c907ee71-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -7016,12 +7034,12 @@
           {
             "matchupId": "c90bbf00-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90bbf01-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c0d20-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c0d22-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90dbad0-0695-11f1-af21-ff98afcfd072",
@@ -7031,19 +7049,19 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f1a60-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f1a62-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -7058,7 +7076,7 @@
           {
             "matchupId": "c90e3000-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e3001-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
@@ -7095,6 +7113,7 @@
       "score": 80,
       "maxPossible": 820,
       "percentile": 0.04406058,
+      "rank": 19,
       "eliminated": false,
       "tiebreaker": null,
       "picks": {
@@ -7264,7 +7283,7 @@
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c907a050-0695-11f1-af21-ff98afcfd072",
@@ -7274,7 +7293,7 @@
           {
             "matchupId": "c9083c90-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9083c92-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -7289,32 +7308,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90b70e0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90b70e2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be612-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90c3430-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90c3432-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd072-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e08f0-0695-11f1-af21-ff98afcfd072",
@@ -7324,29 +7343,29 @@
           {
             "matchupId": "c90e5710-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e5711-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90ecc40-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90ecc42-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4172-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90fb6a0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90fb6a2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "sweet16": [
           {
             "matchupId": "c9068ee0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c9068ee2-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
@@ -7356,32 +7375,32 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90be610-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90be612-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90cd070-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90cd072-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90e5710-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90e5711-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4172-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "elite8": [
@@ -7393,29 +7412,29 @@
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90d93c0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90d93c1-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4172-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "finalFour": [
           {
             "matchupId": "c90a1150-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90a1151-0695-11f1-af21-ff98afcfd072",
-            "result": "CORRECT"
+            "result": "UNDECIDED"
           },
           {
             "matchupId": "c90f4170-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c90f4172-0695-11f1-af21-ff98afcfd072",
-            "result": "INCORRECT"
+            "result": "UNDECIDED"
           }
         ],
         "championship": [
