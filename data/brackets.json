@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-21T04:30:35Z",
+  "lastUpdated": "2026-03-21T05:01:53Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -128,7 +128,7 @@
       "abbrev": "CONN",
       "seed": 2,
       "region": 1,
-      "record": "29-5",
+      "record": "30-5",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png"
     },
     "c908ffe2-0695-11f1-af21-ff98afcfd072": {
@@ -136,7 +136,7 @@
       "abbrev": "FUR",
       "seed": 15,
       "region": 1,
-      "record": "22-12",
+      "record": "22-13",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/231.png"
     },
     "c9094e01-0695-11f1-af21-ff98afcfd072": {
@@ -554,9 +554,9 @@
       "displayOrder": 7,
       "team1Id": "c908ffe1-0695-11f1-af21-ff98afcfd072",
       "team2Id": "c908ffe2-0695-11f1-af21-ff98afcfd072",
-      "winnerId": null,
+      "winnerId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
       "gameTime": 1774060260000,
-      "status": "LOCKED"
+      "status": "COMPLETE"
     },
     {
       "id": "c90f1a60-0695-11f1-af21-ff98afcfd072",
@@ -882,9 +882,9 @@
     {
       "member": "jeff-fa-fa-2",
       "entryName": "Luke's Hoops",
-      "score": 280,
+      "score": 290,
       "maxPossible": 1870,
-      "percentile": 0.99710088,
+      "percentile": 0.99837336,
       "rank": 1,
       "eliminated": false,
       "tiebreaker": null,
@@ -928,7 +928,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -1228,9 +1228,9 @@
     {
       "member": "ESPNFAN3255999702",
       "entryName": "Cornhusker Hustlers 🌽🏀",
-      "score": 260,
+      "score": 270,
       "maxPossible": 1870,
-      "percentile": 0.93590104,
+      "percentile": 0.95760033,
       "rank": 2,
       "eliminated": false,
       "tiebreaker": 158,
@@ -1274,7 +1274,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -1574,9 +1574,9 @@
     {
       "member": "jeff-fa-fa-2",
       "entryName": "Jeff's Worst Picks Ever",
-      "score": 260,
+      "score": 270,
       "maxPossible": 1870,
-      "percentile": 0.93590104,
+      "percentile": 0.95760033,
       "rank": 2,
       "eliminated": false,
       "tiebreaker": 110,
@@ -1620,7 +1620,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -1920,9 +1920,9 @@
     {
       "member": "N-DAWG'08",
       "entryName": "Nautical Nate ⚓",
-      "score": 260,
+      "score": 270,
       "maxPossible": 1850,
-      "percentile": 0.93590104,
+      "percentile": 0.95760033,
       "rank": 2,
       "eliminated": false,
       "tiebreaker": 138,
@@ -1966,7 +1966,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -2266,9 +2266,9 @@
     {
       "member": "ESPNFAN0140312004",
       "entryName": "Vasquez fam intern👩🏿‍💻",
-      "score": 260,
+      "score": 270,
       "maxPossible": 1850,
-      "percentile": 0.93590104,
+      "percentile": 0.95760033,
       "rank": 2,
       "eliminated": false,
       "tiebreaker": 105,
@@ -2312,7 +2312,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -2612,9 +2612,9 @@
     {
       "member": "espnfan6709667072",
       "entryName": "Delka’s Dunk Dynasty",
-      "score": 260,
+      "score": 270,
       "maxPossible": 1850,
-      "percentile": 0.98348334,
+      "percentile": 0.95760033,
       "rank": 2,
       "eliminated": false,
       "tiebreaker": 138,
@@ -2658,7 +2658,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -2958,9 +2958,9 @@
     {
       "member": "Blair N Nelson",
       "entryName": "Jack Jack Attack 💥",
-      "score": 260,
+      "score": 270,
       "maxPossible": 1830,
-      "percentile": 0.98348334,
+      "percentile": 0.95760033,
       "rank": 2,
       "eliminated": false,
       "tiebreaker": 110,
@@ -3004,7 +3004,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -3304,9 +3304,9 @@
     {
       "member": "John DXP",
       "entryName": "John’s Final Fourcast",
-      "score": 250,
+      "score": 260,
       "maxPossible": 1860,
-      "percentile": 0.93590104,
+      "percentile": 0.87682417,
       "rank": 8,
       "eliminated": false,
       "tiebreaker": null,
@@ -3350,7 +3350,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -3650,9 +3650,9 @@
     {
       "member": "Cheri Curtis",
       "entryName": "Swishers Sweet",
-      "score": 250,
+      "score": 260,
       "maxPossible": 1840,
-      "percentile": 0.82913133,
+      "percentile": 0.87682417,
       "rank": 8,
       "eliminated": false,
       "tiebreaker": null,
@@ -3696,7 +3696,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -3996,9 +3996,9 @@
     {
       "member": "espnfan9785388635",
       "entryName": "March sadness ft Tressa ",
-      "score": 250,
+      "score": 260,
       "maxPossible": 1840,
-      "percentile": 0.93590104,
+      "percentile": 0.87682417,
       "rank": 8,
       "eliminated": false,
       "tiebreaker": 107,
@@ -4042,7 +4042,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -4342,9 +4342,9 @@
     {
       "member": "espnfan9438190332",
       "entryName": "Frat Rat 🏓 🍻",
-      "score": 240,
+      "score": 250,
       "maxPossible": 1850,
-      "percentile": 0.64657671,
+      "percentile": 0.72093755,
       "rank": 11,
       "eliminated": false,
       "tiebreaker": null,
@@ -4388,7 +4388,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -4688,9 +4688,9 @@
     {
       "member": "espnfan6709667072",
       "entryName": "Binkies \u0026 Buckets",
-      "score": 240,
+      "score": 250,
       "maxPossible": 1830,
-      "percentile": 0.82913133,
+      "percentile": 0.72093755,
       "rank": 11,
       "eliminated": false,
       "tiebreaker": 141,
@@ -4734,7 +4734,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -5034,9 +5034,9 @@
     {
       "member": "Snoopycake",
       "entryName": "9th Time's The Charm",
-      "score": 230,
+      "score": 240,
       "maxPossible": 1820,
-      "percentile": 0.64657671,
+      "percentile": 0.52808407,
       "rank": 13,
       "eliminated": false,
       "tiebreaker": 150,
@@ -5080,7 +5080,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -5380,9 +5380,9 @@
     {
       "member": "Blair N Nelson",
       "entryName": "Blair N Nelson's Picks 1",
-      "score": 230,
+      "score": 240,
       "maxPossible": 1800,
-      "percentile": 0.64657671,
+      "percentile": 0.52808407,
       "rank": 13,
       "eliminated": false,
       "tiebreaker": null,
@@ -5426,7 +5426,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -5726,9 +5726,9 @@
     {
       "member": "Snoopycake",
       "entryName": "Eli's Grandpa",
-      "score": 220,
+      "score": 230,
       "maxPossible": 1830,
-      "percentile": 0.27869308,
+      "percentile": 0.34523419,
       "rank": 15,
       "eliminated": false,
       "tiebreaker": 160,
@@ -5772,7 +5772,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -6072,9 +6072,9 @@
     {
       "member": "Vasquez",
       "entryName": "The Auditor 📈📉📊🧮",
-      "score": 220,
+      "score": 230,
       "maxPossible": 1570,
-      "percentile": 0.44870339,
+      "percentile": 0.34523419,
       "rank": 15,
       "eliminated": false,
       "tiebreaker": null,
@@ -6118,7 +6118,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -6418,9 +6418,9 @@
     {
       "member": "N-DAWG'08",
       "entryName": "M\u0026M's",
-      "score": 210,
+      "score": 220,
       "maxPossible": 1740,
-      "percentile": 0.18703555,
+      "percentile": 0.23378027,
       "rank": 17,
       "eliminated": false,
       "tiebreaker": 101,
@@ -6464,7 +6464,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -6764,9 +6764,9 @@
     {
       "member": "espnfan9785388635",
       "entryName": "Just Rae-ndom ",
-      "score": 150,
+      "score": 160,
       "maxPossible": 1460,
-      "percentile": 0.05534855,
+      "percentile": 0.06181824,
       "rank": 18,
       "eliminated": false,
       "tiebreaker": 123,
@@ -6810,7 +6810,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
@@ -7110,9 +7110,9 @@
     {
       "member": "espnfan9438190332",
       "entryName": "Lenny 🐶🐾",
-      "score": 80,
+      "score": 90,
       "maxPossible": 690,
-      "percentile": 0.04123229,
+      "percentile": 0.04088211,
       "rank": 19,
       "eliminated": false,
       "tiebreaker": null,
@@ -7156,7 +7156,7 @@
           {
             "matchupId": "c908ffe0-0695-11f1-af21-ff98afcfd072",
             "pickedTeamId": "c908ffe1-0695-11f1-af21-ff98afcfd072",
-            "result": "UNDECIDED"
+            "result": "CORRECT"
           },
           {
             "matchupId": "c9094e00-0695-11f1-af21-ff98afcfd072",
