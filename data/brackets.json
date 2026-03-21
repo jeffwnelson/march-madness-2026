@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-03-21T18:05:09Z",
+  "lastUpdated": "2026-03-21T18:18:00Z",
   "groupId": "af223df6-96d0-46e7-b00d-1b590dc67888",
   "groupName": "Curtis / Vasquez Madness",
   "pointsPerRound": [
@@ -400,7 +400,7 @@
       "abbrev": "MICH",
       "seed": 1,
       "region": 4,
-      "record": "32-3",
+      "record": "33-3",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/130.png"
     },
     "c9124eb2-0695-11f1-af21-ff98afcfd072": {
@@ -424,7 +424,7 @@
       "abbrev": "SLU",
       "seed": 9,
       "region": 4,
-      "record": "29-5",
+      "record": "29-6",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png"
     },
     "c91275c1-0695-11f1-af21-ff98afcfd072": {
@@ -534,7 +534,7 @@
       "team2Id": "c9124eb4-0695-11f1-af21-ff98afcfd072",
       "winnerId": null,
       "gameTime": 1774109400000,
-      "status": "LOCKED"
+      "status": "COMPLETE"
     },
     {
       "id": "c912eaf0-0695-11f1-af21-ff98afcfd072",
@@ -704,6 +704,26 @@
   ],
   "brackets": [
     {
+      "member": "ESPNFAN3255999702",
+      "entryName": "Cornhusker Hustlers 🌽🏀",
+      "score": 290,
+      "maxPossible": 1870,
+      "percentile": 0.95803461,
+      "rank": 1,
+      "eliminated": false,
+      "tiebreaker": 158,
+      "picks": {
+        "r64": [],
+        "r32": [],
+        "sweet16": [],
+        "elite8": [],
+        "finalFour": [],
+        "championship": []
+      },
+      "champion": "",
+      "finalFour": []
+    },
+    {
       "member": "jeff-fa-fa-2",
       "entryName": "Luke's Hoops",
       "score": 290,
@@ -724,32 +744,12 @@
       "finalFour": []
     },
     {
-      "member": "ESPNFAN3255999702",
-      "entryName": "Cornhusker Hustlers 🌽🏀",
-      "score": 270,
-      "maxPossible": 1870,
-      "percentile": 0.95803461,
-      "rank": 2,
-      "eliminated": false,
-      "tiebreaker": 158,
-      "picks": {
-        "r64": [],
-        "r32": [],
-        "sweet16": [],
-        "elite8": [],
-        "finalFour": [],
-        "championship": []
-      },
-      "champion": "",
-      "finalFour": []
-    },
-    {
       "member": "jeff-fa-fa-2",
       "entryName": "Jeff's Worst Picks Ever",
-      "score": 270,
+      "score": 290,
       "maxPossible": 1870,
       "percentile": 0.95803461,
-      "rank": 2,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": 110,
       "picks": {
@@ -766,10 +766,10 @@
     {
       "member": "N-DAWG'08",
       "entryName": "Nautical Nate ⚓",
-      "score": 270,
+      "score": 290,
       "maxPossible": 1850,
       "percentile": 0.95803461,
-      "rank": 2,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": 138,
       "picks": {
@@ -786,10 +786,10 @@
     {
       "member": "ESPNFAN0140312004",
       "entryName": "Vasquez fam intern👩🏿‍💻",
-      "score": 270,
+      "score": 290,
       "maxPossible": 1850,
       "percentile": 0.95803461,
-      "rank": 2,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": 105,
       "picks": {
@@ -806,10 +806,10 @@
     {
       "member": "espnfan6709667072",
       "entryName": "Delka’s Dunk Dynasty",
-      "score": 270,
+      "score": 290,
       "maxPossible": 1850,
       "percentile": 0.95803461,
-      "rank": 2,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": 138,
       "picks": {
@@ -826,10 +826,10 @@
     {
       "member": "Blair N Nelson",
       "entryName": "Jack Jack Attack 💥",
-      "score": 270,
+      "score": 290,
       "maxPossible": 1830,
       "percentile": 0.95803461,
-      "rank": 2,
+      "rank": 1,
       "eliminated": false,
       "tiebreaker": 110,
       "picks": {
@@ -846,7 +846,7 @@
     {
       "member": "John DXP",
       "entryName": "John’s Final Fourcast",
-      "score": 260,
+      "score": 280,
       "maxPossible": 1860,
       "percentile": 0.87789134,
       "rank": 8,
@@ -866,7 +866,7 @@
     {
       "member": "Cheri Curtis",
       "entryName": "Swishers Sweet",
-      "score": 260,
+      "score": 280,
       "maxPossible": 1840,
       "percentile": 0.87789134,
       "rank": 8,
@@ -886,7 +886,7 @@
     {
       "member": "espnfan9785388635",
       "entryName": "March sadness ft Tressa ",
-      "score": 260,
+      "score": 280,
       "maxPossible": 1840,
       "percentile": 0.87789134,
       "rank": 8,
@@ -906,7 +906,7 @@
     {
       "member": "espnfan9438190332",
       "entryName": "Frat Rat 🏓 🍻",
-      "score": 250,
+      "score": 270,
       "maxPossible": 1850,
       "percentile": 0.72291851,
       "rank": 11,
@@ -926,7 +926,7 @@
     {
       "member": "espnfan6709667072",
       "entryName": "Binkies \u0026 Buckets",
-      "score": 250,
+      "score": 270,
       "maxPossible": 1830,
       "percentile": 0.72291851,
       "rank": 11,
@@ -946,7 +946,7 @@
     {
       "member": "Snoopycake",
       "entryName": "9th Time's The Charm",
-      "score": 240,
+      "score": 260,
       "maxPossible": 1820,
       "percentile": 0.53098794,
       "rank": 13,
@@ -966,7 +966,7 @@
     {
       "member": "Blair N Nelson",
       "entryName": "Blair N Nelson's Picks 1",
-      "score": 240,
+      "score": 260,
       "maxPossible": 1800,
       "percentile": 0.53098794,
       "rank": 13,
@@ -986,7 +986,7 @@
     {
       "member": "Snoopycake",
       "entryName": "Eli's Grandpa",
-      "score": 230,
+      "score": 250,
       "maxPossible": 1830,
       "percentile": 0.34871192,
       "rank": 15,
@@ -1006,7 +1006,7 @@
     {
       "member": "Vasquez",
       "entryName": "The Auditor 📈📉📊🧮",
-      "score": 230,
+      "score": 250,
       "maxPossible": 1570,
       "percentile": 0.34871192,
       "rank": 15,
@@ -1046,7 +1046,7 @@
     {
       "member": "espnfan9785388635",
       "entryName": "Just Rae-ndom ",
-      "score": 160,
+      "score": 180,
       "maxPossible": 1460,
       "percentile": 0.06505876,
       "rank": 18,
