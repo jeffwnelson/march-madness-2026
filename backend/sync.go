@@ -535,7 +535,7 @@ func reconstructR64Matchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[s
 		}
 
 		// R64 game A: pos 1 vs pos 2.
-		winnerA := determineR64Winner(pos[1], pos[2], prop, g, outcomeToTeam)
+		winnerA := determineR64Winner(pos[1], pos[2], prop, g, outcomeToTeam, oldOutcomeToTeam)
 		mA := MatchupData{
 			ID:           prop.ID + "-r64a",
 			Region:       regionID,
@@ -548,7 +548,7 @@ func reconstructR64Matchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[s
 		}
 
 		// R64 game B: pos 3 vs pos 4.
-		winnerB := determineR64Winner(pos[3], pos[4], prop, g, outcomeToTeam)
+		winnerB := determineR64Winner(pos[3], pos[4], prop, g, outcomeToTeam, oldOutcomeToTeam)
 		mB := MatchupData{
 			ID:           prop.ID + "-r64b",
 			Region:       regionID,
@@ -566,9 +566,13 @@ func reconstructR64Matchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[s
 	return matchups
 }
 
-// determineR64Winner determines which of two teams won the R64 game
-// by checking which is an R32 contestant (appears in entry picks for R32).
-func determineR64Winner(team1, team2 string, r32Prop espnProposition, g *espnGroup, outcomeToTeam map[string]string) string {
+// determineR64Winner determines which of two teams won the R64 game.
+// Primary: check which team is picked for R32 (appears in entry picks for the R32 prop).
+// Fallback: when nobody picks either team for R32, check old R64 pick results.
+func determineR64Winner(team1, team2 string, r32Prop espnProposition, g *espnGroup, outcomeToTeam map[string]string, oldOutcomeToTeam map[string]string) string {
+	// Primary: check R32 picks
+	propSet := make(map[string]bool)
+	propSet[r32Prop.ID] = true
 	for _, entry := range g.Entries {
 		for _, pick := range entry.Picks {
 			if pick.PropositionID != r32Prop.ID {
@@ -583,6 +587,37 @@ func determineR64Winner(team1, team2 string, r32Prop espnProposition, g *espnGro
 			}
 		}
 	}
+
+	// Fallback: check old R64 pick results.
+	// Scan all entries' old picks. If a pick resolves to team1 or team2 and has
+	// result CORRECT, that team won. If INCORRECT, the other team won.
+	for _, entry := range g.Entries {
+		for _, pick := range entry.Picks {
+			if propSet[pick.PropositionID] {
+				continue // skip current-period picks
+			}
+			if len(pick.OutcomesPicked) == 0 {
+				continue
+			}
+			oid := pick.OutcomesPicked[0].OutcomeID
+			result := pick.OutcomesPicked[0].Result
+			tid, ok := oldOutcomeToTeam[oid]
+			if !ok {
+				continue
+			}
+			if tid == team1 || tid == team2 {
+				if result == "CORRECT" {
+					return tid
+				} else if result == "INCORRECT" {
+					if tid == team1 {
+						return team2
+					}
+					return team1
+				}
+			}
+		}
+	}
+
 	return ""
 }
 
