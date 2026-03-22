@@ -112,6 +112,13 @@ jobs:
       - name: Pull latest (includes VERSION update)
         run: git pull origin master
 
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: 'go.mod'
+
+      - name: Regenerate data files with updated version
+        run: go run ./backend/
+
       - uses: actions/configure-pages@v4
 
       - uses: actions/upload-pages-artifact@v3
