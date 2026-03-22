@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-03-22T20:47:53Z",
-  "version": "0.11.1+cd914e2",
+  "lastUpdated": "2026-03-22T20:58:28Z",
+  "version": "0.11.1+94fa969",
   "pointsPerRound": [
     10,
     20,
@@ -176,7 +176,7 @@ const DATA = {
       "abbrev": "ISU",
       "seed": 2,
       "region": 4,
-      "record": "28-7",
+      "record": "29-7",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/66.png"
     },
     "KENN": {
@@ -440,7 +440,7 @@ const DATA = {
       "abbrev": "UK",
       "seed": 7,
       "region": 4,
-      "record": "22-13",
+      "record": "22-14",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png"
     },
     "UNC": {
@@ -556,7 +556,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -565,6 +564,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -604,10 +604,10 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
-                "Vasquez fam intern👩🏿‍💻"
+                "Vasquez fam intern👩🏿‍💻",
+                "Jeff's Worst Picks Ever"
               ]
             }
           }
@@ -635,7 +635,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "Frat Rat 🏓 🍻",
@@ -643,6 +642,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1"
@@ -665,7 +665,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -674,6 +673,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -704,7 +704,6 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "Frat Rat 🏓 🍻",
@@ -712,6 +711,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -757,11 +757,11 @@ const DATA = {
               "count": 8,
               "entries": [
                 "Luke's Hoops",
-                "Jeff's Worst Picks Ever",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa"
               ]
@@ -784,7 +784,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -792,6 +791,7 @@ const DATA = {
                 "Jack Jack Attack 💥",
                 "Nautical Nate ⚓",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa"
               ]
@@ -814,7 +814,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -823,6 +822,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -853,11 +853,11 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
                 "Frat Rat 🏓 🍻",
                 "Vasquez fam intern👩🏿‍💻",
+                "Jeff's Worst Picks Ever",
                 "Eli's Grandpa",
                 "M\u0026M's"
               ]
@@ -885,7 +885,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -894,6 +893,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -924,13 +924,13 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "March sadness ft Tressa ",
                 "Frat Rat 🏓 🍻",
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -969,7 +969,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -978,6 +977,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1002,7 +1002,6 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1011,6 +1010,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1034,11 +1034,11 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "March sadness ft Tressa ",
                 "Frat Rat 🏓 🍻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet"
               ]
             },
@@ -1072,12 +1072,12 @@ const DATA = {
               "entries": [
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Blair N Nelson's Picks 1",
                 "The Auditor 📈📉📊🧮",
                 "M\u0026M's"
@@ -1102,8 +1102,9 @@ const DATA = {
           "displayOrder": 16,
           "team1Id": "UK",
           "team2Id": "ISU",
+          "winnerId": "ISU",
           "gameTime": 1774205100000,
-          "status": "LOCKED",
+          "status": "COMPLETE",
           "picks": {
             "ISU": {
               "count": 15,
@@ -1154,7 +1155,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1163,6 +1163,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1194,10 +1195,10 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
-                "Vasquez fam intern👩🏿‍💻"
+                "Vasquez fam intern👩🏿‍💻",
+                "Jeff's Worst Picks Ever"
               ]
             },
             "UNI": {
@@ -1289,7 +1290,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "Frat Rat 🏓 🍻",
@@ -1297,6 +1297,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1"
@@ -1343,7 +1344,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1352,6 +1352,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1376,7 +1377,6 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "Frat Rat 🏓 🍻",
@@ -1384,6 +1384,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1437,11 +1438,11 @@ const DATA = {
               "count": 8,
               "entries": [
                 "Luke's Hoops",
-                "Jeff's Worst Picks Ever",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa"
               ]
@@ -1508,7 +1509,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1516,6 +1516,7 @@ const DATA = {
                 "Jack Jack Attack 💥",
                 "Nautical Nate ⚓",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa"
               ]
@@ -1568,7 +1569,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1577,6 +1577,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1606,7 +1607,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1615,6 +1615,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1673,11 +1674,11 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
                 "Frat Rat 🏓 🍻",
                 "Vasquez fam intern👩🏿‍💻",
+                "Jeff's Worst Picks Ever",
                 "Eli's Grandpa",
                 "M\u0026M's"
               ]
@@ -1748,13 +1749,13 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "March sadness ft Tressa ",
                 "Frat Rat 🏓 🍻",
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1796,7 +1797,6 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1805,6 +1805,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1834,7 +1835,6 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
@@ -1843,6 +1843,7 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet",
                 "Eli's Grandpa",
                 "Blair N Nelson's Picks 1",
@@ -1916,11 +1917,11 @@ const DATA = {
               "entries": [
                 "Cornhusker Hustlers 🌽🏀",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "March sadness ft Tressa ",
                 "Frat Rat 🏓 🍻",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Swishers Sweet"
               ]
             },
@@ -1952,12 +1953,12 @@ const DATA = {
               "entries": [
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Jeff's Worst Picks Ever",
                 "Delka’s Dunk Dynasty",
                 "9th Time's The Charm",
                 "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Binkies \u0026 Buckets",
+                "Jeff's Worst Picks Ever",
                 "Blair N Nelson's Picks 1",
                 "The Auditor 📈📉📊🧮",
                 "M\u0026M's"
