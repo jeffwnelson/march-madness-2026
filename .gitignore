@@ -1,20 +1,8 @@
-# Compiled binaries
-march-madness-2026
-march-madness-server
+# Go build output
 *.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-
-# Test binary, built with `go test -c`
 *.test
-
-# Go build/coverage output
 *.out
 *.prof
-
-# Server binary
 .server
 
 # OS generated files
@@ -32,17 +20,9 @@ Thumbs.db
 .env
 .env.*
 
-# Node
-node_modules/
-
 # Playwright
 .playwright-mcp/
-test-results/
-tests/test-results/
-tests/playwright-report/
-
-# Raw ESPN snapshots
-data/snapshots/
+node_modules/
 
 # Backup files
 *.bak

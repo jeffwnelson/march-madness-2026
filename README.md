@@ -1,105 +1,98 @@
 # March Madness 2026
 
-Bracket tracking and scoring app for the NCAA March Madness tournament. Pulls bracket data from ESPN's Tournament Challenge API, processes picks and scores, and serves a web UI for tracking a private group's brackets.
+Bracket tracking app for the NCAA March Madness tournament. Pulls bracket data from ESPN's Tournament Challenge API, processes it into static JS files, and serves a web UI for tracking a private group's brackets.
 
 ## Features
 
-- **Leaderboard** with scores, max possible points, champion picks, player names, and bracket detail modal
-- **Bracket detail modal** — click any leaderboard entry to see champion pick, Final Four (2x2 grid by region), national percentile, R64 record, and tiebreaker prediction
-- **Round-by-round matchup view** showing pick distributions and results
-- **Hierarchical round progression** — each round's matchups only appear when the previous round's games are decided
-- **Bracket uniqueness** analysis comparing entries across the group
-- **What-if simulator** to explore hypothetical outcomes and score impacts
-- **Deep linking** via URI fragments for tabs and rounds
-- **Automated updates** via GitHub Actions cron (noon–1am CST during the tournament)
+- **Leaderboard** — scores, max possible points, correct picks, champion logos (greyed out if eliminated), bracket detail modal
+- **Bracket detail modal** — champion pick, Final Four (2x2 grid by region), national percentile, tiebreaker prediction
+- **Bracket Picks** — round-by-round matchup cards showing which group members picked each team
+- **Slide-out drawer** — tap any matchup to see who picked each team with bracket names
+- **Auto-advancing round pills** — defaults to the first incomplete round
+- **Live game detection** — games past their start time show "PLAYING" with blue border
+- **Deep linking** — URL hash tracks tab, round, sort mode, and open matchup drawer
+- **No server required** — static HTML/JS files, works with GitHub Pages or opening `index.html` directly
 
 ## Project Structure
 
 ```
-├── backend/               Go server and data processing
-│   ├── server.go          HTTP server, ESPN API client
-│   ├── process.go         ESPN data → bracket JSON transform
-│   ├── *_test.go          Tests and scenario generator
-│   └── testdata/          ESPN snapshots and generated scenarios
-├── css/style.css          Styles
-├── js/app.js              Frontend application
-├── index.html             HTML shell
-├── data/brackets.json     Processed bracket data (served to frontend)
-├── Makefile               Server and test data management
-└── .github/workflows/     CI/CD (cron updates, versioning, Pages deploy)
+├── backend/
+│   └── main.go              ESPN data → data.js + leaderboard.js
+├── css/style.css             Styles
+├── js/app.js                 Frontend application
+├── index.html                HTML shell
+├── data/
+│   ├── espn/                 Raw ESPN API snapshots
+│   │   ├── challenge.json    Propositions, teams, outcomes
+│   │   └── group.json        Bracket entries, picks, scores
+│   ├── data.js               Processed matchup data (teams + rounds)
+│   └── leaderboard.js        Processed leaderboard data (entries + scores)
+├── Makefile                  Commands
+└── .github/workflows/        CI/CD
 ```
 
-## Architecture
+## How It Works
 
 ```
 ESPN Tournament Challenge API
-  ├─ /challenges/tournament-challenge-bracket-2026      (matchups, teams, outcomes)
-  └─ /challenges/.../groups/{groupId}?view=entries      (bracket entries, picks, scores)
+  ├─ challenge endpoint    (propositions, teams, outcomes, game results)
+  └─ group endpoint        (bracket entries, picks, scores)
         │
         ▼
   ┌──────────────────────┐
-  │  backend/process.go  │  Transforms ESPN data → processed bracket JSON
-  │                      │  - Teams, matchups (with winners)
-  │                      │  - Per-entry picks bucketed by round (R64→Championship)
-  │                      │  - Champion resolution via finalPick cross-entry correlation
-  │                      │  - ESPN stats: percentile, eliminated, tiebreaker
+  │  backend/main.go     │  Reads data/espn/*.json
+  │                      │  Outputs data/data.js + data/leaderboard.js
+  │                      │
+  │  - Teams from R32 proposition outcomes (all 64)
+  │  - R64 matchups reconstructed from R32 prop positions
+  │  - R64 winners from actualOutcomeIds
+  │  - R32 matchups from R32 props, winners from correctOutcomes
+  │  - Pick aggregation per matchup from entry picks
+  │  - Champion resolution via hex offset on finalPick IDs
   └──────────┬───────────┘
              │
              ▼
   ┌──────────────────────┐
-  │  backend/server.go   │  HTTP server (:8000)
-  │                      │  - GET  /              → index.html
-  │                      │  - GET  /api/brackets  → cached bracket JSON
-  │                      │  - POST /api/refresh   → re-fetch from ESPN
-  └──────────┬───────────┘
-             │
-             ▼
-  ┌──────────────────────┐
-  │  index.html          │  Single-page app (vanilla JS)
-  │  css/style.css       │  - Matchup cards with pick counts
-  │  js/app.js           │  - Hierarchical round rendering
-  │                      │  - Bracket detail modal with stats
-  │                      │  - What-if score simulator
+  │  index.html          │  Static site (no server needed)
+  │  data/data.js        │  const DATA = { teams, rounds }
+  │  data/leaderboard.js │  const LEADERBOARD = { entries }
+  │  js/app.js           │  Renders leaderboard + bracket picks
   └──────────────────────┘
 ```
+
+## ESPN Data Model
+
+ESPN uses a **rolling proposition model** — only the current round's propositions are available. When R64 completes, R64 propositions are replaced with R32 propositions.
+
+Key fields:
+- **`scoringPeriodId`** — current round (1=R64, 2=R32, 3=S16, etc.)
+- **`actualOutcomeIds`** — teams that won their previous-round game (R64 winners)
+- **`correctOutcomes`** — team that won the current-round game (only on COMPLETE props)
+- **`possibleOutcomes`** — 4 teams per R32 prop: positions 1,2 = R64 game A, positions 3,4 = R64 game B
+
+Entry picks use `periodReached` to indicate how far a team advances in that bracket:
+
+| periodReached | Meaning |
+|---------------|---------|
+| 2 | Team wins R64 (reaches R32) |
+| 3 | Team wins R32 (reaches S16) |
+| 4 | Team wins S16 (reaches E8) |
+| 5 | Team wins E8 (reaches FF) |
+| 6 | Team wins FF (reaches Championship) |
 
 ## Quick Start
 
 ```bash
-make start          # Start server in background
-make stop           # Stop server
-make restart        # Restart server
-make test           # Run all tests
-make help           # Show all commands
+# Download fresh ESPN data
+curl -s "https://gambit-api.fantasy.espn.com/apis/v1/challenges/tournament-challenge-bracket-2026" | python3 -m json.tool > data/espn/challenge.json
+curl -s "https://gambit-api.fantasy.espn.com/apis/v1/challenges/tournament-challenge-bracket-2026/groups/af223df6-96d0-46e7-b00d-1b590dc67888?view=entries&limit=50" | python3 -m json.tool > data/espn/group.json
+
+# Generate static JS files
+go run ./backend/
+
+# Open in browser (no server needed)
+open index.html
 ```
-
-The server runs at `http://localhost:8000`.
-
-## Data Flow
-
-ESPN provides 32 R64 propositions. Each bracket entry's picks reference these propositions with a `periodReached` value indicating how far the user predicted that team would advance:
-
-| periodReached | Round          |
-|---------------|----------------|
-| 2             | Round of 64    |
-| 3             | Round of 32    |
-| 4             | Sweet 16       |
-| 5             | Elite 8        |
-| 6             | Final Four     |
-
-### Pick Results
-
-Each round's pick `result` fields (CORRECT/INCORRECT/UNDECIDED) indicate whether the team won that round's game. For example, an R32 pick marked CORRECT means the team won their R32 game.
-
-The frontend uses a **hierarchical winner chain** to determine matchup visibility. Each round's pick results directly determine that round's winners. Later-round matchups only appear once the previous round's games are decided.
-
-### Champion Resolution
-
-ESPN's `finalPick` field uses championship-proposition outcome IDs that differ from R64 outcome IDs. Champions are resolved via:
-
-1. **Cross-entry correlation** — intersect R64 finalists across entries with the same championship pick
-2. **Iterative elimination** — remove already-resolved teams from ambiguous sets
-3. **ID offset fallback** — championship outcomes follow bracket ordering (region × 16 + bracket position)
 
 ## Scoring
 
@@ -111,58 +104,3 @@ ESPN's `finalPick` field uses championship-proposition outcome IDs that differ f
 | Elite 8      | 80     |
 | Final Four   | 160    |
 | Championship | 320    |
-
-## Testing
-
-```bash
-make test
-```
-
-Tests include structural validation (`TestProcessData`), HTTP endpoint tests, and 12 scenario-based integration tests (`TestScenarios`) that validate pick results at each tournament completion level.
-
-## Mock Tournament Data
-
-`testdata_gen_test.go` generates simulated tournament scenarios for end-to-end testing without waiting for real games. It loads real ESPN snapshots from `testdata/`, mutates them with random outcomes, and produces processed `brackets.json` files.
-
-### Scenarios
-
-12 scenarios are generated — 2 at each completion level:
-
-| Scenarios | Completed through | Decided games |
-|-----------|------------------|---------------|
-| `R64_1`, `R64_2` | Round of 64 | 32 |
-| `R32_1`, `R32_2` | Round of 32 | 48 |
-| `S16_1`, `S16_2` | Sweet 16 | 56 |
-| `E8_1`, `E8_2` | Elite 8 | 60 |
-| `FF_1`, `FF_2` | Final Four | 62 |
-| `Champ_1`, `Champ_2` | Championship | 63 |
-
-Each scenario uses a deterministic PRNG seed so results are reproducible.
-
-### Generating scenario files
-
-```bash
-make generate-scenarios   # Generate all scenario files
-make test                 # Run validation tests
-```
-
-### Loading a scenario locally
-
-```bash
-make load-e8              # Load Elite 8 scenario (or load-r64, load-r32, etc.)
-make restart              # Restart server with new data
-
-make load-real            # Restore real ESPN data
-```
-
-## CI/CD
-
-| Workflow | Trigger | Jobs |
-|----------|---------|------|
-| **Version Bump** | push to master | version → update-version-file → release → deploy |
-| **Deploy Pages** | push to master (chore commits) | deploy to GitHub Pages |
-| **Update Brackets** | cron (every 10min during games) | fetch ESPN data → commit → push |
-
-- **Versioning**: [cocogitto](https://github.com/cocogitto/cocogitto) with conventional commits — `feat:` bumps minor, `fix:` bumps patch
-- **Releases**: GitHub releases with cocogitto-generated changelogs
-- **Pages**: Actions-based deployment, runs after version bump and release complete

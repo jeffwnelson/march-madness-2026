@@ -25,27 +25,30 @@ jobs:
         with:
           go-version-file: 'go.mod'
 
-      - name: Fetch latest bracket data
-        run: go run ./backend --fetch-only
+      - name: Fetch ESPN data
+        run: |
+          mkdir -p data/espn
+          curl -s "https://gambit-api.fantasy.espn.com/apis/v1/challenges/tournament-challenge-bracket-2026" > data/espn/challenge.json
+          curl -s "https://gambit-api.fantasy.espn.com/apis/v1/challenges/tournament-challenge-bracket-2026/groups/af223df6-96d0-46e7-b00d-1b590dc67888?view=entries&limit=50" > data/espn/group.json
+
+      - name: Generate data files
+        run: go run ./backend/
 
       - name: Check for changes
         id: diff
         run: |
-          git diff --quiet data/leaderboard.json data/bracket-picks.json || echo "changed=true" >> "$GITHUB_OUTPUT"
+          git diff --quiet data/data.js data/leaderboard.js || echo "changed=true" >> "$GITHUB_OUTPUT"
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/leaderboard.json data/bracket-picks.json
-          git commit -m "chore: update bracket data — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          # Update VERSION with new commit hash
-          VER=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
           SHORT_SHA=$(git rev-parse --short HEAD)
-          echo "${VER}+${SHORT_SHA}" > VERSION
-          git add VERSION
-          git commit --amend --no-edit
+          TIMESTAMP=$(date -u +%Y%m%d.%H%M%S)
+          echo "${TIMESTAMP}+${SHORT_SHA}" > VERSION
+          git add data/data.js data/leaderboard.js data/espn/ VERSION
+          git commit -m "chore: update bracket data — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push
 
   deploy:

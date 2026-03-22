@@ -14,7 +14,7 @@
 <div class="header">
   <div class="header-left">
     <div>
-      <h1>March Madness <span>2026</span></h1>
+      <h1 style="cursor:pointer" onclick="location.hash='';switchTab('leaderboard');setLbSort('current')">March Madness <span>2026</span></h1>
       <div id="group-name" style="font-size:0.79rem;color:var(--muted);font-weight:500;margin-top:2px"></div>
     </div>
   </div>
@@ -47,7 +47,7 @@
 </div>
 
 <div class="tab-content active" id="tab-leaderboard">
-  <div id="leaderboard-content"><div class="loading-msg">Loading bracket data...</div></div>
+  <div id="leaderboard-content"><div class="loading-msg">Loading...</div></div>
 </div>
 <div class="tab-content" id="tab-consensus">
   <div id="consensus-content"><div class="loading-msg">Loading bracket data...</div></div>
@@ -73,6 +73,8 @@
   <div class="drawer-body" id="drawer-body"></div>
 </div>
 
+<script src="data/data.js"></script>
+<script src="data/leaderboard.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
