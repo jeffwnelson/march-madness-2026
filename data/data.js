@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-03-22T18:05:13Z",
-  "version": "20260322.075853+9ee40a8",
+  "lastUpdated": "2026-03-22T18:18:02Z",
+  "version": "20260322.180513+fbfc9c3",
   "pointsPerRound": [
     10,
     20,
@@ -232,7 +232,7 @@ const DATA = {
       "abbrev": "MIA",
       "seed": 7,
       "region": 3,
-      "record": "26-8",
+      "record": "26-9",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png"
     },
     "MICH": {
@@ -296,7 +296,7 @@ const DATA = {
       "abbrev": "PUR",
       "seed": 2,
       "region": 3,
-      "record": "28-8",
+      "record": "29-8",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2509.png"
     },
     "PV": {
@@ -953,8 +953,9 @@ const DATA = {
           "displayOrder": 11,
           "team1Id": "MIA",
           "team2Id": "PUR",
+          "winnerId": "PUR",
           "gameTime": 1774195800000,
-          "status": "LOCKED",
+          "status": "COMPLETE",
           "picks": {
             "MIA": {
               "count": 1,
