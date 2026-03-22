@@ -1,0 +1,123 @@
+name: Version Bump
+
+on:
+  push:
+    branches: [master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'chore(version)')"
+    permissions:
+      contents: read
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: cocogitto/cocogitto-action@v3
+        id: cocogitto
+        with:
+          release: true
+          check: true
+          check-latest-tag-only: true
+
+      - name: Set version output
+        id: version
+        run: echo "version=${{ steps.cocogitto.outputs.version }}" >> "$GITHUB_OUTPUT"
+
+  update-version-file:
+    needs: [version]
+    if: needs.version.outputs.version != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: master
+
+      - name: Update VERSION file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          SHORT_SHA=$(git rev-parse --short HEAD)
+          echo "${{ needs.version.outputs.version }}+${SHORT_SHA}" > VERSION
+          git add VERSION
+          git commit -m "chore(version): update VERSION to ${{ needs.version.outputs.version }}"
+          git push
+
+  release:
+    needs: [version, update-version-file]
+    if: needs.version.outputs.version != ''
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create and push tag
+        run: |
+          if git rev-parse "${{ needs.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "Tag ${{ needs.version.outputs.version }} already exists, skipping"
+          else
+            git tag "${{ needs.version.outputs.version }}"
+            git push origin "${{ needs.version.outputs.version }}"
+          fi
+
+      - name: Install cocogitto
+        run: |
+          curl -sSL https://github.com/cocogitto/cocogitto/releases/download/7.0.0/cocogitto-7.0.0-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components=1
+          sudo mv cog /usr/local/bin/
+
+      - name: Generate changelog and create release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view "${{ needs.version.outputs.version }}" >/dev/null 2>&1; then
+            echo "Release ${{ needs.version.outputs.version }} already exists, skipping"
+          else
+            cog changelog --at "${{ needs.version.outputs.version }}" > RELEASE_NOTES.md
+            gh release create "${{ needs.version.outputs.version }}" --notes-file RELEASE_NOTES.md
+          fi
+
+  deploy:
+    needs: [version, update-version-file, release]
+    if: always() && !cancelled() && needs.version.result == 'success'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages-deploy
+      cancel-in-progress: true
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+
+      - name: Pull latest (includes VERSION update)
+        run: git pull origin master
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
