@@ -44,9 +44,9 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "0.0.0")
           SHORT_SHA=$(git rev-parse --short HEAD)
-          TIMESTAMP=$(date -u +%Y%m%d.%H%M%S)
-          echo "${TIMESTAMP}+${SHORT_SHA}" > VERSION
+          echo "${LATEST_TAG}+${SHORT_SHA}" > VERSION
           git add data/data.js data/leaderboard.js data/espn/ VERSION
           git commit -m "chore: update bracket data — $(date -u +%Y-%m-%dT%H:%M:%SZ)"
           git push

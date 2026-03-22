@@ -346,11 +346,12 @@ func main() {
 		return "future"
 	}
 
-	// Read version from VERSION file
+	// Build version from latest git tag + short commit hash
 	version := "dev"
 	if vb, err := os.ReadFile("VERSION"); err == nil {
 		version = strings.TrimSpace(string(vb))
 	}
+
 
 	out := Output{
 		GroupName:      g.GroupSettings.Name,
