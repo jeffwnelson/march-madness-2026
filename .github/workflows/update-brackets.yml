@@ -1,6 +1,8 @@
 name: Update Bracket Data
 
 on:
+  push:
+    branches: [master]
   schedule:
     - cron: '*/10 18-23 * * *'
     - cron: '*/10 0-7 * * *'
@@ -53,7 +55,7 @@ jobs:
 
   deploy:
     needs: update
-    if: needs.update.outputs.changed == 'true'
+    if: needs.update.outputs.changed == 'true' || github.event_name == 'push'
     runs-on: ubuntu-latest
     concurrency:
       group: pages-deploy
