@@ -403,26 +403,89 @@ func buildOldOutcomeMapping(ch *espnChallenge, g *espnGroup, propSet map[string]
 		oldPropA := oldR64Props[i]
 		oldPropB := oldR64Props[i+1]
 
-		// Get sorted outcome IDs for each old prop.
-		oldOutcomesA := sortedKeys(propOutcomes[oldPropA])
-		oldOutcomesB := sortedKeys(propOutcomes[oldPropB])
-
-		// Map old outcome IDs to R32 outcomes positionally.
-		if len(oldOutcomesA) >= 1 && pos[1] != nil {
-			result[oldOutcomesA[0]] = outcomeToTeam[pos[1].ID]
-		}
-		if len(oldOutcomesA) >= 2 && pos[2] != nil {
-			result[oldOutcomesA[1]] = outcomeToTeam[pos[2].ID]
-		}
-		if len(oldOutcomesB) >= 1 && pos[3] != nil {
-			result[oldOutcomesB[0]] = outcomeToTeam[pos[3].ID]
-		}
-		if len(oldOutcomesB) >= 2 && pos[4] != nil {
-			result[oldOutcomesB[1]] = outcomeToTeam[pos[4].ID]
-		}
+		// Map old outcomes to R32 outcomes using entry correlation.
+		// For each old prop, find entries that picked a specific outcome AND also
+		// picked a known team for the R32 prop. This tells us which old outcome = which team.
+		mapOldPropOutcomes(result, oldPropA, r32PropID, []int{1, 2}, pos, g, propSet, outcomeToTeam)
+		mapOldPropOutcomes(result, oldPropB, r32PropID, []int{3, 4}, pos, g, propSet, outcomeToTeam)
 	}
 
 	return result
+}
+
+// mapOldPropOutcomes maps old R64 outcome IDs to canonical team IDs by correlating
+// entries' old R64 picks with their R32 picks for the same bracket slot.
+// positions specifies which R32 matchup positions (e.g., [1,2] or [3,4]) this old prop feeds into.
+func mapOldPropOutcomes(result map[string]string, oldPropID, r32PropID string, positions []int, pos map[int]*espnOutcome, g *espnGroup, propSet map[string]bool, outcomeToTeam map[string]string) {
+	// For each entry, find their pick for this old R64 prop and their pick for the R32 prop.
+	// If the R32 pick matches one of the positions we're interested in, we know the old outcome = that team.
+	for _, entry := range g.Entries {
+		var oldOutcomeID string
+		var r32OutcomeID string
+
+		for _, pick := range entry.Picks {
+			if pick.PropositionID == oldPropID && len(pick.OutcomesPicked) > 0 {
+				oldOutcomeID = pick.OutcomesPicked[0].OutcomeID
+			}
+			if pick.PropositionID == r32PropID && len(pick.OutcomesPicked) > 0 {
+				r32OutcomeID = pick.OutcomesPicked[0].OutcomeID
+			}
+		}
+
+		if oldOutcomeID == "" || r32OutcomeID == "" {
+			continue
+		}
+		if _, done := result[oldOutcomeID]; done {
+			continue
+		}
+
+		// Check if the R32 pick corresponds to one of our positions
+		r32Team := outcomeToTeam[r32OutcomeID]
+		for _, p := range positions {
+			if pos[p] != nil && outcomeToTeam[pos[p].ID] == r32Team {
+				result[oldOutcomeID] = r32Team
+				break
+			}
+		}
+	}
+
+	// Fallback: if we mapped one outcome but not the other, infer the second.
+	// Each old prop has exactly 2 outcomes mapping to 2 positions.
+	posTeams := make(map[string]string) // canonical team ID → old outcome ID (reverse of result)
+	var unmappedOld []string
+	for oid := range propOutcomesForProp(g, oldPropID) {
+		if _, ok := result[oid]; ok {
+			posTeams[result[oid]] = oid
+		} else {
+			unmappedOld = append(unmappedOld, oid)
+		}
+	}
+	if len(unmappedOld) == 1 {
+		// Find which position team is unmapped
+		for _, p := range positions {
+			if pos[p] == nil {
+				continue
+			}
+			tid := outcomeToTeam[pos[p].ID]
+			if _, mapped := posTeams[tid]; !mapped {
+				result[unmappedOld[0]] = tid
+				break
+			}
+		}
+	}
+}
+
+// propOutcomesForProp collects unique outcome IDs for a proposition from all entries.
+func propOutcomesForProp(g *espnGroup, propID string) map[string]bool {
+	seen := make(map[string]bool)
+	for _, entry := range g.Entries {
+		for _, pick := range entry.Picks {
+			if pick.PropositionID == propID && len(pick.OutcomesPicked) > 0 {
+				seen[pick.OutcomesPicked[0].OutcomeID] = true
+			}
+		}
+	}
+	return seen
 }
 
 func sortedKeys(m map[string]bool) []string {
@@ -467,7 +530,7 @@ func buildCurrentMatchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[str
 			}
 		} else {
 			// R32+: determine actual contestants from entry picks.
-			m.Team1, m.Team2 = determineR32Contestants(prop, g, outcomeToTeam)
+			m.Team1, m.Team2 = determineR32Contestants(prop, outcomeToTeam)
 		}
 
 		// Determine winner from actualOutcomeIds.
@@ -482,39 +545,22 @@ func buildCurrentMatchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[str
 }
 
 // determineR32Contestants figures out which 2 of 4 outcomes are the actual R32 contestants
-// by checking which teams entries actually pick for R32.
-func determineR32Contestants(prop espnProposition, g *espnGroup, outcomeToTeam map[string]string) (string, string) {
-	pickCounts := make(map[string]int) // canonical team ID → pick count
-	for _, entry := range g.Entries {
-		for _, pick := range entry.Picks {
-			if pick.PropositionID != prop.ID {
-				continue
-			}
-			if len(pick.OutcomesPicked) > 0 {
-				if tid, ok := outcomeToTeam[pick.OutcomesPicked[0].OutcomeID]; ok {
-					pickCounts[tid]++
-				}
+// using actualOutcomeIds from the proposition.
+func determineR32Contestants(prop espnProposition, outcomeToTeam map[string]string) (string, string) {
+	actualSet := make(map[string]bool)
+	for _, oid := range prop.ActualOutcomeIDs {
+		actualSet[oid] = true
+	}
+	var t1, t2 string
+	for _, o := range prop.PossibleOutcomes {
+		tid := outcomeToTeam[o.ID]
+		if actualSet[o.ID] {
+			if o.MatchupPosition <= 2 {
+				t1 = tid
+			} else {
+				t2 = tid
 			}
 		}
-	}
-
-	// The two teams with picks are the contestants.
-	type teamCount struct {
-		tid   string
-		count int
-	}
-	var tcs []teamCount
-	for tid, cnt := range pickCounts {
-		tcs = append(tcs, teamCount{tid, cnt})
-	}
-	sort.Slice(tcs, func(i, j int) bool { return tcs[i].count > tcs[j].count })
-
-	var t1, t2 string
-	if len(tcs) >= 1 {
-		t1 = tcs[0].tid
-	}
-	if len(tcs) >= 2 {
-		t2 = tcs[1].tid
 	}
 	return t1, t2
 }
@@ -535,7 +581,7 @@ func reconstructR64Matchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[s
 		}
 
 		// R64 game A: pos 1 vs pos 2.
-		winnerA := determineR64Winner(pos[1], pos[2], prop, g, outcomeToTeam, oldOutcomeToTeam)
+		winnerA := determineR64Winner(pos[1], pos[2], prop, outcomeToTeam)
 		mA := MatchupData{
 			ID:           prop.ID + "-r64a",
 			Region:       regionID,
@@ -548,7 +594,7 @@ func reconstructR64Matchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[s
 		}
 
 		// R64 game B: pos 3 vs pos 4.
-		winnerB := determineR64Winner(pos[3], pos[4], prop, g, outcomeToTeam, oldOutcomeToTeam)
+		winnerB := determineR64Winner(pos[3], pos[4], prop, outcomeToTeam)
 		mB := MatchupData{
 			ID:           prop.ID + "-r64b",
 			Region:       regionID,
@@ -566,58 +612,20 @@ func reconstructR64Matchups(ch *espnChallenge, g *espnGroup, outcomeToTeam map[s
 	return matchups
 }
 
-// determineR64Winner determines which of two teams won the R64 game.
-// Primary: check which team is picked for R32 (appears in entry picks for the R32 prop).
-// Fallback: when nobody picks either team for R32, check old R64 pick results.
-func determineR64Winner(team1, team2 string, r32Prop espnProposition, g *espnGroup, outcomeToTeam map[string]string, oldOutcomeToTeam map[string]string) string {
-	// Primary: check R32 picks
-	propSet := make(map[string]bool)
-	propSet[r32Prop.ID] = true
-	for _, entry := range g.Entries {
-		for _, pick := range entry.Picks {
-			if pick.PropositionID != r32Prop.ID {
-				continue
-			}
-			if len(pick.OutcomesPicked) > 0 {
-				if tid, ok := outcomeToTeam[pick.OutcomesPicked[0].OutcomeID]; ok {
-					if tid == team1 || tid == team2 {
-						return tid
-					}
-				}
-			}
+// determineR64Winner determines which of two teams won the R64 game
+// by checking the R32 proposition's actualOutcomeIds. These list the outcomes
+// (teams) that advanced — i.e., the R64 winners who play in R32.
+func determineR64Winner(team1, team2 string, r32Prop espnProposition, outcomeToTeam map[string]string) string {
+	actualSet := make(map[string]bool)
+	for _, oid := range r32Prop.ActualOutcomeIDs {
+		actualSet[oid] = true
+	}
+	for _, o := range r32Prop.PossibleOutcomes {
+		tid := outcomeToTeam[o.ID]
+		if (tid == team1 || tid == team2) && actualSet[o.ID] {
+			return tid
 		}
 	}
-
-	// Fallback: check old R64 pick results.
-	// Scan all entries' old picks. If a pick resolves to team1 or team2 and has
-	// result CORRECT, that team won. If INCORRECT, the other team won.
-	for _, entry := range g.Entries {
-		for _, pick := range entry.Picks {
-			if propSet[pick.PropositionID] {
-				continue // skip current-period picks
-			}
-			if len(pick.OutcomesPicked) == 0 {
-				continue
-			}
-			oid := pick.OutcomesPicked[0].OutcomeID
-			result := pick.OutcomesPicked[0].Result
-			tid, ok := oldOutcomeToTeam[oid]
-			if !ok {
-				continue
-			}
-			if tid == team1 || tid == team2 {
-				if result == "CORRECT" {
-					return tid
-				} else if result == "INCORRECT" {
-					if tid == team1 {
-						return team2
-					}
-					return team1
-				}
-			}
-		}
-	}
-
 	return ""
 }
 

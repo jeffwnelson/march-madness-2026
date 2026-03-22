@@ -151,6 +151,7 @@ type espnOutcome struct {
 	RegionCompetitorID string        `json:"regionCompetitorId"`
 	MatchupPosition    int           `json:"matchupPosition"`
 	Status             string        `json:"status"`
+	Score              *float64      `json:"score"`
 	Mappings           []espnMapping `json:"mappings"`
 }
 
