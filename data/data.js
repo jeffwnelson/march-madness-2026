@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-03-23T01:35:51Z",
-  "version": "0.11.1+bbb1966",
+  "lastUpdated": "2026-03-23T02:30:21Z",
+  "version": "0.11.1+1efe97a",
   "pointsPerRound": [
     10,
     20,
@@ -1028,7 +1028,7 @@ const DATA = {
           "displayOrder": 13,
           "team1Id": "TTU",
           "team2Id": "ALA",
-          "gameTime": 1774231200000,
+          "gameTime": 1774231680000,
           "status": "LOCKED",
           "picks": {
             "ALA": {
