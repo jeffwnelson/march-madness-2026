@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-03-23T07:52:13Z",
-  "version": "0.11.1+13e01f5",
+  "lastUpdated": "2026-03-23T18:14:50Z",
+  "version": "0.11.1+2eb96e6",
   "pointsPerRound": [
     10,
     20,
@@ -88,7 +88,7 @@ const DATA = {
       "abbrev": "FLA",
       "seed": 1,
       "region": 2,
-      "record": "27-8",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/57.png"
     },
     "FUR": {
@@ -104,7 +104,7 @@ const DATA = {
       "abbrev": "GONZ",
       "seed": 3,
       "region": 3,
-      "record": "31-4",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2250.png"
     },
     "HAW": {
@@ -144,7 +144,7 @@ const DATA = {
       "abbrev": "HPU",
       "seed": 12,
       "region": 3,
-      "record": "31-5",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2272.png"
     },
     "IDHO": {
@@ -192,7 +192,7 @@ const DATA = {
       "abbrev": "KU",
       "seed": 4,
       "region": 1,
-      "record": "24-11",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2305.png"
     },
     "LIU": {
@@ -208,7 +208,7 @@ const DATA = {
       "abbrev": "LOU",
       "seed": 6,
       "region": 1,
-      "record": "24-11",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/97.png"
     },
     "M-OH": {
@@ -232,7 +232,7 @@ const DATA = {
       "abbrev": "MIA",
       "seed": 7,
       "region": 3,
-      "record": "26-9",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2390.png"
     },
     "MICH": {
@@ -344,7 +344,7 @@ const DATA = {
       "abbrev": "SLU",
       "seed": 9,
       "region": 4,
-      "record": "29-6",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/139.png"
     },
     "SMC": {
@@ -360,7 +360,7 @@ const DATA = {
       "abbrev": "TA\u0026M",
       "seed": 10,
       "region": 2,
-      "record": "22-12",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/245.png"
     },
     "TCU": {
@@ -368,7 +368,7 @@ const DATA = {
       "abbrev": "TCU",
       "seed": 9,
       "region": 1,
-      "record": "23-12",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2628.png"
     },
     "TENN": {
@@ -408,7 +408,7 @@ const DATA = {
       "abbrev": "TTU",
       "seed": 5,
       "region": 4,
-      "record": "23-11",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2641.png"
     },
     "UCF": {
@@ -424,7 +424,7 @@ const DATA = {
       "abbrev": "UCLA",
       "seed": 7,
       "region": 1,
-      "record": "24-12",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png"
     },
     "UGA": {
@@ -440,7 +440,7 @@ const DATA = {
       "abbrev": "UK",
       "seed": 7,
       "region": 4,
-      "record": "22-14",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/96.png"
     },
     "UNC": {
@@ -472,7 +472,7 @@ const DATA = {
       "abbrev": "USU",
       "seed": 9,
       "region": 3,
-      "record": "29-7",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png"
     },
     "UVA": {
@@ -480,7 +480,7 @@ const DATA = {
       "abbrev": "UVA",
       "seed": 3,
       "region": 4,
-      "record": "30-6",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/258.png"
     },
     "VAN": {
@@ -488,7 +488,7 @@ const DATA = {
       "abbrev": "VAN",
       "seed": 5,
       "region": 2,
-      "record": "27-9",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/238.png"
     },
     "VCU": {
@@ -496,7 +496,7 @@ const DATA = {
       "abbrev": "VCU",
       "seed": 11,
       "region": 2,
-      "record": "28-8",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2670.png"
     },
     "VILL": {
@@ -538,442 +538,23 @@ const DATA = {
       "matchups": []
     },
     "r32": {
-      "status": "complete",
+      "status": "future",
       "matchups": [
         {
-          "id": "c90fddb0-0695-11f1-af21-ff98afcfd072",
+          "id": "c9131200-0695-11f1-af21-ff98afcfd072",
           "region": 1,
-          "displayOrder": 1,
+          "displayOrder": 0,
           "team1Id": "DUKE",
-          "team2Id": "TCU",
-          "winnerId": "DUKE",
-          "gameTime": 1774129020000,
-          "status": "COMPLETE",
+          "team2Id": "",
+          "gameTime": 1774653000000,
+          "status": "LOCKED",
           "picks": {
             "DUKE": {
-              "count": 18,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's",
-                "Just Rae-ndom "
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91004c0-0695-11f1-af21-ff98afcfd072",
-          "region": 1,
-          "displayOrder": 1,
-          "team1Id": "SJU",
-          "team2Id": "KU",
-          "winnerId": "SJU",
-          "gameTime": 1774214100000,
-          "status": "COMPLETE",
-          "picks": {
-            "KU": {
-              "count": 9,
-              "entries": [
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Binkies \u0026 Buckets",
-                "9th Time's The Charm",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
-              ]
-            },
-            "SJU": {
-              "count": 7,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "Jeff's Worst Picks Ever",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "Vasquez fam intern👩🏿‍💻"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91052e0-0695-11f1-af21-ff98afcfd072",
-          "region": 1,
-          "displayOrder": 2,
-          "team1Id": "LOU",
-          "team2Id": "MSU",
-          "winnerId": "MSU",
-          "gameTime": 1774118700000,
-          "status": "COMPLETE",
-          "picks": {
-            "LOU": {
-              "count": 2,
-              "entries": [
-                "M\u0026M's",
-                "Just Rae-ndom "
-              ]
-            },
-            "MSU": {
-              "count": 14,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91079f0-0695-11f1-af21-ff98afcfd072",
-          "region": 1,
-          "displayOrder": 4,
-          "team1Id": "UCLA",
-          "team2Id": "CONN",
-          "winnerId": "CONN",
-          "gameTime": 1774228200000,
-          "status": "COMPLETE",
-          "picks": {
-            "CONN": {
-              "count": 18,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            },
-            "UCLA": {
-              "count": 1,
-              "entries": [
-                "Just Rae-ndom "
-              ]
-            }
-          }
-        },
-        {
-          "id": "c910a100-0695-11f1-af21-ff98afcfd072",
-          "region": 2,
-          "displayOrder": 4,
-          "team1Id": "FLA",
-          "team2Id": "IOWA",
-          "winnerId": "IOWA",
-          "gameTime": 1774221000000,
-          "status": "COMPLETE",
-          "picks": {
-            "FLA": {
-              "count": 14,
-              "entries": [
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "Just Rae-ndom "
-              ]
-            },
-            "IOWA": {
-              "count": 3,
-              "entries": [
-                "Luke's Hoops",
-                "March sadness ft Tressa ",
-                "The Auditor 📈📉📊🧮"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c910ef20-0695-11f1-af21-ff98afcfd072",
-          "region": 2,
-          "displayOrder": 5,
-          "team1Id": "VAN",
-          "team2Id": "NEB",
-          "winnerId": "NEB",
-          "gameTime": 1774141320000,
-          "status": "COMPLETE",
-          "picks": {
-            "NEB": {
-              "count": 10,
-              "entries": [
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Binkies \u0026 Buckets",
-                "9th Time's The Charm",
-                "Blair N Nelson's Picks 1",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            },
-            "VAN": {
-              "count": 8,
-              "entries": [
-                "Luke's Hoops",
-                "Jeff's Worst Picks Ever",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Eli's Grandpa"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c9111630-0695-11f1-af21-ff98afcfd072",
-          "region": 2,
-          "displayOrder": 7,
-          "team1Id": "VCU",
-          "team2Id": "ILL",
-          "winnerId": "ILL",
-          "gameTime": 1774138500000,
-          "status": "COMPLETE",
-          "picks": {
-            "ILL": {
-              "count": 13,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Eli's Grandpa"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c9113d40-0695-11f1-af21-ff98afcfd072",
-          "region": 2,
-          "displayOrder": 8,
-          "team1Id": "TA\u0026M",
-          "team2Id": "HOU",
-          "winnerId": "HOU",
-          "gameTime": 1774131000000,
-          "status": "COMPLETE",
-          "picks": {
-            "HOU": {
-              "count": 16,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
-              ]
-            },
-            "TA\u0026M": {
-              "count": 1,
-              "entries": [
-                "M\u0026M's"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c911b270-0695-11f1-af21-ff98afcfd072",
-          "region": 3,
-          "displayOrder": 9,
-          "team1Id": "HPU",
-          "team2Id": "ARK",
-          "winnerId": "ARK",
-          "gameTime": 1774143900000,
-          "status": "COMPLETE",
-          "picks": {
-            "ARK": {
-              "count": 10,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Jeff's Worst Picks Ever",
-                "Frat Rat 🏓 🍻",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Eli's Grandpa",
-                "M\u0026M's"
-              ]
-            },
-            "HPU": {
-              "count": 1,
-              "entries": [
-                "Just Rae-ndom "
-              ]
-            }
-          }
-        },
-        {
-          "id": "c9118b60-0695-11f1-af21-ff98afcfd072",
-          "region": 3,
-          "displayOrder": 9,
-          "team1Id": "ARIZ",
-          "team2Id": "USU",
-          "winnerId": "ARIZ",
-          "gameTime": 1774224660000,
-          "status": "COMPLETE",
-          "picks": {
-            "ARIZ": {
-              "count": 16,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
-              ]
-            },
-            "USU": {
-              "count": 2,
-              "entries": [
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c911d980-0695-11f1-af21-ff98afcfd072",
-          "region": 3,
-          "displayOrder": 10,
-          "team1Id": "TEX",
-          "team2Id": "GONZ",
-          "winnerId": "TEX",
-          "gameTime": 1774135020000,
-          "status": "COMPLETE",
-          "picks": {
-            "GONZ": {
-              "count": 14,
-              "entries": [
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
-                "Lenny 🐶🐾"
-              ]
-            },
-            "TEX": {
-              "count": 2,
-              "entries": [
-                "Luke's Hoops",
-                "M\u0026M's"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91227a0-0695-11f1-af21-ff98afcfd072",
-          "region": 3,
-          "displayOrder": 11,
-          "team1Id": "MIA",
-          "team2Id": "PUR",
-          "winnerId": "PUR",
-          "gameTime": 1774195800000,
-          "status": "COMPLETE",
-          "picks": {
-            "MIA": {
-              "count": 1,
-              "entries": [
-                "Just Rae-ndom "
-              ]
-            },
-            "PUR": {
               "count": 17,
               "entries": [
                 "Luke's Hoops",
                 "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
@@ -986,133 +567,70 @@ const DATA = {
                 "Blair N Nelson's Picks 1",
                 "Eli's Grandpa",
                 "The Auditor 📈📉📊🧮",
-                "M\u0026M's"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c9124eb0-0695-11f1-af21-ff98afcfd072",
-          "region": 4,
-          "displayOrder": 12,
-          "team1Id": "MICH",
-          "team2Id": "SLU",
-          "winnerId": "MICH",
-          "gameTime": 1774109400000,
-          "status": "COMPLETE",
-          "picks": {
-            "MICH": {
-              "count": 16,
-              "entries": [
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
+                "M\u0026M's",
                 "Just Rae-ndom "
               ]
             }
           }
         },
         {
-          "id": "c91275c0-0695-11f1-af21-ff98afcfd072",
-          "region": 4,
-          "displayOrder": 13,
-          "team1Id": "TTU",
-          "team2Id": "ALA",
-          "winnerId": "ALA",
-          "gameTime": 1774231680000,
-          "status": "COMPLETE",
+          "id": "c9136020-0695-11f1-af21-ff98afcfd072",
+          "region": 1,
+          "displayOrder": 1,
+          "team1Id": "",
+          "team2Id": "MSU",
+          "gameTime": 1774662300000,
+          "status": "LOCKED",
           "picks": {
-            "ALA": {
-              "count": 8,
+            "MSU": {
+              "count": 2,
               "entries": [
                 "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Swishers Sweet"
-              ]
-            },
-            "TTU": {
-              "count": 9,
-              "entries": [
-                "Luke's Hoops",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's"
+                "Delka’s Dunk Dynasty"
               ]
             }
           }
         },
         {
-          "id": "c912c3e0-0695-11f1-af21-ff98afcfd072",
-          "region": 4,
-          "displayOrder": 15,
-          "team1Id": "TENN",
-          "team2Id": "UVA",
-          "winnerId": "TENN",
-          "gameTime": 1774217400000,
-          "status": "COMPLETE",
+          "id": "c9138730-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 2,
+          "team1Id": "",
+          "team2Id": "IOWA",
+          "gameTime": 1774567800000,
+          "status": "LOCKED",
+          "picks": {}
+        },
+        {
+          "id": "c913d550-0695-11f1-af21-ff98afcfd072",
+          "region": 2,
+          "displayOrder": 3,
+          "team1Id": "",
+          "team2Id": "ILL",
+          "gameTime": 1774577100000,
+          "status": "LOCKED",
           "picks": {
-            "TENN": {
-              "count": 11,
+            "ILL": {
+              "count": 4,
               "entries": [
                 "Luke's Hoops",
-                "John’s Final Fourcast",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
                 "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Blair N Nelson's Picks 1",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's"
-              ]
-            },
-            "UVA": {
-              "count": 6,
-              "entries": [
-                "Cornhusker Hustlers 🌽🏀",
-                "Frat Rat 🏓 🍻",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Eli's Grandpa"
+                "Nautical Nate ⚓"
               ]
             }
           }
         },
         {
-          "id": "c912eaf0-0695-11f1-af21-ff98afcfd072",
-          "region": 4,
-          "displayOrder": 16,
-          "team1Id": "UK",
-          "team2Id": "ISU",
-          "winnerId": "ISU",
-          "gameTime": 1774205100000,
-          "status": "COMPLETE",
+          "id": "c913fc60-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 5,
+          "team1Id": "ARIZ",
+          "team2Id": "",
+          "gameTime": 1774575900000,
+          "status": "LOCKED",
           "picks": {
-            "ISU": {
+            "ARIZ": {
               "count": 15,
               "entries": [
                 "Luke's Hoops",
@@ -1120,6 +638,46 @@ const DATA = {
                 "Cornhusker Hustlers 🌽🏀",
                 "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
+                "Jeff's Worst Picks Ever",
+                "Binkies \u0026 Buckets",
+                "Frat Rat 🏓 🍻",
+                "Jack Jack Attack 💥",
+                "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
+                "Swishers Sweet",
+                "Nautical Nate ⚓",
+                "Blair N Nelson's Picks 1",
+                "Eli's Grandpa"
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9144a80-0695-11f1-af21-ff98afcfd072",
+          "region": 3,
+          "displayOrder": 6,
+          "team1Id": "TEX",
+          "team2Id": "",
+          "gameTime": 1774566600000,
+          "status": "LOCKED",
+          "picks": {}
+        },
+        {
+          "id": "c9147190-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 7,
+          "team1Id": "MICH",
+          "team2Id": "",
+          "gameTime": 1774654500000,
+          "status": "LOCKED",
+          "picks": {
+            "MICH": {
+              "count": 15,
+              "entries": [
+                "John’s Final Fourcast",
+                "Cornhusker Hustlers 🌽🏀",
+                "Delka’s Dunk Dynasty",
+                "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
@@ -1129,13 +687,26 @@ const DATA = {
                 "Nautical Nate ⚓",
                 "Blair N Nelson's Picks 1",
                 "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
+                "The Auditor 📈📉📊🧮",
+                "Just Rae-ndom "
               ]
-            },
-            "UK": {
-              "count": 2,
+            }
+          }
+        },
+        {
+          "id": "c91498a0-0695-11f1-af21-ff98afcfd072",
+          "region": 4,
+          "displayOrder": 8,
+          "team1Id": "TENN",
+          "team2Id": "",
+          "gameTime": 1774663800000,
+          "status": "LOCKED",
+          "picks": {
+            "TENN": {
+              "count": 3,
               "entries": [
-                "Jeff's Worst Picks Ever",
+                "Luke's Hoops",
+                "March sadness ft Tressa ",
                 "M\u0026M's"
               ]
             }
@@ -1147,21 +718,20 @@ const DATA = {
       "status": "complete",
       "matchups": [
         {
-          "id": "c90fddb0-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c9131200-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 1,
-          "displayOrder": 1,
+          "displayOrder": -1,
           "team1Id": "DUKE",
           "team2Id": "SIE",
           "winnerId": "DUKE",
           "status": "COMPLETE",
           "picks": {
             "DUKE": {
-              "count": 18,
+              "count": 17,
               "entries": [
                 "Luke's Hoops",
                 "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
@@ -1187,93 +757,14 @@ const DATA = {
           }
         },
         {
-          "id": "c91004c0-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c9131200-0695-11f1-af21-ff98afcfd072-r64b",
           "region": 1,
-          "displayOrder": 1,
-          "team1Id": "SJU",
-          "team2Id": "UNI",
-          "winnerId": "SJU",
-          "status": "COMPLETE",
-          "picks": {
-            "SJU": {
-              "count": 7,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "Jeff's Worst Picks Ever",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "Vasquez fam intern👩🏿‍💻"
-              ]
-            },
-            "UNI": {
-              "count": 2,
-              "entries": [
-                "M\u0026M's",
-                "Just Rae-ndom "
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91004c0-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 1,
-          "displayOrder": 2,
-          "team1Id": "KU",
-          "team2Id": "CBU",
-          "winnerId": "KU",
-          "status": "COMPLETE",
-          "picks": {
-            "CBU": {
-              "count": 1,
-              "entries": [
-                "Lenny 🐶🐾"
-              ]
-            },
-            "KU": {
-              "count": 9,
-              "entries": [
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Binkies \u0026 Buckets",
-                "9th Time's The Charm",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c90fddb0-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 1,
-          "displayOrder": 2,
+          "displayOrder": 0,
           "team1Id": "OSU",
           "team2Id": "TCU",
-          "winnerId": "TCU",
-          "status": "COMPLETE",
-          "picks": {}
-        },
-        {
-          "id": "c91052e0-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 1,
-          "displayOrder": 3,
-          "team1Id": "LOU",
-          "team2Id": "USF",
-          "winnerId": "LOU",
           "status": "COMPLETE",
           "picks": {
-            "LOU": {
-              "count": 2,
-              "entries": [
-                "M\u0026M's",
-                "Just Rae-ndom "
-              ]
-            },
-            "USF": {
+            "KU": {
               "count": 1,
               "entries": [
                 "March sadness ft Tressa "
@@ -1282,21 +773,37 @@ const DATA = {
           }
         },
         {
-          "id": "c91052e0-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c9136020-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 1,
-          "displayOrder": 4,
+          "displayOrder": 1,
+          "team1Id": "LOU",
+          "team2Id": "USF",
+          "status": "COMPLETE",
+          "picks": {
+            "LOU": {
+              "count": 2,
+              "entries": [
+                "M\u0026M's",
+                "Just Rae-ndom "
+              ]
+            }
+          }
+        },
+        {
+          "id": "c9136020-0695-11f1-af21-ff98afcfd072-r64b",
+          "region": 1,
+          "displayOrder": 2,
           "team1Id": "MSU",
           "team2Id": "NDSU",
           "winnerId": "MSU",
           "status": "COMPLETE",
           "picks": {
-            "MSU": {
+            "CONN": {
               "count": 14,
               "entries": [
                 "Luke's Hoops",
-                "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
-                "Delka’s Dunk Dynasty",
+                "March sadness ft Tressa ",
                 "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
                 "Frat Rat 🏓 🍻",
@@ -1306,246 +813,135 @@ const DATA = {
                 "Swishers Sweet",
                 "Nautical Nate ⚓",
                 "Blair N Nelson's Picks 1",
-                "Eli's Grandpa"
+                "Eli's Grandpa",
+                "Lenny 🐶🐾"
+              ]
+            },
+            "MSU": {
+              "count": 2,
+              "entries": [
+                "John’s Final Fourcast",
+                "Delka’s Dunk Dynasty"
               ]
             },
             "NDSU": {
-              "count": 2,
-              "entries": [
-                "The Auditor 📈📉📊🧮",
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91079f0-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 1,
-          "displayOrder": 7,
-          "team1Id": "UCLA",
-          "team2Id": "UCF",
-          "winnerId": "UCLA",
-          "status": "COMPLETE",
-          "picks": {
-            "UCLA": {
               "count": 1,
               "entries": [
-                "Just Rae-ndom "
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91079f0-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 1,
-          "displayOrder": 8,
-          "team1Id": "CONN",
-          "team2Id": "FUR",
-          "winnerId": "CONN",
-          "status": "COMPLETE",
-          "picks": {
-            "CONN": {
-              "count": 18,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c910a100-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 2,
-          "displayOrder": 7,
-          "team1Id": "FLA",
-          "team2Id": "PV",
-          "winnerId": "FLA",
-          "status": "COMPLETE",
-          "picks": {
-            "FLA": {
-              "count": 14,
-              "entries": [
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "Just Rae-ndom "
-              ]
-            }
-          }
-        },
-        {
-          "id": "c910a100-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 2,
-          "displayOrder": 8,
-          "team1Id": "CLEM",
-          "team2Id": "IOWA",
-          "winnerId": "IOWA",
-          "status": "COMPLETE",
-          "picks": {
-            "CLEM": {
-              "count": 2,
-              "entries": [
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            },
-            "IOWA": {
-              "count": 3,
-              "entries": [
-                "Luke's Hoops",
-                "March sadness ft Tressa ",
                 "The Auditor 📈📉📊🧮"
               ]
             }
           }
         },
         {
-          "id": "c910ef20-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c9138730-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 2,
-          "displayOrder": 9,
-          "team1Id": "VAN",
-          "team2Id": "MCN",
-          "winnerId": "VAN",
+          "displayOrder": 3,
+          "team1Id": "FLA",
+          "team2Id": "PV",
           "status": "COMPLETE",
           "picks": {
-            "MCN": {
-              "count": 1,
+            "FLA": {
+              "count": 11,
               "entries": [
-                "Just Rae-ndom "
-              ]
-            },
-            "VAN": {
-              "count": 8,
-              "entries": [
-                "Luke's Hoops",
+                "John’s Final Fourcast",
+                "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
+                "9th Time's The Charm",
                 "Vasquez fam intern👩🏿‍💻",
                 "Swishers Sweet",
                 "Nautical Nate ⚓",
-                "Eli's Grandpa"
+                "Eli's Grandpa",
+                "Just Rae-ndom "
               ]
             }
           }
         },
         {
-          "id": "c910ef20-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c9138730-0695-11f1-af21-ff98afcfd072-r64b",
           "region": 2,
-          "displayOrder": 10,
-          "team1Id": "NEB",
-          "team2Id": "TROY",
-          "winnerId": "NEB",
+          "displayOrder": 4,
+          "team1Id": "CLEM",
+          "team2Id": "IOWA",
+          "winnerId": "IOWA",
           "status": "COMPLETE",
           "picks": {
             "NEB": {
-              "count": 10,
+              "count": 7,
               "entries": [
-                "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
                 "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
                 "Binkies \u0026 Buckets",
-                "9th Time's The Charm",
                 "Blair N Nelson's Picks 1",
                 "The Auditor 📈📉📊🧮",
                 "M\u0026M's",
                 "Lenny 🐶🐾"
               ]
-            }
-          }
-        },
-        {
-          "id": "c9111630-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 2,
-          "displayOrder": 13,
-          "team1Id": "UNC",
-          "team2Id": "VCU",
-          "winnerId": "VCU",
-          "status": "COMPLETE",
-          "picks": {
-            "UNC": {
-              "count": 3,
+            },
+            "VAN": {
+              "count": 1,
               "entries": [
-                "Vasquez fam intern👩🏿‍💻",
-                "Blair N Nelson's Picks 1",
-                "Just Rae-ndom "
+                "Luke's Hoops"
               ]
             }
           }
         },
         {
-          "id": "c9111630-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c913d550-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 2,
-          "displayOrder": 14,
+          "displayOrder": 5,
+          "team1Id": "UNC",
+          "team2Id": "VCU",
+          "status": "COMPLETE",
+          "picks": {}
+        },
+        {
+          "id": "c913d550-0695-11f1-af21-ff98afcfd072-r64b",
+          "region": 2,
+          "displayOrder": 6,
           "team1Id": "ILL",
           "team2Id": "PENN",
           "winnerId": "ILL",
           "status": "COMPLETE",
           "picks": {
-            "ILL": {
-              "count": 13,
+            "HOU": {
+              "count": 11,
               "entries": [
-                "Luke's Hoops",
                 "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
                 "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
                 "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
                 "9th Time's The Charm",
+                "Vasquez fam intern👩🏿‍💻",
                 "Swishers Sweet",
-                "Nautical Nate ⚓",
+                "Blair N Nelson's Picks 1",
                 "Eli's Grandpa"
               ]
             },
-            "PENN": {
-              "count": 3,
+            "IDHO": {
+              "count": 1,
               "entries": [
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's",
                 "Lenny 🐶🐾"
               ]
-            }
-          }
-        },
-        {
-          "id": "c9113d40-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 2,
-          "displayOrder": 15,
-          "team1Id": "SMC",
-          "team2Id": "TA\u0026M",
-          "winnerId": "TA\u0026M",
-          "status": "COMPLETE",
-          "picks": {
+            },
+            "ILL": {
+              "count": 4,
+              "entries": [
+                "Luke's Hoops",
+                "Binkies \u0026 Buckets",
+                "Jack Jack Attack 💥",
+                "Nautical Nate ⚓"
+              ]
+            },
+            "PENN": {
+              "count": 1,
+              "entries": [
+                "The Auditor 📈📉📊🧮"
+              ]
+            },
             "SMC": {
               "count": 1,
               "entries": [
@@ -1561,54 +957,16 @@ const DATA = {
           }
         },
         {
-          "id": "c9113d40-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 2,
-          "displayOrder": 16,
-          "team1Id": "HOU",
-          "team2Id": "IDHO",
-          "winnerId": "HOU",
-          "status": "COMPLETE",
-          "picks": {
-            "HOU": {
-              "count": 16,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
-              ]
-            },
-            "IDHO": {
-              "count": 1,
-              "entries": [
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c9118b60-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c913fc60-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 3,
-          "displayOrder": 17,
+          "displayOrder": 9,
           "team1Id": "ARIZ",
           "team2Id": "LIU",
           "winnerId": "ARIZ",
           "status": "COMPLETE",
           "picks": {
             "ARIZ": {
-              "count": 16,
+              "count": 15,
               "entries": [
                 "Luke's Hoops",
                 "John’s Final Fourcast",
@@ -1624,8 +982,7 @@ const DATA = {
                 "Swishers Sweet",
                 "Nautical Nate ⚓",
                 "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮"
+                "Eli's Grandpa"
               ]
             },
             "LIU": {
@@ -1637,211 +994,101 @@ const DATA = {
           }
         },
         {
-          "id": "c911b270-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c913fc60-0695-11f1-af21-ff98afcfd072-r64b",
           "region": 3,
-          "displayOrder": 17,
-          "team1Id": "WIS",
-          "team2Id": "HPU",
-          "winnerId": "HPU",
+          "displayOrder": 10,
+          "team1Id": "VILL",
+          "team2Id": "USU",
           "status": "COMPLETE",
           "picks": {
-            "HPU": {
+            "HAW": {
               "count": 1,
               "entries": [
-                "Just Rae-ndom "
+                "Lenny 🐶🐾"
+              ]
+            },
+            "USU": {
+              "count": 1,
+              "entries": [
+                "M\u0026M's"
               ]
             },
             "WIS": {
-              "count": 7,
+              "count": 1,
               "entries": [
-                "Delka’s Dunk Dynasty",
-                "Binkies \u0026 Buckets",
-                "Jack Jack Attack 💥",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
                 "The Auditor 📈📉📊🧮"
               ]
             }
           }
         },
         {
-          "id": "c911b270-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c9144a80-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 3,
-          "displayOrder": 18,
-          "team1Id": "ARK",
-          "team2Id": "HAW",
-          "winnerId": "ARK",
-          "status": "COMPLETE",
-          "picks": {
-            "ARK": {
-              "count": 10,
-              "entries": [
-                "Luke's Hoops",
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Jeff's Worst Picks Ever",
-                "Frat Rat 🏓 🍻",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Eli's Grandpa",
-                "M\u0026M's"
-              ]
-            },
-            "HAW": {
-              "count": 1,
-              "entries": [
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c9118b60-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 3,
-          "displayOrder": 18,
-          "team1Id": "VILL",
-          "team2Id": "USU",
-          "winnerId": "USU",
-          "status": "COMPLETE",
-          "picks": {
-            "USU": {
-              "count": 2,
-              "entries": [
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c911d980-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 3,
-          "displayOrder": 19,
+          "displayOrder": 11,
           "team1Id": "BYU",
           "team2Id": "TEX",
           "winnerId": "TEX",
           "status": "COMPLETE",
-          "picks": {
-            "BYU": {
-              "count": 3,
-              "entries": [
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Just Rae-ndom "
-              ]
-            },
-            "TEX": {
-              "count": 2,
-              "entries": [
-                "Luke's Hoops",
-                "M\u0026M's"
-              ]
-            }
-          }
+          "picks": {}
         },
         {
-          "id": "c911d980-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c9144a80-0695-11f1-af21-ff98afcfd072-r64b",
           "region": 3,
-          "displayOrder": 20,
+          "displayOrder": 12,
           "team1Id": "GONZ",
           "team2Id": "KENN",
-          "winnerId": "GONZ",
           "status": "COMPLETE",
           "picks": {
             "GONZ": {
-              "count": 14,
+              "count": 5,
               "entries": [
-                "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
                 "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
                 "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
                 "Lenny 🐶🐾"
               ]
-            }
-          }
-        },
-        {
-          "id": "c91227a0-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 3,
-          "displayOrder": 21,
-          "team1Id": "MIA",
-          "team2Id": "MIZ",
-          "winnerId": "MIA",
-          "status": "COMPLETE",
-          "picks": {
+            },
             "MIA": {
               "count": 1,
               "entries": [
                 "Just Rae-ndom "
               ]
-            }
-          }
-        },
-        {
-          "id": "c91227a0-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 3,
-          "displayOrder": 22,
-          "team1Id": "PUR",
-          "team2Id": "QUC",
-          "winnerId": "PUR",
-          "status": "COMPLETE",
-          "picks": {
+            },
             "PUR": {
-              "count": 17,
+              "count": 13,
               "entries": [
                 "Luke's Hoops",
                 "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
                 "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
                 "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
                 "Swishers Sweet",
-                "Nautical Nate ⚓",
                 "Blair N Nelson's Picks 1",
                 "Eli's Grandpa",
                 "The Auditor 📈📉📊🧮",
                 "M\u0026M's"
               ]
-            },
-            "QUC": {
-              "count": 1,
-              "entries": [
-                "Lenny 🐶🐾"
-              ]
             }
           }
         },
         {
-          "id": "c9124eb0-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c9147190-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 4,
-          "displayOrder": 23,
+          "displayOrder": 13,
           "team1Id": "MICH",
           "team2Id": "HOW",
           "winnerId": "MICH",
           "status": "COMPLETE",
           "picks": {
             "MICH": {
-              "count": 16,
+              "count": 15,
               "entries": [
                 "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
                 "Binkies \u0026 Buckets",
@@ -1860,78 +1107,27 @@ const DATA = {
           }
         },
         {
-          "id": "c9124eb0-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c9147190-0695-11f1-af21-ff98afcfd072-r64b",
           "region": 4,
-          "displayOrder": 24,
+          "displayOrder": 14,
           "team1Id": "UGA",
           "team2Id": "SLU",
-          "winnerId": "SLU",
-          "status": "COMPLETE",
-          "picks": {
-            "UGA": {
-              "count": 3,
-              "entries": [
-                "Luke's Hoops",
-                "M\u0026M's",
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91275c0-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 4,
-          "displayOrder": 25,
-          "team1Id": "TTU",
-          "team2Id": "AKR",
-          "winnerId": "TTU",
-          "status": "COMPLETE",
-          "picks": {
-            "AKR": {
-              "count": 1,
-              "entries": [
-                "Just Rae-ndom "
-              ]
-            },
-            "TTU": {
-              "count": 9,
-              "entries": [
-                "Luke's Hoops",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Vasquez fam intern👩🏿‍💻",
-                "Nautical Nate ⚓",
-                "Blair N Nelson's Picks 1",
-                "Eli's Grandpa",
-                "The Auditor 📈📉📊🧮",
-                "M\u0026M's"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c91275c0-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 4,
-          "displayOrder": 26,
-          "team1Id": "ALA",
-          "team2Id": "HOF",
-          "winnerId": "ALA",
           "status": "COMPLETE",
           "picks": {
             "ALA": {
-              "count": 8,
+              "count": 1,
               "entries": [
-                "John’s Final Fourcast",
-                "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Frat Rat 🏓 🍻",
-                "Swishers Sweet"
+                "March sadness ft Tressa "
               ]
             },
-            "HOF": {
+            "TTU": {
+              "count": 2,
+              "entries": [
+                "Luke's Hoops",
+                "M\u0026M's"
+              ]
+            },
+            "UGA": {
               "count": 1,
               "entries": [
                 "Lenny 🐶🐾"
@@ -1940,9 +1136,9 @@ const DATA = {
           }
         },
         {
-          "id": "c912c3e0-0695-11f1-af21-ff98afcfd072-r64a",
+          "id": "c91498a0-0695-11f1-af21-ff98afcfd072-r64a",
           "region": 4,
-          "displayOrder": 29,
+          "displayOrder": 15,
           "team1Id": "TENN",
           "team2Id": "M-OH",
           "winnerId": "TENN",
@@ -1955,105 +1151,53 @@ const DATA = {
               ]
             },
             "TENN": {
-              "count": 11,
+              "count": 3,
               "entries": [
                 "Luke's Hoops",
-                "John’s Final Fourcast",
                 "March sadness ft Tressa ",
-                "Delka’s Dunk Dynasty",
-                "Jeff's Worst Picks Ever",
-                "Binkies \u0026 Buckets",
-                "Jack Jack Attack 💥",
-                "9th Time's The Charm",
-                "Blair N Nelson's Picks 1",
-                "The Auditor 📈📉📊🧮",
                 "M\u0026M's"
               ]
             }
           }
         },
         {
-          "id": "c912c3e0-0695-11f1-af21-ff98afcfd072-r64b",
+          "id": "c91498a0-0695-11f1-af21-ff98afcfd072-r64b",
           "region": 4,
-          "displayOrder": 30,
+          "displayOrder": 16,
           "team1Id": "UVA",
           "team2Id": "WRST",
-          "winnerId": "UVA",
-          "status": "COMPLETE",
-          "picks": {
-            "UVA": {
-              "count": 6,
-              "entries": [
-                "Cornhusker Hustlers 🌽🏀",
-                "Frat Rat 🏓 🍻",
-                "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
-                "Nautical Nate ⚓",
-                "Eli's Grandpa"
-              ]
-            },
-            "WRST": {
-              "count": 1,
-              "entries": [
-                "Lenny 🐶🐾"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c912eaf0-0695-11f1-af21-ff98afcfd072-r64a",
-          "region": 4,
-          "displayOrder": 31,
-          "team1Id": "UK",
-          "team2Id": "SCU",
-          "winnerId": "UK",
-          "status": "COMPLETE",
-          "picks": {
-            "SCU": {
-              "count": 1,
-              "entries": [
-                "Just Rae-ndom "
-              ]
-            },
-            "UK": {
-              "count": 2,
-              "entries": [
-                "Jeff's Worst Picks Ever",
-                "M\u0026M's"
-              ]
-            }
-          }
-        },
-        {
-          "id": "c912eaf0-0695-11f1-af21-ff98afcfd072-r64b",
-          "region": 4,
-          "displayOrder": 32,
-          "team1Id": "ISU",
-          "team2Id": "TNST",
-          "winnerId": "ISU",
           "status": "COMPLETE",
           "picks": {
             "ISU": {
-              "count": 15,
+              "count": 12,
               "entries": [
-                "Luke's Hoops",
                 "John’s Final Fourcast",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Binkies \u0026 Buckets",
                 "Frat Rat 🏓 🍻",
                 "Jack Jack Attack 💥",
                 "9th Time's The Charm",
                 "Vasquez fam intern👩🏿‍💻",
-                "Swishers Sweet",
                 "Nautical Nate ⚓",
                 "Blair N Nelson's Picks 1",
                 "Eli's Grandpa",
                 "The Auditor 📈📉📊🧮"
               ]
             },
-            "TNST": {
+            "UK": {
+              "count": 1,
+              "entries": [
+                "Jeff's Worst Picks Ever"
+              ]
+            },
+            "UVA": {
+              "count": 1,
+              "entries": [
+                "Swishers Sweet"
+              ]
+            },
+            "WRST": {
               "count": 1,
               "entries": [
                 "Lenny 🐶🐾"
