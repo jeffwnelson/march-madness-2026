@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-03-23T02:30:21Z",
-  "version": "0.11.1+1efe97a",
+  "lastUpdated": "2026-03-23T03:35:17Z",
+  "version": "0.11.1+0c503b4",
   "pointsPerRound": [
     10,
     20,
@@ -32,7 +32,7 @@ const DATA = {
       "abbrev": "ARIZ",
       "seed": 1,
       "region": 3,
-      "record": "33-2",
+      "record": "34-2",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png"
     },
     "ARK": {
@@ -72,7 +72,7 @@ const DATA = {
       "abbrev": "CONN",
       "seed": 2,
       "region": 1,
-      "record": "30-5",
+      "record": "31-5",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png"
     },
     "DUKE": {
@@ -424,7 +424,7 @@ const DATA = {
       "abbrev": "UCLA",
       "seed": 7,
       "region": 1,
-      "record": "24-11",
+      "record": "24-12",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/26.png"
     },
     "UGA": {
@@ -472,7 +472,7 @@ const DATA = {
       "abbrev": "USU",
       "seed": 9,
       "region": 3,
-      "record": "29-6",
+      "record": "29-7",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/328.png"
     },
     "UVA": {
@@ -657,8 +657,9 @@ const DATA = {
           "displayOrder": 4,
           "team1Id": "UCLA",
           "team2Id": "CONN",
+          "winnerId": "CONN",
           "gameTime": 1774228200000,
-          "status": "LOCKED",
+          "status": "COMPLETE",
           "picks": {
             "CONN": {
               "count": 18,
@@ -878,8 +879,9 @@ const DATA = {
           "displayOrder": 9,
           "team1Id": "ARIZ",
           "team2Id": "USU",
+          "winnerId": "ARIZ",
           "gameTime": 1774224660000,
-          "status": "LOCKED",
+          "status": "COMPLETE",
           "picks": {
             "ARIZ": {
               "count": 16,
