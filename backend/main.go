@@ -52,12 +52,12 @@ type ESPNGroupSettings struct {
 }
 
 type ESPNEntry struct {
-	Name             string               `json:"name"`
-	Member           ESPNMember           `json:"member"`
-	Picks            []ESPNPick           `json:"picks"`
-	Score            ESPNScore            `json:"score"`
-	FinalPick        ESPNPick             `json:"finalPick"`
-	TiebreakAnswers  []ESPNTiebreakAnswer `json:"tiebreakAnswers"`
+	Name            string               `json:"name"`
+	Member          ESPNMember           `json:"member"`
+	Picks           []ESPNPick           `json:"picks"`
+	Score           ESPNScore            `json:"score"`
+	FinalPick       ESPNPick             `json:"finalPick"`
+	TiebreakAnswers []ESPNTiebreakAnswer `json:"tiebreakAnswers"`
 }
 
 type ESPNTiebreakAnswer struct {
@@ -157,6 +157,24 @@ type LeaderboardOutput struct {
 	Entries []LeaderboardEntry `json:"entries"`
 }
 
+// parseHex extracts the first hex segment (before '-') and returns its int64 value.
+func parseHex(id string) int64 {
+	seg := id
+	if i := strings.IndexByte(id, '-'); i >= 0 {
+		seg = id[:i]
+	}
+	val := int64(0)
+	for _, c := range seg {
+		val = val * 16
+		if c >= '0' && c <= '9' {
+			val += int64(c - '0')
+		} else if c >= 'a' && c <= 'f' {
+			val += int64(c - 'a' + 10)
+		}
+	}
+	return val
+}
+
 func main() {
 	// Load ESPN data
 	challengeData, err := os.ReadFile("data/espn/challenge.json")
@@ -181,28 +199,13 @@ func main() {
 		os.Exit(1)
 	}
 
-	// R32 outcome ID → team abbrev (known from current challenge propositions)
+	// Current outcome ID → team abbrev
 	outcomeToAbbrev := make(map[string]string)
+	currentOutcomeIDs := make(map[string]bool)
 	for _, prop := range ch.Propositions {
 		for _, o := range prop.PossibleOutcomes {
 			outcomeToAbbrev[o.ID] = o.Abbrev
-		}
-	}
-
-	// Build old outcome ID → team abbrev mapping.
-	// Old R64 picks reference outcome IDs not in the current challenge.
-	// For each old prop, the outcome with result=CORRECT across entries is the winner.
-	// We know all 32 R64 winners from actualOutcomeIds → team abbrev.
-	// We match by: for each old prop, find an entry with CORRECT result,
-	// then find which R64 winner this entry also picked in their R32 pick.
-	r32PropSet := make(map[string]bool)
-	finalPickProps := make(map[string]bool)
-	for _, prop := range ch.Propositions {
-		r32PropSet[prop.ID] = true
-	}
-	for _, entry := range g.Entries {
-		if entry.FinalPick.PropositionID != "" {
-			finalPickProps[entry.FinalPick.PropositionID] = true
+			currentOutcomeIDs[o.ID] = true
 		}
 	}
 
@@ -228,9 +231,104 @@ func main() {
 		}
 	}
 
-	// Build matchups
-	var r64Matchups []Matchup
-	var r32Matchups []Matchup
+	// Detect current period from propositions
+	currentPeriod := ch.Propositions[0].ScoringPeriodID
+
+	var r64Matchups, r32Matchups, s16Matchups []Matchup
+
+	if currentPeriod == 2 {
+		// ============================================================
+		// Period 2 (R32): 4 outcomes per prop → 2 R64 games + 1 R32 game
+		// ============================================================
+		r64Matchups, r32Matchups = buildFromR32Props(ch, g, outcomeToAbbrev)
+
+	} else if currentPeriod == 3 {
+		// ============================================================
+		// Period 3 (S16): 8 outcomes per prop → 4 R64 + 2 R32 + 1 S16
+		// ============================================================
+		r64Matchups, r32Matchups, s16Matchups = buildFromS16Props(ch, g, outcomeToAbbrev, currentOutcomeIDs)
+	}
+
+	// Sort matchups
+	sortMatchups := func(ms []Matchup) {
+		sort.Slice(ms, func(i, j int) bool {
+			if ms[i].Region != ms[j].Region {
+				return ms[i].Region < ms[j].Region
+			}
+			return ms[i].DisplayOrder < ms[j].DisplayOrder
+		})
+	}
+	sortMatchups(r64Matchups)
+	sortMatchups(r32Matchups)
+	sortMatchups(s16Matchups)
+
+	// Derive round status
+	deriveStatus := func(matchups []Matchup) string {
+		if len(matchups) == 0 {
+			return "future"
+		}
+		allComplete, anyStarted := true, false
+		for _, m := range matchups {
+			if m.Status == "COMPLETE" || m.Status == "PLAYING" || m.Status == "LOCKED" {
+				anyStarted = true
+			}
+			if m.Status != "COMPLETE" {
+				allComplete = false
+			}
+		}
+		if allComplete {
+			return "complete"
+		}
+		if anyStarted {
+			return "in_progress"
+		}
+		return "future"
+	}
+
+	version := "dev"
+	if vb, err := os.ReadFile("VERSION"); err == nil {
+		version = strings.TrimSpace(string(vb))
+	}
+
+	out := Output{
+		GroupName:      g.GroupSettings.Name,
+		LastUpdated:    time.Now().UTC().Format(time.RFC3339),
+		Version:        version,
+		PointsPerRound: []int{10, 20, 40, 80, 160, 320},
+		Teams:          teams,
+		Rounds: map[string]Round{
+			"r64":          {Status: deriveStatus(r64Matchups), Matchups: r64Matchups},
+			"r32":          {Status: deriveStatus(r32Matchups), Matchups: r32Matchups},
+			"sweet16":      {Status: deriveStatus(s16Matchups), Matchups: s16Matchups},
+			"elite8":       {Status: "future", Matchups: []Matchup{}},
+			"finalFour":    {Status: "future", Matchups: []Matchup{}},
+			"championship": {Status: "future", Matchups: []Matchup{}},
+		},
+		Brackets: []interface{}{},
+	}
+
+	outBytes, err := json.MarshalIndent(out, "", "  ")
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error marshaling output: %v\n", err)
+		os.Exit(1)
+	}
+	js := append([]byte("const DATA = "), outBytes...)
+	js = append(js, ';')
+	if err := os.WriteFile("data/data.js", js, 0644); err != nil {
+		fmt.Fprintf(os.Stderr, "Error writing data.js: %v\n", err)
+		os.Exit(1)
+	}
+	fmt.Println("Wrote data/data.js")
+
+	// ============================================================
+	// Generate leaderboard.js
+	// ============================================================
+	generateLeaderboard(ch, g, outcomeToAbbrev, currentOutcomeIDs)
+}
+
+// buildFromR32Props handles period 2 (R32): each prop has 4 outcomes.
+func buildFromR32Props(ch ESPNChallenge, g ESPNGroup, outcomeToAbbrev map[string]string) ([]Matchup, []Matchup) {
+	var r64Matchups, r32Matchups []Matchup
 
 	for _, prop := range ch.Propositions {
 		byPos := make(map[int]ESPNOutcome)
@@ -247,12 +345,18 @@ func main() {
 		t1, t2, t3, t4 := byPos[1], byPos[2], byPos[3], byPos[4]
 
 		winnerA := ""
-		if actual[t1.ID] { winnerA = t1.Abbrev } else if actual[t2.ID] { winnerA = t2.Abbrev }
+		if actual[t1.ID] {
+			winnerA = t1.Abbrev
+		} else if actual[t2.ID] {
+			winnerA = t2.Abbrev
+		}
 		winnerB := ""
-		if actual[t3.ID] { winnerB = t3.Abbrev } else if actual[t4.ID] { winnerB = t4.Abbrev }
+		if actual[t3.ID] {
+			winnerB = t3.Abbrev
+		} else if actual[t4.ID] {
+			winnerB = t4.Abbrev
+		}
 
-		// Aggregate picks from R32 entries for R64 games.
-		// Entry picks one of 4 outcomes. Pos 1 or 2 → game A pick. Pos 3 or 4 → game B pick.
 		gameAPicks := make(map[string]PickInfo)
 		gameBPicks := make(map[string]PickInfo)
 		r32Picks := make(map[string]PickInfo)
@@ -266,10 +370,12 @@ func main() {
 				abbrev := outcomeToAbbrev[oid]
 				pos := 0
 				for _, o := range prop.PossibleOutcomes {
-					if o.ID == oid { pos = o.MatchupPosition; break }
+					if o.ID == oid {
+						pos = o.MatchupPosition
+						break
+					}
 				}
 
-				// R32 picks — only track picks for the two actual contestants
 				if abbrev == winnerA || abbrev == winnerB {
 					pi := r32Picks[abbrev]
 					pi.Count++
@@ -277,7 +383,6 @@ func main() {
 					r32Picks[abbrev] = pi
 				}
 
-				// R64 game picks based on position
 				if pos == 1 || pos == 2 {
 					pi := gameAPicks[abbrev]
 					pi.Count++
@@ -307,7 +412,6 @@ func main() {
 			Picks: gameBPicks,
 		})
 
-		// R32 matchup
 		r32Winner := ""
 		for _, oid := range prop.CorrectOutcomes {
 			if abbrev, ok := outcomeToAbbrev[oid]; ok {
@@ -323,75 +427,378 @@ func main() {
 		})
 	}
 
-	// Sort
-	sortMatchups := func(ms []Matchup) {
-		sort.Slice(ms, func(i, j int) bool {
-			if ms[i].Region != ms[j].Region { return ms[i].Region < ms[j].Region }
-			return ms[i].DisplayOrder < ms[j].DisplayOrder
+	return r64Matchups, r32Matchups
+}
+
+// buildFromS16Props handles period 3 (S16): each prop has 8 outcomes.
+// Reconstructs R64, R32, and S16 matchups using current props + old entry picks.
+func buildFromS16Props(ch ESPNChallenge, g ESPNGroup, outcomeToAbbrev map[string]string, currentOutcomeIDs map[string]bool) ([]Matchup, []Matchup, []Matchup) {
+	// Sort S16 props by displayOrder
+	s16Props := make([]ESPNProposition, len(ch.Propositions))
+	copy(s16Props, ch.Propositions)
+	sort.Slice(s16Props, func(i, j int) bool {
+		return s16Props[i].DisplayOrder < s16Props[j].DisplayOrder
+	})
+
+	// Collect all old (non-current) proposition IDs from entry picks, sorted by hex.
+	// Structure: first 32 = R64 props, next 16 = R32 props, rest = future rounds.
+	oldPropSet := make(map[string]bool)
+	for _, entry := range g.Entries {
+		for _, pick := range entry.Picks {
+			if len(pick.OutcomesPicked) == 0 {
+				continue
+			}
+			if !currentOutcomeIDs[pick.OutcomesPicked[0].OutcomeID] {
+				oldPropSet[pick.PropositionID] = true
+			}
+		}
+	}
+	oldProps := make([]string, 0, len(oldPropSet))
+	for pid := range oldPropSet {
+		oldProps = append(oldProps, pid)
+	}
+	sort.Slice(oldProps, func(i, j int) bool {
+		return parseHex(oldProps[i]) < parseHex(oldProps[j])
+	})
+
+	r64OldProps := oldProps[:32] // First 32 old props = R64 games
+	r32OldProps := oldProps[32:48] // Next 16 = R32 games
+
+	// ============================================================
+	// Determine R64 winners from old entry picks using hex offset mapping.
+	//
+	// R64 props map to S16 props in groups of 4 (matching displayOrder sort):
+	//   r64OldProps[s16idx*4 + gameIdx] → S16 prop's R64 game
+	//   gameIdx 0: pos 1 vs 2, gameIdx 1: pos 3 vs 4,
+	//   gameIdx 2: pos 5 vs 6, gameIdx 3: pos 7 vs 8
+	//
+	// Within each R64 prop, outcome offset 1 = odd position team,
+	// offset 2 = even position team.
+	// ============================================================
+
+	// r64Winners[s16idx][gameIdx] = winner abbrev
+	r64Winners := make([]map[int]string, len(s16Props))
+	for i := range r64Winners {
+		r64Winners[i] = make(map[int]string)
+	}
+
+	for propIdx, r64Pid := range r64OldProps {
+		s16Idx := propIdx / 4
+		gameIdx := propIdx % 4
+		prop := s16Props[s16Idx]
+
+		pos1 := gameIdx*2 + 1
+		pos2 := gameIdx*2 + 2
+		var team1, team2 ESPNOutcome
+		for _, o := range prop.PossibleOutcomes {
+			if o.MatchupPosition == pos1 {
+				team1 = o
+			}
+			if o.MatchupPosition == pos2 {
+				team2 = o
+			}
+		}
+
+		r64PidBase := parseHex(r64Pid)
+		found := false
+		for _, entry := range g.Entries {
+			if found {
+				break
+			}
+			for _, pick := range entry.Picks {
+				if pick.PropositionID != r64Pid || len(pick.OutcomesPicked) == 0 {
+					continue
+				}
+				oid := pick.OutcomesPicked[0].OutcomeID
+				result := pick.OutcomesPicked[0].Result
+				offset := int(parseHex(oid) - r64PidBase)
+
+				if result == "CORRECT" {
+					if offset == 1 {
+						r64Winners[s16Idx][gameIdx] = team1.Abbrev
+					} else {
+						r64Winners[s16Idx][gameIdx] = team2.Abbrev
+					}
+					found = true
+					break
+				} else if result == "INCORRECT" {
+					if offset == 1 {
+						r64Winners[s16Idx][gameIdx] = team2.Abbrev
+					} else {
+						r64Winners[s16Idx][gameIdx] = team1.Abbrev
+					}
+					found = true
+					break
+				}
+			}
+		}
+	}
+
+	// ============================================================
+	// Build old outcome ID → team abbrev mapping for pick aggregation.
+	//
+	// For R64 old props: offset 1 → odd-position team, offset 2 → even-position team.
+	// For R32 old props: offsets 1-4 → S16 positions from the relevant half.
+	// ============================================================
+	oldOutcomeToAbbrev := make(map[string]string)
+
+	// Map R64 old prop outcomes
+	for propIdx, r64Pid := range r64OldProps {
+		s16Idx := propIdx / 4
+		gameIdx := propIdx % 4
+		prop := s16Props[s16Idx]
+
+		pos1 := gameIdx*2 + 1
+		pos2 := gameIdx*2 + 2
+		var team1Abbrev, team2Abbrev string
+		for _, o := range prop.PossibleOutcomes {
+			if o.MatchupPosition == pos1 {
+				team1Abbrev = o.Abbrev
+			}
+			if o.MatchupPosition == pos2 {
+				team2Abbrev = o.Abbrev
+			}
+		}
+
+		r64PidBase := parseHex(r64Pid)
+		// Collect all outcome IDs used across entries for this prop
+		for _, entry := range g.Entries {
+			for _, pick := range entry.Picks {
+				if pick.PropositionID != r64Pid || len(pick.OutcomesPicked) == 0 {
+					continue
+				}
+				oid := pick.OutcomesPicked[0].OutcomeID
+				offset := int(parseHex(oid) - r64PidBase)
+				if offset == 1 {
+					oldOutcomeToAbbrev[oid] = team1Abbrev
+				} else if offset == 2 {
+					oldOutcomeToAbbrev[oid] = team2Abbrev
+				}
+			}
+		}
+	}
+
+	// Map R32 old prop outcomes
+	for propIdx, r32Pid := range r32OldProps {
+		s16Idx := propIdx / 2
+		half := propIdx % 2 // 0=top (pos 1-4), 1=bottom (pos 5-8)
+		prop := s16Props[s16Idx]
+
+		// Build position → abbrev for this half
+		posToAbbrev := make(map[int]string)
+		for _, o := range prop.PossibleOutcomes {
+			posToAbbrev[o.MatchupPosition] = o.Abbrev
+		}
+
+		r32PidBase := parseHex(r32Pid)
+		for _, entry := range g.Entries {
+			for _, pick := range entry.Picks {
+				if pick.PropositionID != r32Pid || len(pick.OutcomesPicked) == 0 {
+					continue
+				}
+				oid := pick.OutcomesPicked[0].OutcomeID
+				offset := int(parseHex(oid) - r32PidBase)
+				// Offsets 1-4 map to positions in the relevant S16 half
+				if offset >= 1 && offset <= 4 {
+					pos := offset
+					if half == 1 {
+						pos = offset + 4 // bottom half: offset 1→pos5, 2→pos6, etc.
+					}
+					if abbrev, ok := posToAbbrev[pos]; ok {
+						oldOutcomeToAbbrev[oid] = abbrev
+					}
+				}
+			}
+		}
+	}
+
+	// Merge old and current outcome mappings
+	allOutcomeToAbbrev := make(map[string]string)
+	for k, v := range outcomeToAbbrev {
+		allOutcomeToAbbrev[k] = v
+	}
+	for k, v := range oldOutcomeToAbbrev {
+		allOutcomeToAbbrev[k] = v
+	}
+
+	// ============================================================
+	// Build R64 matchups
+	// ============================================================
+	var r64Matchups []Matchup
+	for s16Idx, prop := range s16Props {
+		region := prop.PossibleOutcomes[0].RegionID
+		byPos := make(map[int]ESPNOutcome)
+		for _, o := range prop.PossibleOutcomes {
+			byPos[o.MatchupPosition] = o
+		}
+
+		for gameIdx := 0; gameIdx < 4; gameIdx++ {
+			pos1 := gameIdx*2 + 1
+			pos2 := gameIdx*2 + 2
+			t1 := byPos[pos1]
+			t2 := byPos[pos2]
+			winner := r64Winners[s16Idx][gameIdx]
+
+			// Aggregate R64 picks from the corresponding old R64 prop
+			r64Picks := make(map[string]PickInfo)
+			r64Pid := r64OldProps[s16Idx*4+gameIdx]
+			for _, entry := range g.Entries {
+				for _, pick := range entry.Picks {
+					if pick.PropositionID != r64Pid || len(pick.OutcomesPicked) == 0 {
+						continue
+					}
+					abbrev := allOutcomeToAbbrev[pick.OutcomesPicked[0].OutcomeID]
+					if abbrev != "" {
+						pi := r64Picks[abbrev]
+						pi.Count++
+						pi.Entries = append(pi.Entries, entry.Name)
+						r64Picks[abbrev] = pi
+					}
+				}
+			}
+
+			r64Matchups = append(r64Matchups, Matchup{
+				ID:           prop.ID + fmt.Sprintf("-r64-%d", gameIdx),
+				Region:       region,
+				DisplayOrder: prop.DisplayOrder*4 + gameIdx,
+				Team1ID:      t1.Abbrev,
+				Team2ID:      t2.Abbrev,
+				WinnerID:     winner,
+				Status:       "COMPLETE",
+				Picks:        r64Picks,
+			})
+		}
+	}
+
+	// ============================================================
+	// Build R32 matchups
+	// ============================================================
+	var r32Matchups []Matchup
+	for s16Idx, prop := range s16Props {
+		region := prop.PossibleOutcomes[0].RegionID
+		oidToAbbrev := make(map[string]string)
+		for _, o := range prop.PossibleOutcomes {
+			oidToAbbrev[o.ID] = o.Abbrev
+		}
+
+		actualSet := make(map[string]bool)
+		for _, aid := range prop.ActualOutcomeIDs {
+			actualSet[oidToAbbrev[aid]] = true
+		}
+
+		for half := 0; half < 2; half++ {
+			// R32 contestants = R64 winners from each pair of games
+			game1 := half * 2       // games 0,1 or 2,3
+			game2 := half*2 + 1
+			teamA := r64Winners[s16Idx][game1]
+			teamB := r64Winners[s16Idx][game2]
+
+			r32Winner := ""
+			if actualSet[teamA] {
+				r32Winner = teamA
+			} else if actualSet[teamB] {
+				r32Winner = teamB
+			}
+
+			// Aggregate R32 picks from the corresponding old R32 prop
+			r32Picks := make(map[string]PickInfo)
+			r32Pid := r32OldProps[s16Idx*2+half]
+			for _, entry := range g.Entries {
+				for _, pick := range entry.Picks {
+					if pick.PropositionID != r32Pid || len(pick.OutcomesPicked) == 0 {
+						continue
+					}
+					abbrev := allOutcomeToAbbrev[pick.OutcomesPicked[0].OutcomeID]
+					// Only count picks for the actual R32 contestants
+					if abbrev == teamA || abbrev == teamB {
+						pi := r32Picks[abbrev]
+						pi.Count++
+						pi.Entries = append(pi.Entries, entry.Name)
+						r32Picks[abbrev] = pi
+					}
+				}
+			}
+
+			r32Matchups = append(r32Matchups, Matchup{
+				ID:           prop.ID + fmt.Sprintf("-r32-%d", half),
+				Region:       region,
+				DisplayOrder: prop.DisplayOrder*2 + half,
+				Team1ID:      teamA,
+				Team2ID:      teamB,
+				WinnerID:     r32Winner,
+				Status:       "COMPLETE",
+				Picks:        r32Picks,
+			})
+		}
+	}
+
+	// ============================================================
+	// Build S16 matchups
+	// ============================================================
+	var s16Matchups []Matchup
+	for _, prop := range s16Props {
+		region := prop.PossibleOutcomes[0].RegionID
+		oidToAbbrev := make(map[string]string)
+		for _, o := range prop.PossibleOutcomes {
+			oidToAbbrev[o.ID] = o.Abbrev
+		}
+
+		// S16 contestants = the 2 R32 winners (actualOutcomeIds)
+		var team1, team2 string
+		if len(prop.ActualOutcomeIDs) >= 2 {
+			team1 = oidToAbbrev[prop.ActualOutcomeIDs[0]]
+			team2 = oidToAbbrev[prop.ActualOutcomeIDs[1]]
+		} else if len(prop.ActualOutcomeIDs) == 1 {
+			team1 = oidToAbbrev[prop.ActualOutcomeIDs[0]]
+		}
+
+		// S16 winner from correctOutcomes
+		s16Winner := ""
+		for _, cid := range prop.CorrectOutcomes {
+			if abbrev, ok := oidToAbbrev[cid]; ok {
+				s16Winner = abbrev
+			}
+		}
+
+		// Aggregate S16 picks from current prop entries
+		s16Picks := make(map[string]PickInfo)
+		for _, entry := range g.Entries {
+			for _, pick := range entry.Picks {
+				if pick.PropositionID != prop.ID || len(pick.OutcomesPicked) == 0 {
+					continue
+				}
+				oid := pick.OutcomesPicked[0].OutcomeID
+				abbrev := outcomeToAbbrev[oid]
+				// Only count picks for actual S16 contestants
+				if abbrev == team1 || abbrev == team2 {
+					pi := s16Picks[abbrev]
+					pi.Count++
+					pi.Entries = append(pi.Entries, entry.Name)
+					s16Picks[abbrev] = pi
+				}
+			}
+		}
+
+		s16Matchups = append(s16Matchups, Matchup{
+			ID:           prop.ID,
+			Region:       region,
+			DisplayOrder: prop.DisplayOrder,
+			Team1ID:      team1,
+			Team2ID:      team2,
+			WinnerID:     s16Winner,
+			GameTime:     prop.Date,
+			Status:       prop.Status,
+			Picks:        s16Picks,
 		})
 	}
-	sortMatchups(r64Matchups)
-	sortMatchups(r32Matchups)
 
-	// Derive round status
-	deriveStatus := func(matchups []Matchup) string {
-		if len(matchups) == 0 { return "future" }
-		allComplete, anyStarted := true, false
-		for _, m := range matchups {
-			if m.Status == "COMPLETE" || m.Status == "PLAYING" { anyStarted = true }
-			if m.Status != "COMPLETE" { allComplete = false }
-		}
-		if allComplete { return "complete" }
-		if anyStarted { return "in_progress" }
-		return "future"
-	}
+	return r64Matchups, r32Matchups, s16Matchups
+}
 
-	// Build version from latest git tag + short commit hash
-	version := "dev"
-	if vb, err := os.ReadFile("VERSION"); err == nil {
-		version = strings.TrimSpace(string(vb))
-	}
-
-
-	out := Output{
-		GroupName:      g.GroupSettings.Name,
-		LastUpdated:    time.Now().UTC().Format(time.RFC3339),
-		Version:        version,
-		PointsPerRound: []int{10, 20, 40, 80, 160, 320},
-		Teams:          teams,
-		Rounds: map[string]Round{
-			"r64":          {Status: deriveStatus(r64Matchups), Matchups: r64Matchups},
-			"r32":          {Status: deriveStatus(r32Matchups), Matchups: r32Matchups},
-			"sweet16":      {Status: "future", Matchups: []Matchup{}},
-			"elite8":       {Status: "future", Matchups: []Matchup{}},
-			"finalFour":    {Status: "future", Matchups: []Matchup{}},
-			"championship": {Status: "future", Matchups: []Matchup{}},
-		},
-		Brackets: []interface{}{},
-	}
-
-	outBytes, err := json.MarshalIndent(out, "", "  ")
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error marshaling output: %v\n", err)
-		os.Exit(1)
-	}
-	js := append([]byte("const DATA = "), outBytes...)
-	js = append(js, ';')
-	if err := os.WriteFile("data/data.js", js, 0644); err != nil {
-		fmt.Fprintf(os.Stderr, "Error writing data.js: %v\n", err)
-		os.Exit(1)
-	}
-	fmt.Println("Wrote data/data.js")
-
-	// ============================================================
-	// Generate leaderboard.js
-	// ============================================================
-
+func generateLeaderboard(ch ESPNChallenge, g ESPNGroup, outcomeToAbbrev map[string]string, currentOutcomeIDs map[string]bool) {
 	// Map championship finalPick outcome IDs to team abbrevs using hex offset.
-	// Championship outcomes follow: base + (region-1)*16 + bracketPosition
 	bracketOrder := [16]int{1, 16, 8, 9, 5, 12, 4, 13, 6, 11, 3, 14, 7, 10, 2, 15}
 
-	// region+seed → abbrev
 	rsToAbbrev := make(map[[2]int]string)
 	for _, prop := range ch.Propositions {
 		for _, o := range prop.PossibleOutcomes {
@@ -399,35 +806,11 @@ func main() {
 		}
 	}
 
-	// Collect all unique finalPick outcome IDs, find the base (lowest hex)
 	fpOutcomes := make(map[string]bool)
 	for _, entry := range g.Entries {
 		if len(entry.FinalPick.OutcomesPicked) > 0 {
 			fpOutcomes[entry.FinalPick.OutcomesPicked[0].OutcomeID] = true
 		}
-	}
-
-	parseHex := func(id string) int64 {
-		seg := id
-		if idx := len(id); idx > 0 {
-			for i, c := range id {
-				if c == '-' {
-					seg = id[:i]
-					break
-				}
-				_ = c
-			}
-		}
-		val := int64(0)
-		for _, c := range seg {
-			val = val*16
-			if c >= '0' && c <= '9' {
-				val += int64(c - '0')
-			} else if c >= 'a' && c <= 'f' {
-				val += int64(c - 'a' + 10)
-			}
-		}
-		return val
 	}
 
 	var champBase int64
@@ -440,8 +823,7 @@ func main() {
 		}
 	}
 
-	// Map each finalPick outcome → team abbrev
-	champMap := make(map[string]string) // finalPick outcome ID → team abbrev
+	champMap := make(map[string]string)
 	for oid := range fpOutcomes {
 		offset := int(parseHex(oid) - champBase)
 		region := offset/16 + 1
@@ -454,9 +836,186 @@ func main() {
 		}
 	}
 
-	// Build FinalFour picks per entry.
-	// Entries with periodReached >= 5 on their R32 picks = team reaches Final Four.
-	// The R32 pick outcome → known abbrev.
+	// Build old outcome ID → team abbrev for Final Four resolution.
+	// Need to map old pick outcome IDs to team abbrevs using the same hex approach.
+	// Collect all old prop IDs, sort by hex, map R64 props to S16 positions.
+	oldPropSet := make(map[string]bool)
+	for _, entry := range g.Entries {
+		for _, pick := range entry.Picks {
+			if len(pick.OutcomesPicked) == 0 {
+				continue
+			}
+			if !currentOutcomeIDs[pick.OutcomesPicked[0].OutcomeID] {
+				oldPropSet[pick.PropositionID] = true
+			}
+		}
+	}
+	oldProps := make([]string, 0, len(oldPropSet))
+	for pid := range oldPropSet {
+		oldProps = append(oldProps, pid)
+	}
+	sort.Slice(oldProps, func(i, j int) bool {
+		return parseHex(oldProps[i]) < parseHex(oldProps[j])
+	})
+
+	// Build old outcome → abbrev mapping
+	oldOutcomeToAbbrev := make(map[string]string)
+
+	s16Props := make([]ESPNProposition, len(ch.Propositions))
+	copy(s16Props, ch.Propositions)
+	sort.Slice(s16Props, func(i, j int) bool {
+		return s16Props[i].DisplayOrder < s16Props[j].DisplayOrder
+	})
+
+	if len(oldProps) >= 48 {
+		// Map R64 old prop outcomes (first 32)
+		for propIdx := 0; propIdx < 32 && propIdx < len(oldProps); propIdx++ {
+			r64Pid := oldProps[propIdx]
+			s16Idx := propIdx / 4
+			gameIdx := propIdx % 4
+			if s16Idx >= len(s16Props) {
+				continue
+			}
+			prop := s16Props[s16Idx]
+
+			pos1 := gameIdx*2 + 1
+			pos2 := gameIdx*2 + 2
+			var t1Abbrev, t2Abbrev string
+			for _, o := range prop.PossibleOutcomes {
+				if o.MatchupPosition == pos1 {
+					t1Abbrev = o.Abbrev
+				}
+				if o.MatchupPosition == pos2 {
+					t2Abbrev = o.Abbrev
+				}
+			}
+
+			r64Base := parseHex(r64Pid)
+			for _, entry := range g.Entries {
+				for _, pick := range entry.Picks {
+					if pick.PropositionID != r64Pid || len(pick.OutcomesPicked) == 0 {
+						continue
+					}
+					oid := pick.OutcomesPicked[0].OutcomeID
+					offset := int(parseHex(oid) - r64Base)
+					if offset == 1 {
+						oldOutcomeToAbbrev[oid] = t1Abbrev
+					} else if offset == 2 {
+						oldOutcomeToAbbrev[oid] = t2Abbrev
+					}
+				}
+			}
+		}
+
+		// Map R32 old prop outcomes (next 16)
+		for propIdx := 0; propIdx < 16 && propIdx+32 < len(oldProps); propIdx++ {
+			r32Pid := oldProps[32+propIdx]
+			s16Idx := propIdx / 2
+			half := propIdx % 2
+			if s16Idx >= len(s16Props) {
+				continue
+			}
+			prop := s16Props[s16Idx]
+
+			posToAbbrev := make(map[int]string)
+			for _, o := range prop.PossibleOutcomes {
+				posToAbbrev[o.MatchupPosition] = o.Abbrev
+			}
+
+			r32Base := parseHex(r32Pid)
+			for _, entry := range g.Entries {
+				for _, pick := range entry.Picks {
+					if pick.PropositionID != r32Pid || len(pick.OutcomesPicked) == 0 {
+						continue
+					}
+					oid := pick.OutcomesPicked[0].OutcomeID
+					offset := int(parseHex(oid) - r32Base)
+					if offset >= 1 && offset <= 4 {
+						pos := offset
+						if half == 1 {
+							pos = offset + 4
+						}
+						if abbrev, ok := posToAbbrev[pos]; ok {
+							oldOutcomeToAbbrev[oid] = abbrev
+						}
+					}
+				}
+			}
+		}
+
+		// Map remaining old props (E8, FF, Championship) using wider offsets
+		// E8 props (4 props) have 8 outcomes each, FF props have 16, Championship has 32+
+		// Use the same S16 position mapping but with larger offset ranges
+		for propIdx := 48; propIdx < len(oldProps); propIdx++ {
+			pid := oldProps[propIdx]
+			pidBase := parseHex(pid)
+
+			// Determine which S16 props this covers based on index
+			// E8: props 48-51, each covers 2 S16 props (= 1 region quarter)
+			// FF: props 52-53, each covers 4 S16 props (= 2 regions)
+			// Championship: prop 54, covers all 8 S16 props
+			for _, entry := range g.Entries {
+				for _, pick := range entry.Picks {
+					if pick.PropositionID != pid || len(pick.OutcomesPicked) == 0 {
+						continue
+					}
+					oid := pick.OutcomesPicked[0].OutcomeID
+					offset := int(parseHex(oid) - pidBase)
+
+					// For E8/FF/Championship, outcomes follow the same bracket ordering
+					// as the full tournament. Each S16 prop contributes 8 positions.
+					// We can map by: figure out which S16 prop this offset falls in,
+					// then which position within that prop.
+					var s16Idx, posInProp int
+					switch {
+					case propIdx < 52: // E8 (4 props)
+						e8Idx := propIdx - 48
+						// Each E8 prop covers 2 S16 props (= 16 teams)
+						localOffset := offset - 1
+						if localOffset < 0 || localOffset >= 16 {
+							continue
+						}
+						s16Idx = e8Idx*2 + localOffset/8
+						posInProp = (localOffset % 8) + 1
+					case propIdx < 54: // FF (2 props)
+						ffIdx := propIdx - 52
+						localOffset := offset - 1
+						if localOffset < 0 || localOffset >= 32 {
+							continue
+						}
+						s16Idx = ffIdx*4 + localOffset/8
+						posInProp = (localOffset % 8) + 1
+					default: // Championship (1 prop)
+						localOffset := offset - 1
+						if localOffset < 0 || localOffset >= 64 {
+							continue
+						}
+						s16Idx = localOffset / 8
+						posInProp = (localOffset % 8) + 1
+					}
+
+					if s16Idx < len(s16Props) {
+						for _, o := range s16Props[s16Idx].PossibleOutcomes {
+							if o.MatchupPosition == posInProp {
+								oldOutcomeToAbbrev[oid] = o.Abbrev
+								break
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// Build combined outcome → abbrev (current + old)
+	allOutcomeToAbbrev := make(map[string]string)
+	for k, v := range outcomeToAbbrev {
+		allOutcomeToAbbrev[k] = v
+	}
+	for k, v := range oldOutcomeToAbbrev {
+		allOutcomeToAbbrev[k] = v
+	}
+
 	var lbEntries []LeaderboardEntry
 	for _, entry := range g.Entries {
 		champion := ""
@@ -468,7 +1027,7 @@ func main() {
 		seen := make(map[string]bool)
 		for _, pick := range entry.Picks {
 			if pick.PeriodReached >= 5 && len(pick.OutcomesPicked) > 0 {
-				abbrev := outcomeToAbbrev[pick.OutcomesPicked[0].OutcomeID]
+				abbrev := allOutcomeToAbbrev[pick.OutcomesPicked[0].OutcomeID]
 				if abbrev != "" && !seen[abbrev] {
 					seen[abbrev] = true
 					finalFour = append(finalFour, abbrev)
