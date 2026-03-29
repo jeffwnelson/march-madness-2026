@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-03-29T00:13:33Z",
-  "version": "0.13.0+b7fd929",
+  "lastUpdated": "2026-03-29T01:00:58Z",
+  "version": "0.13.0+df7b70e",
   "pointsPerRound": [
     10,
     20,
@@ -160,7 +160,7 @@ const DATA = {
       "abbrev": "ILL",
       "seed": 3,
       "region": 2,
-      "record": "27-8",
+      "record": "28-8",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png"
     },
     "IOWA": {
@@ -168,7 +168,7 @@ const DATA = {
       "abbrev": "IOWA",
       "seed": 9,
       "region": 2,
-      "record": "24-12",
+      "record": "24-13",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/2294.png"
     },
     "ISU": {
@@ -576,8 +576,9 @@ const DATA = {
           "displayOrder": 1,
           "team1Id": "IOWA",
           "team2Id": "ILL",
+          "winnerId": "ILL",
           "gameTime": 1774735740000,
-          "status": "LOCKED",
+          "status": "COMPLETE",
           "picks": {
             "ILL": {
               "count": 1,
@@ -593,7 +594,7 @@ const DATA = {
           "displayOrder": 2,
           "team1Id": "ARIZ",
           "team2Id": "PUR",
-          "gameTime": 1774745340000,
+          "gameTime": 1774745940000,
           "status": "LOCKED",
           "picks": {
             "ARIZ": {
