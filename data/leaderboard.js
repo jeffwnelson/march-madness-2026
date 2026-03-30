@@ -128,8 +128,7 @@ const LEADERBOARD = {
         "DUKE",
         "HOU",
         "ARIZ",
-        "MICH",
-        "FLA"
+        "MICH"
       ]
     },
     {
@@ -223,8 +222,7 @@ const LEADERBOARD = {
         "MSU",
         "HOU",
         "ARIZ",
-        "ISU",
-        "FLA"
+        "ISU"
       ]
     },
     {
@@ -335,8 +333,7 @@ const LEADERBOARD = {
         "DUKE",
         "FLA",
         "MIA",
-        "MICH",
-        "SMC"
+        "MICH"
       ]
     },
     {
