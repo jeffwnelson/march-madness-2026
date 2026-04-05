@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-04-05T00:14:07Z",
-  "version": "0.13.0+18c57ae",
+  "lastUpdated": "2026-04-05T01:01:32Z",
+  "version": "0.13.0+8af0c63",
   "pointsPerRound": [
     10,
     20,
@@ -72,7 +72,7 @@ const DATA = {
       "abbrev": "CONN",
       "seed": 2,
       "region": 1,
-      "record": "33-5",
+      "record": "34-5",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/41.png"
     },
     "DUKE": {
@@ -160,7 +160,7 @@ const DATA = {
       "abbrev": "ILL",
       "seed": 3,
       "region": 2,
-      "record": "28-8",
+      "record": "28-9",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png"
     },
     "IOWA": {
@@ -544,8 +544,8 @@ const DATA = {
             "CONN": {
               "count": 4,
               "entries": [
-                "Jack Jack Attack 💥",
                 "March sadness ft Tressa ",
+                "Jack Jack Attack 💥",
                 "Vasquez fam intern👩🏿‍💻",
                 "Lenny 🐶🐾"
               ]
@@ -599,12 +599,12 @@ const DATA = {
             "ARIZ": {
               "count": 12,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -670,8 +670,9 @@ const DATA = {
           "displayOrder": 0,
           "team1Id": "CONN",
           "team2Id": "ILL",
+          "winnerId": "CONN",
           "gameTime": 1775340540000,
-          "status": "LOCKED",
+          "status": "COMPLETE",
           "picks": {
             "CONN": {
               "count": 1,
@@ -693,7 +694,7 @@ const DATA = {
           "displayOrder": 1,
           "team1Id": "ARIZ",
           "team2Id": "MICH",
-          "gameTime": 1775350140000,
+          "gameTime": 1775351940000,
           "status": "LOCKED",
           "picks": {
             "ARIZ": {
@@ -736,12 +737,12 @@ const DATA = {
             "DUKE": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -770,8 +771,8 @@ const DATA = {
             "KU": {
               "count": 9,
               "entries": [
-                "9th Time's The Charm",
                 "March sadness ft Tressa ",
+                "9th Time's The Charm",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -844,12 +845,12 @@ const DATA = {
             "CONN": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -903,8 +904,8 @@ const DATA = {
             "IOWA": {
               "count": 3,
               "entries": [
-                "Luke's Hoops",
                 "March sadness ft Tressa ",
+                "Luke's Hoops",
                 "The Auditor 📈📉📊🧮"
               ]
             }
@@ -922,9 +923,9 @@ const DATA = {
             "NEB": {
               "count": 10,
               "entries": [
+                "March sadness ft Tressa ",
                 "Cornhusker Hustlers 🌽🏀",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "John’s Final Fourcast",
                 "Binkies \u0026 Buckets",
@@ -961,12 +962,12 @@ const DATA = {
             "ILL": {
               "count": 13,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -990,12 +991,12 @@ const DATA = {
             "HOU": {
               "count": 16,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1028,12 +1029,12 @@ const DATA = {
             "ARIZ": {
               "count": 16,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1067,11 +1068,11 @@ const DATA = {
             "ARK": {
               "count": 10,
               "entries": [
+                "March sadness ft Tressa ",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Eli's Grandpa",
                 "Vasquez fam intern👩🏿‍💻",
                 "Jeff's Worst Picks Ever",
@@ -1099,9 +1100,9 @@ const DATA = {
             "GONZ": {
               "count": 14,
               "entries": [
+                "March sadness ft Tressa ",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1142,12 +1143,12 @@ const DATA = {
             "PUR": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1175,11 +1176,11 @@ const DATA = {
             "MICH": {
               "count": 16,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1207,9 +1208,9 @@ const DATA = {
             "ALA": {
               "count": 8,
               "entries": [
+                "March sadness ft Tressa ",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
                 "John’s Final Fourcast",
@@ -1245,10 +1246,10 @@ const DATA = {
             "TENN": {
               "count": 11,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Jeff's Worst Picks Ever",
                 "John’s Final Fourcast",
@@ -1283,12 +1284,12 @@ const DATA = {
             "ISU": {
               "count": 15,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1326,12 +1327,12 @@ const DATA = {
             "DUKE": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1381,10 +1382,10 @@ const DATA = {
             "TCU": {
               "count": 9,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Cornhusker Hustlers 🌽🏀",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Vasquez fam intern👩🏿‍💻",
                 "John’s Final Fourcast",
@@ -1453,11 +1454,11 @@ const DATA = {
             "KU": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1526,12 +1527,12 @@ const DATA = {
             "MSU": {
               "count": 16,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1577,10 +1578,10 @@ const DATA = {
             "UCLA": {
               "count": 13,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Frat Rat 🏓 🍻",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Eli's Grandpa",
                 "Vasquez fam intern👩🏿‍💻",
@@ -1606,12 +1607,12 @@ const DATA = {
             "CONN": {
               "count": 19,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1641,12 +1642,12 @@ const DATA = {
             "FLA": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1692,11 +1693,11 @@ const DATA = {
             "IOWA": {
               "count": 13,
               "entries": [
+                "March sadness ft Tressa ",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Vasquez fam intern👩🏿‍💻",
@@ -1761,12 +1762,12 @@ const DATA = {
             "NEB": {
               "count": 19,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1815,9 +1816,9 @@ const DATA = {
             "VCU": {
               "count": 5,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
-                "March sadness ft Tressa ",
                 "The Auditor 📈📉📊🧮",
                 "Lenny 🐶🐾"
               ]
@@ -1836,12 +1837,12 @@ const DATA = {
             "ILL": {
               "count": 15,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1890,10 +1891,10 @@ const DATA = {
             "TA\u0026M": {
               "count": 10,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Vasquez fam intern👩🏿‍💻",
                 "Jeff's Worst Picks Ever",
@@ -1916,12 +1917,12 @@ const DATA = {
             "HOU": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1956,12 +1957,12 @@ const DATA = {
             "ARIZ": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -1996,9 +1997,9 @@ const DATA = {
             "USU": {
               "count": 11,
               "entries": [
+                "March sadness ft Tressa ",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Jeff's Worst Picks Ever",
@@ -2043,12 +2044,12 @@ const DATA = {
             "WIS": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2076,12 +2077,12 @@ const DATA = {
             "ARK": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2134,8 +2135,8 @@ const DATA = {
             "TEX": {
               "count": 6,
               "entries": [
-                "Luke's Hoops",
                 "March sadness ft Tressa ",
+                "Luke's Hoops",
                 "Nautical Nate ⚓",
                 "John’s Final Fourcast",
                 "M\u0026M's",
@@ -2156,12 +2157,12 @@ const DATA = {
             "GONZ": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2212,8 +2213,8 @@ const DATA = {
             "MIZ": {
               "count": 8,
               "entries": [
-                "9th Time's The Charm",
                 "March sadness ft Tressa ",
+                "9th Time's The Charm",
                 "Delka’s Dunk Dynasty",
                 "John’s Final Fourcast",
                 "Binkies \u0026 Buckets",
@@ -2236,12 +2237,12 @@ const DATA = {
             "PUR": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2282,12 +2283,12 @@ const DATA = {
             "MICH": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2316,9 +2317,9 @@ const DATA = {
             "SLU": {
               "count": 7,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Cornhusker Hustlers 🌽🏀",
-                "March sadness ft Tressa ",
                 "Nautical Nate ⚓",
                 "Binkies \u0026 Buckets",
                 "Swishers Sweet",
@@ -2364,11 +2365,11 @@ const DATA = {
             "TTU": {
               "count": 16,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2396,12 +2397,12 @@ const DATA = {
             "ALA": {
               "count": 18,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2443,12 +2444,12 @@ const DATA = {
             "TENN": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2476,12 +2477,12 @@ const DATA = {
             "UVA": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2556,12 +2557,12 @@ const DATA = {
             "ISU": {
               "count": 17,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2634,12 +2635,12 @@ const DATA = {
             "CONN": {
               "count": 14,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
                 "Vasquez fam intern👩🏿‍💻",
@@ -2670,8 +2671,8 @@ const DATA = {
             "NEB": {
               "count": 7,
               "entries": [
-                "Cornhusker Hustlers 🌽🏀",
                 "March sadness ft Tressa ",
+                "Cornhusker Hustlers 🌽🏀",
                 "Binkies \u0026 Buckets",
                 "Blair N Nelson's Picks 1",
                 "The Auditor 📈📉📊🧮",
@@ -2693,10 +2694,10 @@ const DATA = {
             "HOU": {
               "count": 11,
               "entries": [
+                "March sadness ft Tressa ",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Eli's Grandpa",
                 "Vasquez fam intern👩🏿‍💻",
@@ -2729,12 +2730,12 @@ const DATA = {
             "ARIZ": {
               "count": 15,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Cornhusker Hustlers 🌽🏀",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Nautical Nate ⚓",
                 "Eli's Grandpa",
@@ -2760,11 +2761,11 @@ const DATA = {
             "PUR": {
               "count": 13,
               "entries": [
+                "March sadness ft Tressa ",
                 "Jack Jack Attack 💥",
                 "Luke's Hoops",
                 "Frat Rat 🏓 🍻",
                 "9th Time's The Charm",
-                "March sadness ft Tressa ",
                 "Delka’s Dunk Dynasty",
                 "Eli's Grandpa",
                 "Jeff's Worst Picks Ever",
@@ -2843,8 +2844,8 @@ const DATA = {
             "TENN": {
               "count": 3,
               "entries": [
-                "Luke's Hoops",
                 "March sadness ft Tressa ",
+                "Luke's Hoops",
                 "M\u0026M's"
               ]
             }
