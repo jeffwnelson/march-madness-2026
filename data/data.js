@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-04-05T07:58:18Z",
-  "version": "0.13.0+7cd1e62",
+  "lastUpdated": "2026-04-05T18:07:31Z",
+  "version": "0.13.0+2154ef5",
   "pointsPerRound": [
     10,
     20,
@@ -32,7 +32,7 @@ const DATA = {
       "abbrev": "ARIZ",
       "seed": 1,
       "region": 3,
-      "record": "36-3",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/12.png"
     },
     "ARK": {
@@ -160,7 +160,7 @@ const DATA = {
       "abbrev": "ILL",
       "seed": 3,
       "region": 2,
-      "record": "28-9",
+      "record": "",
       "logo": "https://a.espncdn.com/i/teamlogos/ncaa/500/356.png"
     },
     "IOWA": {
@@ -526,14 +526,34 @@ const DATA = {
   },
   "rounds": {
     "championship": {
-      "status": "future",
-      "matchups": []
+      "status": "in_progress",
+      "matchups": [
+        {
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-championship-0",
+          "region": 1,
+          "displayOrder": 0,
+          "team1Id": "CONN",
+          "team2Id": "MICH",
+          "gameTime": 1775523000000,
+          "status": "LOCKED",
+          "picks": {
+            "MICH": {
+              "count": 3,
+              "entries": [
+                "Cornhusker Hustlers 🌽🏀",
+                "9th Time's The Charm",
+                "The Auditor 📈📉📊🧮"
+              ]
+            }
+          }
+        }
+      ]
     },
     "elite8": {
       "status": "complete",
       "matchups": [
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-elite8-0",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-elite8-0",
           "region": 1,
           "displayOrder": 0,
           "team1Id": "DUKE",
@@ -571,7 +591,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-elite8-1",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-elite8-1",
           "region": 1,
           "displayOrder": 1,
           "team1Id": "",
@@ -588,8 +608,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-elite8-0",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-elite8-2",
+          "region": 1,
           "displayOrder": 2,
           "team1Id": "ARIZ",
           "team2Id": "PUR",
@@ -626,8 +646,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-elite8-1",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-elite8-3",
+          "region": 1,
           "displayOrder": 3,
           "team1Id": "MICH",
           "team2Id": "TENN",
@@ -665,13 +685,12 @@ const DATA = {
       "status": "complete",
       "matchups": [
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-finalFour-0",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-finalFour-0",
           "region": 1,
           "displayOrder": 0,
           "team1Id": "CONN",
           "team2Id": "ILL",
           "winnerId": "CONN",
-          "gameTime": 1775340540000,
           "status": "COMPLETE",
           "picks": {
             "CONN": {
@@ -689,13 +708,12 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-finalFour-0",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-finalFour-1",
+          "region": 1,
           "displayOrder": 1,
           "team1Id": "ARIZ",
           "team2Id": "MICH",
           "winnerId": "MICH",
-          "gameTime": 1775351940000,
           "status": "COMPLETE",
           "picks": {
             "ARIZ": {
@@ -727,7 +745,7 @@ const DATA = {
       "status": "complete",
       "matchups": [
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-0",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-0",
           "region": 1,
           "displayOrder": 0,
           "team1Id": "DUKE",
@@ -761,7 +779,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-1",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-1",
           "region": 1,
           "displayOrder": 1,
           "team1Id": "SJU",
@@ -798,7 +816,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-2",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-2",
           "region": 1,
           "displayOrder": 2,
           "team1Id": "LOU",
@@ -835,7 +853,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-3",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-3",
           "region": 1,
           "displayOrder": 3,
           "team1Id": "UCLA",
@@ -875,7 +893,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-4",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-4",
           "region": 1,
           "displayOrder": 4,
           "team1Id": "FLA",
@@ -913,7 +931,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-5",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-5",
           "region": 1,
           "displayOrder": 5,
           "team1Id": "VAN",
@@ -952,7 +970,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-6",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-6",
           "region": 1,
           "displayOrder": 6,
           "team1Id": "VCU",
@@ -981,7 +999,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r32-7",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-7",
           "region": 1,
           "displayOrder": 7,
           "team1Id": "TA\u0026M",
@@ -1019,8 +1037,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-0",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-8",
+          "region": 1,
           "displayOrder": 8,
           "team1Id": "ARIZ",
           "team2Id": "USU",
@@ -1058,8 +1076,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-1",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-9",
+          "region": 1,
           "displayOrder": 9,
           "team1Id": "HPU",
           "team2Id": "ARK",
@@ -1090,8 +1108,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-2",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-10",
+          "region": 1,
           "displayOrder": 10,
           "team1Id": "TEX",
           "team2Id": "GONZ",
@@ -1127,8 +1145,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-3",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-11",
+          "region": 1,
           "displayOrder": 11,
           "team1Id": "MIA",
           "team2Id": "PUR",
@@ -1166,8 +1184,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-4",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-12",
+          "region": 1,
           "displayOrder": 12,
           "team1Id": "MICH",
           "team2Id": "SLU",
@@ -1198,8 +1216,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-5",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-13",
+          "region": 1,
           "displayOrder": 13,
           "team1Id": "TTU",
           "team2Id": "ALA",
@@ -1236,8 +1254,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-6",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-14",
+          "region": 1,
           "displayOrder": 14,
           "team1Id": "TENN",
           "team2Id": "UVA",
@@ -1274,8 +1292,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r32-7",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r32-15",
+          "region": 1,
           "displayOrder": 15,
           "team1Id": "UK",
           "team2Id": "ISU",
@@ -1317,7 +1335,7 @@ const DATA = {
       "status": "complete",
       "matchups": [
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-0",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-0",
           "region": 1,
           "displayOrder": 0,
           "team1Id": "DUKE",
@@ -1357,7 +1375,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-1",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-1",
           "region": 1,
           "displayOrder": 1,
           "team1Id": "OSU",
@@ -1397,7 +1415,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-2",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-2",
           "region": 1,
           "displayOrder": 2,
           "team1Id": "SJU",
@@ -1437,7 +1455,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-3",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-3",
           "region": 1,
           "displayOrder": 3,
           "team1Id": "KU",
@@ -1477,7 +1495,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-4",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-4",
           "region": 1,
           "displayOrder": 4,
           "team1Id": "LOU",
@@ -1517,7 +1535,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-5",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-5",
           "region": 1,
           "displayOrder": 5,
           "team1Id": "MSU",
@@ -1557,7 +1575,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-6",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-6",
           "region": 1,
           "displayOrder": 6,
           "team1Id": "UCLA",
@@ -1597,7 +1615,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-7",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-7",
           "region": 1,
           "displayOrder": 7,
           "team1Id": "CONN",
@@ -1632,7 +1650,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-8",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-8",
           "region": 1,
           "displayOrder": 8,
           "team1Id": "FLA",
@@ -1672,7 +1690,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-9",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-9",
           "region": 1,
           "displayOrder": 9,
           "team1Id": "CLEM",
@@ -1712,7 +1730,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-10",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-10",
           "region": 1,
           "displayOrder": 10,
           "team1Id": "VAN",
@@ -1752,7 +1770,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-11",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-11",
           "region": 1,
           "displayOrder": 11,
           "team1Id": "NEB",
@@ -1787,7 +1805,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-12",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-12",
           "region": 1,
           "displayOrder": 12,
           "team1Id": "UNC",
@@ -1827,7 +1845,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-13",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-13",
           "region": 1,
           "displayOrder": 13,
           "team1Id": "ILL",
@@ -1867,7 +1885,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-14",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-14",
           "region": 1,
           "displayOrder": 14,
           "team1Id": "SMC",
@@ -1907,7 +1925,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-r64-15",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-15",
           "region": 1,
           "displayOrder": 15,
           "team1Id": "HOU",
@@ -1947,8 +1965,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-0",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-16",
+          "region": 1,
           "displayOrder": 16,
           "team1Id": "ARIZ",
           "team2Id": "LIU",
@@ -1987,8 +2005,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-1",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-17",
+          "region": 1,
           "displayOrder": 17,
           "team1Id": "VILL",
           "team2Id": "USU",
@@ -2027,8 +2045,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-2",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-18",
+          "region": 1,
           "displayOrder": 18,
           "team1Id": "WIS",
           "team2Id": "HPU",
@@ -2067,8 +2085,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-3",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-19",
+          "region": 1,
           "displayOrder": 19,
           "team1Id": "ARK",
           "team2Id": "HAW",
@@ -2107,8 +2125,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-4",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-20",
+          "region": 1,
           "displayOrder": 20,
           "team1Id": "BYU",
           "team2Id": "TEX",
@@ -2147,8 +2165,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-5",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-21",
+          "region": 1,
           "displayOrder": 21,
           "team1Id": "GONZ",
           "team2Id": "KENN",
@@ -2187,8 +2205,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-6",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-22",
+          "region": 1,
           "displayOrder": 22,
           "team1Id": "MIA",
           "team2Id": "MIZ",
@@ -2227,8 +2245,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-7",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-23",
+          "region": 1,
           "displayOrder": 23,
           "team1Id": "PUR",
           "team2Id": "QUC",
@@ -2267,8 +2285,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-8",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-24",
+          "region": 1,
           "displayOrder": 24,
           "team1Id": "MICH",
           "team2Id": "HOW",
@@ -2307,8 +2325,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-9",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-25",
+          "region": 1,
           "displayOrder": 25,
           "team1Id": "UGA",
           "team2Id": "SLU",
@@ -2347,8 +2365,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-10",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-26",
+          "region": 1,
           "displayOrder": 26,
           "team1Id": "TTU",
           "team2Id": "AKR",
@@ -2387,8 +2405,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-11",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-27",
+          "region": 1,
           "displayOrder": 27,
           "team1Id": "ALA",
           "team2Id": "HOF",
@@ -2427,8 +2445,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-12",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-28",
+          "region": 1,
           "displayOrder": 28,
           "team1Id": "TENN",
           "team2Id": "M-OH",
@@ -2467,8 +2485,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-13",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-29",
+          "region": 1,
           "displayOrder": 29,
           "team1Id": "UVA",
           "team2Id": "WRST",
@@ -2507,8 +2525,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-14",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-30",
+          "region": 1,
           "displayOrder": 30,
           "team1Id": "UK",
           "team2Id": "SCU",
@@ -2547,8 +2565,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-r64-15",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-r64-31",
+          "region": 1,
           "displayOrder": 31,
           "team1Id": "ISU",
           "team2Id": "TNST",
@@ -2592,7 +2610,7 @@ const DATA = {
       "status": "complete",
       "matchups": [
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-sweet16-0",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-0",
           "region": 1,
           "displayOrder": 0,
           "team1Id": "DUKE",
@@ -2625,7 +2643,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-sweet16-1",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-1",
           "region": 1,
           "displayOrder": 1,
           "team1Id": "MSU",
@@ -2662,7 +2680,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-sweet16-2",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-2",
           "region": 1,
           "displayOrder": 2,
           "team1Id": "IOWA",
@@ -2684,7 +2702,7 @@ const DATA = {
           }
         },
         {
-          "id": "c915aa10-0695-11f1-af21-ff98afcfd072-sweet16-3",
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-3",
           "region": 1,
           "displayOrder": 3,
           "team1Id": "ILL",
@@ -2720,8 +2738,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-sweet16-0",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-4",
+          "region": 1,
           "displayOrder": 4,
           "team1Id": "ARIZ",
           "team2Id": "ARK",
@@ -2751,8 +2769,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-sweet16-1",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-5",
+          "region": 1,
           "displayOrder": 5,
           "team1Id": "TEX",
           "team2Id": "PUR",
@@ -2780,8 +2798,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-sweet16-2",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-6",
+          "region": 1,
           "displayOrder": 6,
           "team1Id": "MICH",
           "team2Id": "ALA",
@@ -2817,8 +2835,8 @@ const DATA = {
           }
         },
         {
-          "id": "c915f830-0695-11f1-af21-ff98afcfd072-sweet16-3",
-          "region": 3,
+          "id": "c9161f40-0695-11f1-af21-ff98afcfd072-sweet16-7",
+          "region": 1,
           "displayOrder": 7,
           "team1Id": "TENN",
           "team2Id": "ISU",
