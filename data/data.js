@@ -1,7 +1,7 @@
 const DATA = {
   "groupName": "Curtis / Vasquez Madness",
-  "lastUpdated": "2026-04-16T20:34:54Z",
-  "version": "0.13.0+9cb8d1b",
+  "lastUpdated": "2026-04-16T20:58:41Z",
+  "version": "0.13.0+a30ea87",
   "pointsPerRound": [
     10,
     20,
